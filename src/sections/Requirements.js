@@ -41,29 +41,29 @@ const ProfilePicture = styled(Image)`
   }
 `;
 
-const About = ({lang}) => (
-  <Section.Container id="about" Background={Background}>
-    <Section.Header name="About me" icon="🙋‍♂️" label="person" />
+const Requirements = () => (
+  <Section.Container id="requirements" Background={Background}>
+    <Section.Header name="Requirements" icon="" label="person" />
     <StaticQuery
       query={graphql`
-        query AboutMeQuery {
-          allContentfulAbout {
-            edges { node {
-              node_locale
-    	        aboutMe {
-      	        childMarkdownRemark { rawMarkdownBody }
-    	        }
-  		        profile {
-    		        title
-    		        image: resize(width: 450, quality: 100) { src }
+        query RequirementsQuery {
+          contentfulAbout {
+            aboutMe {
+              childMarkdownRemark {
+                rawMarkdownBody
               }
-  	        }}
+            }
+            profile {
+              title
+              image: resize(width: 450, quality: 100) {
+                src
+              }
+            }
           }
         }
       `}
       render={data => {
-
-        const { aboutMe, profile } = data.allContentfulAbout.edges.filter(({node}) => node.node_locale === lang)[0].node
+        const { aboutMe, profile } = data.contentfulAbout;
         return (
           <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
             <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
@@ -95,4 +95,4 @@ const About = ({lang}) => (
   </Section.Container>
 );
 
-export default About;
+export default Requirements;

@@ -1,21 +1,37 @@
+import { graphql, navigate, withPrefix } from 'gatsby';
+import { getUserLangKey } from 'ptz-i18n';
 import React from 'react';
-import Layout from '../components/Layout';
-import Landing from '../sections/Landing';
-import About from '../sections/About';
-import Projects from '../sections/Projects';
-import Writing from '../sections/Writing';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 
-const IndexPage = () => (
-  <Layout>
-    <Header />
-    <Landing />
-    <About />
-    <Projects />
-    <Writing />
-    <Footer />
-  </Layout>
-);
+class RedirectIndex extends React.PureComponent {
+  constructor(args) {
+    super(args);
 
-export default IndexPage;
+    // Skip build, Browsers only
+    if (typeof window !== 'undefined') {
+      const { langs, defaultLangKey } = args.data.site.siteMetadata.languages;
+      const langKey = getUserLangKey(langs, defaultLangKey);
+      const homeUrl = withPrefix(`/${langKey}/`);
+
+      navigate(homeUrl);
+    }
+  }
+
+  render() {
+    return (<div />);
+  }
+}
+
+export default RedirectIndex;
+
+export const pageQuery = graphql`
+  query IndexQuery {
+    site{
+      siteMetadata{
+        languages {
+          defaultLangKey
+          langs
+        }
+      }
+    }
+  }
+`;

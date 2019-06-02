@@ -1,11 +1,14 @@
+import { navigate } from 'gatsby';
 import React, { Fragment } from 'react';
 import Headroom from 'react-headroom';
+import Fade from 'react-reveal/Fade';
+import { SectionLinks } from 'react-scroll-section';
 import { Flex, Image } from 'rebass';
 import styled from 'styled-components';
-import { SectionLinks } from 'react-scroll-section';
-import Fade from 'react-reveal/Fade';
-import RouteLink from './RouteLink';
+import { langs } from '../../data/languages';
 import Logo from './Logo/Portfolio.svg';
+import RouteLang from './RouteLang';
+import RouteLink from './RouteLink';
 
 const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
@@ -35,7 +38,7 @@ const formatLinks = allLinks =>
     { links: [], home: null },
   );
 
-const Header = () => (
+const Header = ({lang}) => (
   <HeaderContainer>
     <Fade top>
       <Flex
@@ -54,9 +57,7 @@ const Header = () => (
                 width="50px"
                 alt="Portfolio Logo"
                 onClick={home.onClick}
-                style={{
-                  cursor: 'pointer',
-                }}
+                style={{ cursor: 'pointer' }}
               />
             );
             const navLinks = links.map(({ name, value }) => (
@@ -68,6 +69,13 @@ const Header = () => (
                 {name}
               </RouteLink>
             ));
+
+            const nextLang = langs.filter(l => l !== lang)[0]
+            navLinks.push( 
+              (<RouteLang onClick={() => {navigate(`/${nextLang}/`)}}>
+                { nextLang.slice(0,2).toUpperCase() }
+              </RouteLang> )
+            )
 
             return (
               <Fragment>

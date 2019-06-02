@@ -1,37 +1,34 @@
+import { graphql, StaticQuery } from 'gatsby';
+import PropTypes from 'prop-types';
 import React from 'react';
 import ReactHelmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
 import { withTheme } from 'styled-components';
-import PropTypes from 'prop-types';
 
-const Helmet = ({ theme = {} }) => (
+const Helmet = (props) => {
+  const { theme = {}, lang } = props
+  return (
   <StaticQuery
     query={graphql`
       query HelmetQuery {
-        contentfulAbout {
-          name
-          description
-          profile {
-            favicon16: resize(width: 16) {
-              src
-            }
-            favicon32: resize(width: 32) {
-              src
-            }
-            bigIcon: resize(width: 192) {
-              src
-            }
-            appleIcon: resize(width: 180) {
-              src
-            }
+        allContentfulAbout {
+          edges {
+            node 
+              {
+                name description node_locale
+                profile { 
+                  favicon16: resize(width: 16) { src }
+                  favicon32: resize(width: 32) { src }
+                  bigIcon: resize(width: 192) { src }
+                  appleIcon: resize(width: 180) { src }
+                }
+              }
           }
         }
       }
     `}
     render={data => {
-      const { name, description, profile } = data.contentfulAbout;
-      const title = `${name} Portofolio`;
-
+      const { name, description, profile } = data.allContentfulAbout.edges.filter(({node}) => node.node_locale === lang)[0].node
+      const title = `${name}`;
       return (
         <ReactHelmet>
           <meta charSet="utf-8" />
@@ -86,7 +83,7 @@ const Helmet = ({ theme = {} }) => (
       );
     }}
   />
-);
+)};
 
 Helmet.propTypes = {
   // eslint-disable-next-line

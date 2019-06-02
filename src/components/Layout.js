@@ -1,9 +1,9 @@
-import React, { Fragment } from 'react';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import PropTypes from 'prop-types';
+import React, { Fragment } from 'react';
+import config from 'react-reveal/globals';
 import { ScrollingProvider } from 'react-scroll-section';
 import 'react-tippy/dist/tippy.css';
-import config from 'react-reveal/globals';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 import colors from '../../colors';
 import Helmet from './Helmet';
 
@@ -26,17 +26,20 @@ body {
 
 config({ ssrFadeout: true });
 
-const Layout = ({ children }) => (
-  <Fragment>
-    <GlobalStyle />
-    <ThemeProvider theme={{ colors }}>
-      <ScrollingProvider>
-        <Helmet />
-        {children}
-      </ScrollingProvider>
-    </ThemeProvider>
-  </Fragment>
-);
+const Layout = (props) => {
+  const { children, lang } = props
+  console.log('PROPS@ Layout: ', props)
+  return (
+    <Fragment>
+      <GlobalStyle />
+      <ThemeProvider theme={{ colors }}>
+        <ScrollingProvider>
+          <Helmet lang={lang} />
+          {children}
+        </ScrollingProvider>
+      </ThemeProvider>
+    </Fragment>
+  )}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

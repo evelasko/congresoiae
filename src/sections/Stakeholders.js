@@ -2,51 +2,17 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Fade from 'react-reveal/Fade';
-import { Box, Flex, Image } from 'rebass';
-import styled from 'styled-components';
+import { Box, Flex } from 'rebass';
 import markdownRenderer from '../components/MarkdownRenderer';
 import Section from '../components/Section';
-import Triangle from '../components/Triangle';
 
-const Background = () => (
-  <div>
-    <Triangle
-      color="secondaryLight"
-      height={['50vh', '20vh']}
-      width={['50vw', '50vw']}
-      invertY
-    />
 
-    <Triangle
-      color="primaryDark"
-      height={['20vh', '40vh']}
-      width={['75vw', '70vw']}
-      invertX
-    />
-
-    <Triangle
-      color="backgroundDark"
-      height={['25vh', '20vh']}
-      width={['100vw', '100vw']}
-    />
-  </div>
-);
-
-const ProfilePicture = styled(Image)`
-  border-radius: 50%;
-  transition: all 0.25s ease-out;
-
-  &:hover {
-    border-radius: 20%;
-  }
-`;
-
-const About = ({lang}) => (
-  <Section.Container id="about" Background={Background}>
-    <Section.Header name="About me" icon="🙋‍♂️" label="person" />
+const Stakeholders = ({lang}) => (
+  <Section.Container id="stakeholders">
+    <Section.Header name="Stakeholders" label="stakeholder" />
     <StaticQuery
       query={graphql`
-        query AboutMeQuery {
+        query StakeholdersQuery {
           allContentfulAbout {
             edges { node {
               node_locale
@@ -95,4 +61,4 @@ const About = ({lang}) => (
   </Section.Container>
 );
 
-export default About;
+export default Stakeholders;

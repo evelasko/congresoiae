@@ -1,5 +1,6 @@
 const contentful = require('contentful');
 const manifestConfig = require('./manifest-config');
+const languages = require('./data/languages');
 require('dotenv').config();
 
 const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID } = process.env;
@@ -23,6 +24,14 @@ const plugins = [
     options: {
       fonts: ['cabin', 'Open Sans'],
     },
+  },
+  {
+    resolve: 'gatsby-plugin-i18n',
+    options: {
+      langKeyForNull: 'any',
+      langKeyDefault: languages.defaultLangKey,
+      useLangKeyLayout: false
+    }
   },
   {
     resolve: 'gatsby-source-contentful',
@@ -57,6 +66,7 @@ module.exports = client.getEntries().then(entries => {
   return {
     siteMetadata: {
       isMediumUserDefined: !!mediumUser,
+      languages
     },
     plugins,
   };
