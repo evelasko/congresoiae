@@ -5,7 +5,11 @@ const LinkLang = styled.span`
   position: relative;
   margin-bottom: 0;
   padding-bottom: 5px;
+  padding-left: 3px;
+  padding-right: 3px;
   color: inherit;
+  background-color: white;
+  color: ${props => props.theme.colors.primary};
   ${props =>
     props.selected &&
     `border-bottom:  5px solid ${props.theme.colors.primaryLight}`};

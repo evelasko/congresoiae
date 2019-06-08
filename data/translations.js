@@ -14,6 +14,13 @@ const translations = {
         subjects: {
             en: ['technology', 'industry', 'heritage', 'education'],
             es: ['tecnología', 'industria', 'patrimonio', 'educación']
+        },
+        menu: {
+            about: { en: 'About', es: 'Acerca' },
+            projects: { en: 'Speakers', es: 'Ponentes',
+                slug: { en: 'Main Speakers', es: 'Ponentes Oficiales'} },
+            writing: { en: 'Topics', es: 'Temas'},
+            stakeholders: { en: 'Venue', es: 'Recinto'}
         }
     }
 

@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
-import styled from 'styled-components';
+import Slide from 'react-reveal/Slide';
 import { Section } from 'react-scroll-section';
 import { Heading } from 'rebass';
-import PropTypes from 'prop-types';
-import Slide from 'react-reveal/Slide';
+import styled from 'styled-components';
 import LinkAnimated from './LinkAnimated';
 
 const SectionContainer = styled.div`
@@ -36,7 +36,14 @@ Container.propTypes = {
 
 const Header = ({ name, icon = '', label = '' }) => (
   <Slide left>
-    <Heading color="secondaryDark" mb={4}>
+    <Heading 
+      color="secondary" 
+      mb={4}
+      fontFamily="Tranx"
+      fontSize="34px"
+      fontWeight="100"
+      lineHeight="38px"
+    >
       <LinkAnimated selected>
         {name}
         {icon && (

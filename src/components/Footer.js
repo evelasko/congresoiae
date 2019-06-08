@@ -1,15 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
-import { Text, Flex, Box } from 'rebass';
-import Fade from 'react-reveal/Fade';
 import PropTypes from 'prop-types';
+import React from 'react';
+import Fade from 'react-reveal/Fade';
+import { Box, Flex, Text } from 'rebass';
+import styled from 'styled-components';
 import ContentfulLogo from './Logo/Contenful.svg';
 import GatsbyLogo from './Logo/Gatsby.svg';
 
 const FooterContainer = styled.footer`
   padding: 1em;
-  background: ${props => props.theme.colors.primaryDark};
-  color: ${props => props.theme.colors.background};
+  background: ${props => props.theme.colors.primary};
+   color: white; /*${props => props.theme.colors.background}; */
   display: flex;
   flex: 0 1 auto;
   flex-direction: column;

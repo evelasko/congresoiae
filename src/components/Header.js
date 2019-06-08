@@ -3,10 +3,11 @@ import React, { Fragment } from 'react';
 import Headroom from 'react-headroom';
 import Fade from 'react-reveal/Fade';
 import { SectionLinks } from 'react-scroll-section';
-import { Flex, Image } from 'rebass';
+import { Flex } from 'rebass';
 import styled from 'styled-components';
 import { langs } from '../../data/languages';
-import Logo from './Logo/Portfolio.svg';
+import translations from '../../data/translations';
+import Logo from './Logo/Logo.svg';
 import RouteLang from './RouteLang';
 import RouteLink from './RouteLink';
 
@@ -14,11 +15,21 @@ const capitalize = s => s && s[0].toUpperCase() + s.slice(1);
 
 const HeaderContainer = styled(Headroom)`
   .headroom--pinned {
-    background: ${props => props.theme.colors.primaryDark};
+    background: ${props => props.theme.colors.primary};
   }
-
+  font-family: 'Tranx', sans-serif;
+  letter-spacing:1px;
   position: absolute;
   width: 100%;
+`;
+const ResponsiveLogo = styled.img`
+  width: 24px;
+  height: 24px;
+
+  @media (min-width: 400px) {
+    width: 48px;
+    height: 48px;
+  }
 `;
 
 const formatLinks = allLinks =>
@@ -38,7 +49,7 @@ const formatLinks = allLinks =>
     { links: [], home: null },
   );
 
-const Header = ({lang}) => (
+const Header = ({lang, pathname}) => (
   <HeaderContainer>
     <Fade top>
       <Flex
@@ -52,7 +63,7 @@ const Header = ({lang}) => (
             const { home, links } = formatLinks(allLinks);
 
             const homeLink = home && (
-              <Image
+              <ResponsiveLogo
                 src={Logo}
                 width="50px"
                 alt="Portfolio Logo"
@@ -66,20 +77,22 @@ const Header = ({lang}) => (
                 onClick={value.onClick}
                 selected={value.selected}
               >
-                {name}
+                {translations.menu[name.toLowerCase()][lang.slice(0,2)].toUpperCase()}
               </RouteLink>
             ));
 
             const nextLang = langs.filter(l => l !== lang)[0]
             navLinks.push( 
-              (<RouteLang onClick={() => {navigate(`/${nextLang}/`)}}>
+              (<RouteLang key={lang} onClick={() => {navigate(pathname.replace(lang, nextLang))}}>
                 { nextLang.slice(0,2).toUpperCase() }
               </RouteLang> )
             )
 
             return (
               <Fragment>
-                {homeLink}
+                {
+                  homeLink
+                }
                 <Flex mr={[0, 3, 5]}>{navLinks}</Flex>
               </Fragment>
             );

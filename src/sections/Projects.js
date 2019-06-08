@@ -1,15 +1,13 @@
-import React from 'react';
+import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
-import { Image, Text, Flex, Box } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import React from 'react';
 import Fade from 'react-reveal/Fade';
+import { Flex, Image, Text } from 'rebass';
+import styled from 'styled-components';
+import translations from '../../data/translations';
+import { Card, CardContainer } from '../components/Card';
 import Section from '../components/Section';
-import { CardContainer, Card } from '../components/Card';
-import SocialLink from '../components/SocialLink';
 import Triangle from '../components/Triangle';
-import ImageSubtitle from '../components/ImageSubtitle';
-import Hide from '../components/Hide';
 
 const Background = () => (
   <div>
@@ -103,115 +101,60 @@ const ProjectTag = styled.div`
   }
 `;
 
-const Project = ({
-  name,
-  description,
-  projectUrl,
-  repositoryUrl,
-  type,
-  publishedDate,
-  logo,
-}) => (
+const Project = ({ fullName, description, photo }) => (
   <Card p={0}>
     <Flex style={{ height: CARD_HEIGHT }}>
       <TextContainer>
-        <span>
-          <Title my={2} pb={1}>
-            {name}
-          </Title>
-        </span>
+        <span><Title my={2} pb={1}>{fullName}</Title></span>
         <Text width={[1]} style={{ overflow: 'auto' }}>
-          {description}
+          { description ? 'Description' : 'No description' }
         </Text>
       </TextContainer>
-
       <ImageContainer>
-        <ProjectImage src={logo.image.src} alt={logo.title} />
-        <ProjectTag>
-          <Flex
-            style={{
-              float: 'right',
-            }}
-          >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
-          </Flex>
-          <ImageSubtitle
-            bg="primaryLight"
-            color="white"
-            y="bottom"
-            x="right"
-            round
-          >
-            {type}
-          </ImageSubtitle>
-          <Hide query={MEDIA_QUERY_SMALL}>
-            <ImageSubtitle bg="backgroundDark">{publishedDate}</ImageSubtitle>
-          </Hide>
-        </ProjectTag>
+        <ProjectImage src={photo.image.src} alt={photo.title} />
       </ImageContainer>
     </Flex>
   </Card>
 );
 
 Project.propTypes = {
-  name: PropTypes.string.isRequired,
+  fullName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  publishedDate: PropTypes.string.isRequired,
-  logo: PropTypes.shape({
-    image: PropTypes.shape({
-      src: PropTypes.string,
-    }),
-  }).isRequired,
+  // projectUrl: PropTypes.string.isRequired,
+  // repositoryUrl: PropTypes.string.isRequired,
+  // logo: PropTypes.shape({
+  //   image: PropTypes.shape({
+  //     src: PropTypes.string,
+  //   }),
+  // }).isRequired,
 };
 
-const Projects = () => (
-  <Section.Container id="projects" Background={Background}>
-    <Section.Header name="Projects" icon="💻" Box="notebook" />
+const Projects = ({lang}) => (
+  <Section.Container id="projects">
+    <Section.Header name={translations.menu.projects.slug[lang.slice(0,2)] } icon="" Box="notebook" />
     <StaticQuery
       query={graphql`
         query ProjectsQuery {
-          contentfulAbout {
-            projects {
+          allContentfulSpeaker {
+            edges { node {
               id
-              name
-              description
-              projectUrl
-              repositoryUrl
-              publishedDate(formatString: "YYYY")
-              type
-              logo {
-                title
-                image: resize(width: 200, quality: 100) {
-                  src
-                }
+              fullName
+              description { description }
+              photo { title image: resize(width: 200, quality: 100) { src } }
               }
             }
           }
         }
       `}
-      render={({ contentfulAbout }) => (
+      render={({ allContentfulSpeaker }) => (
         <CardContainer minWidth="350px">
-          {contentfulAbout.projects.map((p, i) => (
-            <Fade bottom delay={i * 200}>
-              <Project key={p.id} {...p} />
-            </Fade>
-          ))}
+          {allContentfulSpeaker.edges.map(({node}, i) => {
+            const nd = Object.assign(node, node.description)
+            return (
+              <Fade bottom delay={i * 200} key={`F${node.id}`}>
+                <Project key={node.id} {...nd} />
+              </Fade>
+          )})}
         </CardContainer>
       )}
     />

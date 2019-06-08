@@ -20,12 +20,6 @@ const plugins = [
   },
   'gatsby-plugin-styled-components',
   {
-    resolve: 'gatsby-plugin-google-fonts',
-    options: {
-      fonts: ['cabin', 'Open Sans'],
-    },
-  },
-  {
     resolve: 'gatsby-plugin-i18n',
     options: {
       langKeyForNull: 'any',

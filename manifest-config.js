@@ -1,11 +1,7 @@
-const colors = require('./colors');
-
 module.exports = {
-  name: 'Mate Gatsby Starter',
-  short_name: 'Mate Gatsby Starter',
+  name: 'Congreso Internacional de Investigación y Artes Escénicas',
+  short_name: 'IAE Congress',
   start_url: '/',
-  background_color: colors.background,
-  theme_color: colors.primary,
   display: 'minimal-ui',
   icon: 'media/icon.png',
 };

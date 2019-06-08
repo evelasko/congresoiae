@@ -1,6 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
-import PropTypes from 'prop-types';
+import { colors } from '../styles/theme';
 
 const MouseContainer = styled.svg`
   max-width: 2.5rem;
@@ -36,10 +37,10 @@ const ScrollAnimation = keyframes`
   }
 `;
 
-const Mouse = styled.rect.attrs({
-  stroke: props => props.theme.colors.primary,
+const Mouse = styled.rect.attrs(props => ({
+  stroke: colors.primary,
   strokeWidth: '3',
-})``;
+}))``;
 
 const Scroll = styled.circle`
   animation-name: ${ScrollAnimation};

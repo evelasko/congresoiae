@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { SectionLink } from 'react-scroll-section';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 
 const StyledLink = styled.a`
   display: inline-block;
@@ -35,7 +35,6 @@ const StyledLink = styled.a`
 `;
 
 const MarkdownParagraph = styled.p`
-  line-height: 2em;
 
   &:first-child {
     margin-top: 0em;
@@ -48,7 +47,6 @@ const MarkdownList = styled.ul`
 
 const MarkdownListItem = styled.li`
   margin: 1em 0;
-  line-height: 2em;
 `;
 
 const MarkdownLink = ({ href, children }) => {

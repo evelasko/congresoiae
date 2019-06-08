@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 import LinkLang from './LinkLang';
 
 const RouteLink = ({ onClick, children }) => (
-  <Box ml={[2, 3]} color="background" fontSize={[2, 3]}>
+  <Box ml={[2, 3]} color="background" fontSize={[1, 2]} >
     <LinkLang onClick={onClick}>
       {children}
     </LinkLang>

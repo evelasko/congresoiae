@@ -1,13 +1,12 @@
+import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Heading, Text } from 'rebass';
-import { StaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
 import Fade from 'react-reveal/Fade';
+import { Heading, Text } from 'rebass';
+import styled from 'styled-components';
+import translations from '../../data/translations';
+import { Card, CardContainer } from '../components/Card';
 import Section from '../components/Section';
-import { CardContainer, Card } from '../components/Card';
 import Triangle from '../components/Triangle';
-import ImageSubtitle from '../components/ImageSubtitle';
 
 const Background = () => (
   <div>
@@ -49,103 +48,48 @@ const EllipsisHeading = styled(Heading)`
   border-bottom: ${props => props.theme.colors.primary} 5px solid;
 `;
 
-const Post = ({ title, text, image, url, date, time }) => (
-  <Card onClick={() => window.open(url, '_blank')} pb={4}>
-    <EllipsisHeading m={3} p={1}>
-      {title}
-    </EllipsisHeading>
-    {image && <CoverImage src={image} height="200px" alt={title} />}
-    <Text m={3}>{text}</Text>
-    <ImageSubtitle bg="primaryLight" color="white" x="right" y="bottom" round>
-      {`${date} - ${Math.ceil(time)} min`}
-    </ImageSubtitle>
+const Post = ({ title, desc, image }) => (
+  <Card pb={4}>
+    <EllipsisHeading m={3} p={1}> {title} </EllipsisHeading>
+    {image && <CoverImage src={`https:${image}`} height="200px" alt={title} />}
+    <Text m={3} word-break='break-all'>{desc}</Text>
   </Card>
 );
 
-Post.propTypes = {
-  title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  time: PropTypes.number.isRequired,
-};
-
-const parsePost = postFromGraphql => {
-  const MEDIUM_CDN = 'https://cdn-images-1.medium.com/max/400';
-  const MEDIUM_URL = 'https://medium.com';
-  const {
-    id,
-    uniqueSlug,
-    createdAt,
-    title,
-    virtuals,
-    author,
-  } = postFromGraphql;
-  const image =
-    virtuals.previewImage.imageId &&
-    `${MEDIUM_CDN}/${virtuals.previewImage.imageId}`;
-  return {
-    id,
-    title,
-    time: virtuals.readingTime,
-    date: createdAt,
-    text: virtuals.subtitle,
-    image,
-    url: `${MEDIUM_URL}/${author.username}/${uniqueSlug}`,
-  };
-};
-
-const edgeToArray = data => data.edges.map(edge => edge.node);
-
-const Writing = () => (
+const Writing = ({ lang }) => (
   <StaticQuery
     query={graphql`
-      query MediumPostQuery {
-        site {
-          siteMetadata {
-            isMediumUserDefined
-          }
-        }
-        allMediumPost(limit: 6, sort: { fields: createdAt, order: DESC }) {
+      query TopicsQuery {
+        allContentfulTopics {
           edges {
             node {
               id
-              uniqueSlug
               title
-              createdAt(formatString: "MMM YYYY")
-              virtuals {
-                subtitle
-                readingTime
-                previewImage {
-                  imageId
-                }
-              }
-              author {
-                username
-              }
+              desc { desc }
+              node_locale
+              image { image: resize(width: 450, quality: 100) { src } }
             }
           }
         }
       }
     `}
-    render={({ allMediumPost, site }) => {
-      const posts = edgeToArray(allMediumPost).map(parsePost);
-      const { isMediumUserDefined } = site.siteMetadata;
+    render={({ allContentfulTopics }) => {
+      const topics = allContentfulTopics.edges.filter(({node}) => node.node_locale === lang)
       return (
-        isMediumUserDefined && (
-          <Section.Container id="writing" Background={Background}>
-            <Section.Header name="Writing" icon="✍️" label="writing" />
-            <CardContainer minWidth="300px">
-              {posts.map(p => (
-                <Fade bottom>
-                  <Post key={p.id} {...p} />
-                </Fade>
-              ))}
+          <Section.Container id="writing">
+            <Section.Header name={translations.menu.writing[lang.slice(0,2)]} icon="" label="writing" />
+            <CardContainer minWidth="250px">
+              {
+                topics.map(({node: {title, id, image, desc}}) => ( 
+                  <Fade bottom key={`F${id}`} > 
+                    <Post key={id} title={title} image={image.image.src} desc={desc.desc} />
+                  </Fade> 
+                  )
+                )
+              }
             </CardContainer>
           </Section.Container>
-        )
-      );
+        ) 
     }}
   />
 );
