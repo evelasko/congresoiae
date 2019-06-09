@@ -23,8 +23,8 @@ const HeaderContainer = styled(Headroom)`
   width: 100%;
 `;
 const ResponsiveLogo = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 
   @media (min-width: 400px) {
     width: 48px;
@@ -66,17 +66,13 @@ const Header = ({lang, pathname}) => (
               <ResponsiveLogo
                 src={Logo}
                 width="50px"
-                alt="Portfolio Logo"
+                alt="Congress Logo"
                 onClick={home.onClick}
                 style={{ cursor: 'pointer' }}
               />
             );
             const navLinks = links.map(({ name, value }) => (
-              <RouteLink
-                key={name}
-                onClick={value.onClick}
-                selected={value.selected}
-              >
+              <RouteLink key={name} onClick={value.onClick} selected={value.selected} >
                 {translations.menu[name.toLowerCase()][lang.slice(0,2)].toUpperCase()}
               </RouteLink>
             ));

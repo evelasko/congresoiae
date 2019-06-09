@@ -35,8 +35,8 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
   margin: 0;
-  font-family: 'Hoefler Text A';
-  font-weight: 400;
+  font-family: 'Hoefler Text';
+  font-weight: normal;
   font-size: 18px;
   font-variant-numeric: oldstyle-nums;
   line-height: 27px;
@@ -46,6 +46,9 @@ body {
 }
 h1 {
     font-family: 'Tranx, sans-serif';
+}
+h2 {
+  white-space: pre-wrap;
 }
 `;
 

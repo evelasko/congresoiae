@@ -2,20 +2,13 @@ import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import Fade from 'react-reveal/Fade';
-import { Parallax } from 'react-scroll-parallax';
 import { Box, Flex, Image } from 'rebass';
 import styled from 'styled-components';
 import translations from '../../data/translations';
-import Logo from '../components/Logo/Logo.svg';
+import Logo from '../components/Logo/LogoColor.svg';
 import markdownRenderer from '../components/MarkdownRenderer';
 import Section from '../components/Section';
 import { colors } from '../styles/theme';
-
-const ParallaxImage = () => (
-  <Parallax  y={[-20, 20]}>
-      <Image src="https://res.cloudinary.com/huh9ixig7/image/upload/v1559925659/congreso/bg_b.jpg" />
-  </Parallax>
-);
 
 const ProfilePicture = styled(Image)`
   transition: all 0.25s ease-out;
@@ -58,15 +51,14 @@ const About = ({lang}) => (
             >
               <Fade right>
                 <ProfilePicture
+                  width="200px"
+                  height="200px"
                   src={Logo}
                   alt={profile.title}
                   mt={[4, 4, 0]}
                   ml={[0, 0, 1]}
                 />
               </Fade>
-            </Box>
-            <Box width='100' height='50px' style={{overflow: 'hidden'}}>
-              <ParallaxImage />
             </Box>
           </Flex>
         );

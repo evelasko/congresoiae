@@ -1,8 +1,7 @@
-import { Flex as FlexR } from '@rebass/grid';
 import React, { Fragment } from 'react';
 import { SectionLink } from 'react-scroll-section';
 import TextLoop from 'react-text-loop';
-import { Button, Heading, Text } from 'rebass';
+import { Heading, Text } from 'rebass';
 import styled from 'styled-components';
 import translations from '../../data/translations';
 import Hero from '../components/Hero';
@@ -19,31 +18,27 @@ const HeadingA = styled(Heading)`
   font-weight: 400;
   text-shadow: 0px 0px 35px ${colors.secondary};
 `
+const HeadingWrap = styled.div`
+  width: 100%;
+  white-space: pre-wrap;
+`
 
 const LandingPage = ({lang}) => (
   <Section.Container id="home" Background={Background}>
     <Fragment>
-      <HeadingA as="h1" lineHeight={["40px", "60px", "85px"]} fontSize={[5, 6, 8]} mb={[3, 4, 5]} px={[4, 16, 20]}>
+      <HeadingA as="h1" lineHeight={["55px", "70px", "85px"]} fontSize={[5, 7, 8]} mb={[3, 4, 5]} px={[4, 16, 20]}>
         {translations.name[lang.slice(0,2)].toUpperCase()}
       </HeadingA>
-      <Heading as="h2" color="backgroundDark" fontSize={[2, 3, 4]} mb={[2, 4]} textAlign="center">
-        {translations.date[lang.slice(0,2)]}
-      </Heading>
-      <Heading as="h2" color="backgroundDark" fontWeight="200" font fontSize={[2, 3, 6]} mb={[2, 4]} textAlign="center" fontWeight="bold">
-        {'Museo Nacional Centro de Arte Reina Sofía'}
-      </Heading>
-      <Heading as="h2" color="backgroundDark" fontSize={[2, 3, 6]} mb={[2, 4]} textAlign="center" fontWeight="bold">
-        {translations.place[lang.slice(0,2)]}
-      </Heading>
+      <HeadingWrap>
+        <Heading as="h2" color="backgroundDark" fontWeight={100} lineHeight={[2, 2, 2]} fontSize={[1, 4, 5]} textAlign="center">
+          {`${translations.date[lang.slice(0,2)]}\nMuseo Nacional Centro de Arte Reina Sofía\n${translations.place[lang.slice(0,2)]}`}
+        </Heading>
+      </HeadingWrap>
       <Heading as="h2" color="backgroundDark" my={5} fontFamily={'Tranx'} fontWeight='400' fontSize={[3, 4, 5]} my={[3, 5]} textAlign="center">
         <TextLoop>
           {translations.subjects[lang.slice(0,2)].map(text => (<Text width={[300, 500]} key={text}>{text.toUpperCase()}</Text>))}
         </TextLoop>
       </Heading>
-      <FlexR alignItems='center' justifyContent='center' >
-        <Button variant='outlineLight' mx={3} fontSize={[1, 3]} onClick={() => {console.log('GO SOMEWHERE')}}>Participa</Button>
-        <Button variant='outlineLight' mx={3} fontSize={[1, 3]}>Expone</Button>
-      </FlexR>
       <SectionLink section="about">
         {({ onClick }) => <MouseIcon onClick={onClick} />}
       </SectionLink>
@@ -52,12 +47,3 @@ const LandingPage = ({lang}) => (
 );
 
 export default LandingPage;
-
-// ------- social links:
-// <Flex alignItems="center" justifyContent="center" flexWrap="wrap">
-// {socialLinks.map(({ id, ...rest }) => (
-//   <Box mx={3} fontSize={[5, 6, 6]} key={id}>
-//     <SocialLink {...rest} />
-//   </Box>
-// ))}
-// </Flex>

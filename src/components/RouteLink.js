@@ -4,7 +4,7 @@ import { Box } from 'rebass';
 import LinkAnimated from './LinkAnimated';
 
 const RouteLink = ({ onClick, selected, children }) => (
-  <Box ml={[2, 3]} color="background" fontSize={[1, 2]}>
+  <Box ml={[2, 3]} color="background" fontSize={['11px', 2]}>
     <LinkAnimated onClick={onClick} selected={selected}>
       {children}
     </LinkAnimated>

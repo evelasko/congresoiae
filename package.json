@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-starter-mate",
-  "version": "2.2.0",
-  "description": "Gatsby v2 starter to create a top notch portfolio!",
+  "name": "congresoiae",
+  "version": "1.0.0",
+  "description": "Research in Performing Arts World Congress Website",
   "main": "index.js",
   "scripts": {
     "build": "cleandir ./.cache && gatsby build",
@@ -10,23 +10,12 @@
     "lint": "eslint ./src",
     "setup": "node ./bin/setup.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/EmaSuriano/gatsby-starter-mate.git"
-  },
   "keywords": [
     "gatsby",
-    "starter",
-    "contentful",
-    "PWA",
-    "portfolio"
+    "starter"
   ],
-  "author": "Ema Suriano",
+  "author": "Enrique Velasco",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/EmaSuriano/gatsby-starter-mate/issues"
-  },
-  "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
   "dependencies": {
     "@rebass/grid": "^6.0.0",
     "clean-dir": "^1.0.3",
@@ -40,6 +29,7 @@
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.12",
+    "gatsby-plugin-react-svg": "^2.1.1",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-contentful": "^2.0.52",
     "gatsby-source-medium": "^2.0.7",

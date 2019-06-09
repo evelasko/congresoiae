@@ -1,36 +1,40 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
-import { Box, Flex, Text } from 'rebass';
+import { Box, Image, Text } from 'rebass';
 import styled from 'styled-components';
-import ContentfulLogo from './Logo/Contenful.svg';
-import GatsbyLogo from './Logo/Gatsby.svg';
+import Catedra from '../../assets/catedra.svg';
+import { colors } from '../styles/theme';
+
+const CARD_HEIGHT = '200px';
+const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
 const FooterContainer = styled.footer`
   padding: 1em;
   background: ${props => props.theme.colors.primary};
-   color: white; /*${props => props.theme.colors.background}; */
-  display: flex;
-  flex: 0 1 auto;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  color: ${colors.secondaryDark};
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
 `;
-
-const RenponsiveLogo = styled.img`
-  width: 100px;
-  height: 25px;
-
-  @media (min-width: 400px) {
-    width: 150px;
-    height: 35px;
+const FooterColumn = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+  align-content: center;
+  white-space: pre-wrap;
+  font-family: 'Tranx', sans-serif;
+  font-weight: 100;
+  ${MEDIA_QUERY_SMALL} {
+    width: calc(${CARD_HEIGHT} + ${CARD_HEIGHT} / 2);
   }
 `;
 
 const Logo = ({ url, logo, alt = '' }) => (
   <Box>
     <a href={url} rel="noopener noreferrer" target="_blank">
-      <RenponsiveLogo src={logo} alt={alt} />
+      <Image width="220px" src={logo} alt={alt} />
     </a>
   </Box>
 );
@@ -44,36 +48,31 @@ Logo.propTypes = {
 const Footer = () => (
   <FooterContainer>
     <Fade bottom>
-      <span>
-        <Text
-          mb={2}
-          pb={1}
-          style={{
-            textTransform: 'uppercase',
-            borderBottom: 'white 3px solid',
-            display: 'table',
-          }}
-        >
-          Powered By
-        </Text>
-      </span>
-      <Flex justifyContent="center" alignItems="center">
+      <FooterColumn>
         <Logo
-          url="https://www.contentful.com/"
-          logo={ContentfulLogo}
-          alt="Powered by Contentful"
+          url="https://www.alicialonso.org/"
+          logo={Catedra}
+          alt="Cátedra UNESCO de Danza Alicia Alonso"
         />
-        <Text m={2} fontSize={4}>
-          <span role="img" aria-label="heart">
-            ❤️
-          </span>
+      </FooterColumn>
+      <FooterColumn>
+        <Text fontWeight={600}>Contacto</Text>
+        <Text>
+        {
+`Cátedra Iberoamericana de Danza
+Alicia Alonso
+Camino del Molino SN
+Campus URJC Edificio Gestión
+28943, Fuenlabrada
+Madrid. España
+Tel: (123) - 123 123
+catedra@alicialonso.org`
+        }
         </Text>
-        <Logo
-          url="https://www.gatsbyjs.org/"
-          logo={GatsbyLogo}
-          alt="Gatsby Logo"
-        />
-      </Flex>
+      </FooterColumn>
+      <FooterColumn>
+        <Text>Links</Text>
+      </FooterColumn>
     </Fade>
   </FooterContainer>
 );
