@@ -5,7 +5,7 @@ import ReactHelmet from 'react-helmet';
 import { withTheme } from 'styled-components';
 
 const Helmet = (props) => {
-  const { theme = {}, lang } = props
+  const { theme = {}, lang = 'es-ES' } = props
   return (
   <StaticQuery
     query={graphql`

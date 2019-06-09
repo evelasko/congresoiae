@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Box } from 'rebass';
+import { Box, Heading } from 'rebass';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Triangle from '../components/Triangle';
@@ -30,7 +30,7 @@ const Background = () => (
 );
 
 const NotFoundPage = () => (
-  <Layout>
+  <Layout lang="es-ES">
     <Section.Container id="404" Background={Background}>
       <Box width={[320, 400, 600]} m="auto">
         <Heading color="primaryDark" fontSize={['9rem', '13rem', '16rem']}>
