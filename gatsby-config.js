@@ -13,10 +13,6 @@ const client = contentful.createClient({
 const getAboutEntry = entry => entry.sys.contentType.sys.id === 'about';
 
 const plugins = [
-  {
-    resolve: `gatsby-source-filesystem`,
-    options: { path: `${__dirname}/src/images`, name: 'images' }
-  },
   'gatsby-plugin-react-helmet',
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
