@@ -1,5 +1,4 @@
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 import { Heading, Image, Text } from 'rebass';
 import styled from 'styled-components';
 import translations from '../../data/translations';
@@ -52,27 +51,21 @@ const CallColumn = styled.div`
   }
 `;
 
-
 const Stakeholders = ({ lang }) => (
   <Section.Container id="stakeholders">
     <Section.Header name={translations.menu.stakeholders[lang.slice(0,2)]} icon="" Box="notebook" />
     <CallContainer>
-      <Fade bottom>
         <CallColumn>
           <Heading mb={4}>{translations.call[lang.slice(0,2)].modalities[0].toUpperCase()}</Heading>
           <Image />
           <Text>{translations.call[lang.slice(0,2)].description[0]}</Text>
         </CallColumn>
-      </Fade>
-      <Fade bottom>
         <CallColumn>
           <Heading mb={4}>{translations.call[lang.slice(0,2)].modalities[1].toUpperCase()}</Heading>
           <Image />
           <Text>{translations.call[lang.slice(0,2)].description[1]}</Text>
         </CallColumn>
-      </Fade>
     </CallContainer>
-    
   </Section.Container>
 );
 

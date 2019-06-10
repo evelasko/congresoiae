@@ -37,12 +37,10 @@ const About = ({lang}) => (
         return (
           <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
             <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} color={colors.secondary}>
-              <Fade bottom>
                 <ReactMarkdown
                   source={aboutMe.childMarkdownRemark.rawMarkdownBody}
                   renderers={markdownRenderer}
                 />
-              </Fade>
             </Box>
 
             <Box

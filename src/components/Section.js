@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import Slide from 'react-reveal/Slide';
 import { Section } from 'react-scroll-section';
 import { Heading } from 'rebass';
 import styled from 'styled-components';
@@ -35,7 +34,6 @@ Container.propTypes = {
 };
 
 const Header = ({ name, icon = '', label = '' }) => (
-  <Slide left>
     <Heading 
       color="secondary" 
       mb={4}
@@ -53,7 +51,6 @@ const Header = ({ name, icon = '', label = '' }) => (
         )}
       </LinkAnimated>
     </Heading>
-  </Slide>
 );
 
 Header.propTypes = {

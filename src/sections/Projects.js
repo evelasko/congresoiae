@@ -1,6 +1,5 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 import { Flex, Image, Text } from 'rebass';
 import styled from 'styled-components';
 import translations from '../../data/translations';
@@ -91,9 +90,7 @@ const Projects = ({lang}) => (
             {speakers.map(({node}, i) => {
               const nd = Object.assign(node, node.description)
               return (
-                <Fade bottom delay={i * 200} key={`F${node.id}`}>
                   <Project key={node.id} {...nd} />
-                </Fade>
                 )
               })
             }

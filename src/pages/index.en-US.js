@@ -18,9 +18,9 @@ const IndexPage = (props) => {
     <Header lang={langKey} pathname={pathname} />
     <Landing lang={langKey}  />
     <About lang={langKey} />
-    <ParallaxBanner text={`Museo Nacional\nCentro de Arte Reina Sofía`} src="https://res.cloudinary.com/huh9ixig7/image/upload/v1560010709/congreso/edificio.jpg" />
+    <ParallaxBanner text={`Museo Nacional\nCentro de Arte Reina Sofía`} src="https://res.cloudinary.com/huh9ixig7/image/upload/v1560197964/congreso/_edificio.jpg" />
     <Projects lang={langKey}  />
-    <ParallaxBanner text={`Auditorio 400\nNouvel Building`} src="https://res.cloudinary.com/huh9ixig7/image/upload/v1560010705/congreso/auditorio.jpg" />
+    <ParallaxBanner text={`Auditorio 400\nNouvel Building`} src="https://res.cloudinary.com/huh9ixig7/image/upload/v1560197964/congreso/_auditorio.jpg" />
     <Writing lang={langKey}  />
     <Stakeholders lang={langKey} />
     <SponsorSection />

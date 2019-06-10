@@ -1,38 +1,10 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import Fade from 'react-reveal/Fade';
 import { Heading, Text } from 'rebass';
 import styled from 'styled-components';
 import translations from '../../data/translations';
 import { Card, CardContainer } from '../components/Card';
 import Section from '../components/Section';
-import Triangle from '../components/Triangle';
-
-const Background = () => (
-  <div>
-    <Triangle
-      color="backgroundDark"
-      height={['15vh', '10vh']}
-      width={['100vw', '100vw']}
-      invertX
-    />
-
-    <Triangle
-      color="secondary"
-      height={['50vh', '40vh']}
-      width={['70vw', '40vw']}
-      invertY
-    />
-
-    <Triangle
-      color="primaryDark"
-      height={['40vh', '15vh']}
-      width={['100vw', '100vw']}
-      invertX
-      invertY
-    />
-  </div>
-);
 
 const CoverImage = styled.img`
   width: 100%;
@@ -81,9 +53,7 @@ const Writing = ({ lang }) => (
             <CardContainer minWidth="250px">
               {
                 topics.map(({node: {title, id, image, desc}}) => ( 
-                  <Fade bottom key={`F${id}`} > 
                     <Post key={id} title={title} image={image.image.src} desc={desc.desc} />
-                  </Fade> 
                   )
                 )
               }

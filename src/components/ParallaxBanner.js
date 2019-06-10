@@ -6,8 +6,8 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
     width: 100%;
     height: ${props => props.height || '400px'};
-    display: flex;
-    flex-flow: row wrap;
+    /* display: flex;
+    flex-flow: row wrap; */
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -38,7 +38,7 @@ const ParallaxBanner = ({ src, height, text }) => (
     <Wrapper>
         <Parallax  y={[-60, 30]}>
             <ParallaxContainer height={height}>
-                <Image src={src} />
+                <Image width="100%" src={src} />
                 <BannerContainer height={height}>
                     <center>
                         <BannerText lineHeight={[2, 2, 2]} fontSize={[3, 3, 5]} color='white'>{text}</BannerText>

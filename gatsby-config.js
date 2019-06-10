@@ -13,40 +13,44 @@ const client = contentful.createClient({
 const getAboutEntry = entry => entry.sys.contentType.sys.id === 'about';
 
 const plugins = [
-  'gatsby-plugin-react-helmet',
   {
-    resolve: 'gatsby-plugin-manifest',
-    options: manifestConfig,
+    resolve: `gatsby-source-filesystem`,
+    options: { path: `${__dirname}/src/images`, name: 'images' }
+  },
+  'gatsby-plugin-react-helmet',
+  'gatsby-transformer-sharp',
+  'gatsby-plugin-sharp',
+  'gatsby-transformer-remark',
+  'gatsby-plugin-offline',
+  `gatsby-plugin-netlify`,
+  'gatsby-transformer-sharp',
+  'gatsby-plugin-sharp',
+  {
+    resolve: 'gatsby-plugin-manifest', options: manifestConfig,
   },
   'gatsby-plugin-styled-components',
   {
     resolve: 'gatsby-plugin-i18n',
     options: {
-      langKeyForNull: 'any',
-      langKeyDefault: languages.defaultLangKey,
-      useLangKeyLayout: false
+      langKeyForNull: 'any', langKeyDefault: languages.defaultLangKey, useLangKeyLayout: false
     }
   },
   {
     resolve: 'gatsby-source-contentful',
-    options: {
-      spaceId: SPACE_ID,
-      accessToken: ACCESS_TOKEN,
-    },
+    options: { spaceId: SPACE_ID, accessToken: ACCESS_TOKEN, },
   },
-  'gatsby-transformer-remark',
-  'gatsby-plugin-offline',
+  {
+    resolve: 'gatsby-plugin-zopfli'
+  },
 ];
 
 module.exports = client.getEntries().then(entries => {
-  const { mediumUser } = entries.items.find(getAboutEntry).fields;
+  // const { mediumUser } = entries.items.find(getAboutEntry).fields;
 
-  plugins.push({
-    resolve: 'gatsby-source-medium',
-    options: {
-      username: mediumUser || '@medium',
-    },
-  });
+  // plugins.push({
+  //   resolve: 'gatsby-source-medium',
+  //   options: { username: mediumUser || '@medium' },
+  // });
 
   if (ANALYTICS_ID) {
     plugins.push({
@@ -59,7 +63,7 @@ module.exports = client.getEntries().then(entries => {
 
   return {
     siteMetadata: {
-      isMediumUserDefined: !!mediumUser,
+      // isMediumUserDefined: !!mediumUser,
       languages
     },
     plugins,

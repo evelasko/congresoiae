@@ -9,7 +9,7 @@ import MouseIcon from '../components/MouseIcon';
 import Section from '../components/Section';
 import { colors } from '../styles/theme';
 
-const Background = () => (<div><Hero img='https://res.cloudinary.com/huh9ixig7/image/upload/v1559925659/congreso/bg_b.jpg' /></div>)
+const Background = () => (<div><Hero img='https://res.cloudinary.com/huh9ixig7/image/upload/v1560197982/congreso/_bg_b.jpg' /></div>)
 
 const HeadingA = styled(Heading)`
   text-align: center;
