@@ -22,13 +22,12 @@ const CommitteeContainer = styled.div`
   margin-top: 10px;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-column-gap: 5px;
 `;
 const CommitteeList = styled.div`
   width: 100%;
   height: auto;
   margin-top: 50px;
-  margin-right: 5px;
-  margin-left: 5px;
 `;
 const CommitteListHeader = styled.div`
   display: block;

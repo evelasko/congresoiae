@@ -34,15 +34,15 @@ const translations = {
     en: {
       modalities: ['present', 'attend'],
       description: [
-        'Do you have a research paper that fit in the topics described above? We encourage you to present it!\nThe call for papers will open June 20, 2019.',
-        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!\nRegistration for participants will open June 20, 2019.',
+        'Do you have a research paper that fit in the topics described above? We encourage you to present it!\nThe call for papers will open July 18, 2019.',
+        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!\nRegistration for participants will open July 18, 2019.',
       ],
     },
     es: {
       modalities: ['expone', 'atiende'],
       description: [
-        '¿Tienes una investigación que se ajuste a los temas del congreso? Ésta es una oportunidad para presentarla!\nLa convocatoria se abrirá el próximo 20 de Junio, 2019.',
-        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? Involúcrate y participa!\nEl registro de participación se abrirá el 20 de Junio, 2019.',
+        '¿Tienes una investigación que se ajuste a los temas del congreso? Ésta es una oportunidad para presentarla!\nLa convocatoria se abrirá el próximo 18 de Julio, 2019.',
+        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? Involúcrate y participa!\nEl registro de participación se abrirá el 18 de Julio, 2019.',
       ],
     },
   },

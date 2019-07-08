@@ -3,7 +3,6 @@ import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import PresentSections from '../sections/PresentSections';
-import { colors } from '../styles/theme';
 
 const IndexPage = props => {
   console.log('PROPS: ', props);
@@ -13,7 +12,7 @@ const IndexPage = props => {
   } = props;
   return (
     <Layout lang={langKey}>
-      <Header lang={langKey} pathname={pathname} bg={colors.primary} />
+      <Header lang={langKey} pathname={pathname} />
       <PresentSections lang={langKey} />
       <Footer />
     </Layout>

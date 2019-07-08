@@ -30,16 +30,19 @@ const ImageContainer = styled.div`
 const CallContainer = styled.footer`
   padding: 1em;
   margin-top: 50px;
-  background: ${props => props.theme.colors.primary};
+  width: 100%;
+
   color: ${colors.secondaryDark};
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-column-gap: 10px;
 `;
 const CallColumn = styled.div`
   display: inline-flex;
   flex-direction: column;
-  padding: 10px;
+  background: ${props => props.theme.colors.primary};
+  padding: 20px;
   width: 100%;
   margin: 10px;
   align-content: center;

@@ -18,7 +18,7 @@ const HeaderContainer = styled(Headroom)`
     background: ${props => props.theme.colors.primary};
   }
   font-family: 'Tranx', sans-serif;
-  letter-spacing:1px;
+  letter-spacing: 1px;
   position: absolute;
   width: 100%;
 `;
@@ -49,7 +49,7 @@ const formatLinks = allLinks =>
     { links: [], home: null },
   );
 
-const Header = ({lang, pathname}) => (
+const Header = ({ lang, pathname }) => (
   <HeaderContainer>
     <Fade top>
       <Flex
@@ -62,7 +62,7 @@ const Header = ({lang, pathname}) => (
           {({ allLinks }) => {
             const { home, links } = formatLinks(allLinks);
 
-            const homeLink = home && (
+            const homeLink = home ? (
               <ResponsiveLogo
                 src={Logo}
                 width="50px"
@@ -70,25 +70,46 @@ const Header = ({lang, pathname}) => (
                 onClick={home.onClick}
                 style={{ cursor: 'pointer' }}
               />
+            ) : (
+              <ResponsiveLogo
+                src={Logo}
+                width="50px"
+                alt="Congress Logo"
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  navigate('/');
+                }}
+              />
             );
             const navLinks = links.map(({ name, value }) => (
-              <RouteLink key={name} onClick={value.onClick} selected={value.selected} >
-                {translations.menu[name.toLowerCase()][lang.slice(0,2)].toUpperCase()}
+              <RouteLink
+                key={name}
+                onClick={value.onClick}
+                selected={value.selected}
+              >
+                {translations.menu[name.toLowerCase()]
+                  ? translations.menu[name.toLowerCase()][
+                      lang.slice(0, 2)
+                    ].toUpperCase()
+                  : name.toUpperCase()}
               </RouteLink>
             ));
 
-            const nextLang = langs.filter(l => l !== lang)[0]
-            navLinks.push( 
-              (<RouteLang key={lang} onClick={() => {navigate(pathname.replace(lang, nextLang))}}>
-                { nextLang.slice(0,2).toUpperCase() }
-              </RouteLang> )
-            )
+            const nextLang = langs.filter(l => l !== lang)[0];
+            navLinks.push(
+              <RouteLang
+                key={lang}
+                onClick={() => {
+                  navigate(pathname.replace(lang, nextLang));
+                }}
+              >
+                {nextLang.slice(0, 2).toUpperCase()}
+              </RouteLang>,
+            );
 
             return (
               <Fragment>
-                {
-                  homeLink
-                }
+                {homeLink}
                 <Flex mr={[0, 3, 5]}>{navLinks}</Flex>
               </Fragment>
             );

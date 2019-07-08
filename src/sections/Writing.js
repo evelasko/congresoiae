@@ -1,10 +1,12 @@
 import { graphql, StaticQuery } from 'gatsby';
 import React from 'react';
-import { Heading, Text } from 'rebass';
+import ReactMarkdown from 'react-markdown';
+import { Box, Heading } from 'rebass';
 import styled from 'styled-components';
 import Program from '../../data/program';
 import translations from '../../data/translations';
 import { Card, CardContainer } from '../components/Card';
+import markdownRenderer from '../components/MarkdownRenderer';
 import Section from '../components/Section';
 import { colors } from '../styles/theme';
 
@@ -29,9 +31,12 @@ const Post = ({ title, desc, image }) => (
       {title}{' '}
     </EllipsisHeading>
     {image && <CoverImage src={`https:${image}`} height="200px" alt={title} />}
-    <Text m={3} word-break="break-all">
-      {desc}
-    </Text>
+    <Box m={3} word-break="break-all">
+      <ReactMarkdown
+        source={desc.childMarkdownRemark.rawMarkdownBody}
+        renderers={markdownRenderer}
+      />
+    </Box>
   </Card>
 );
 
@@ -40,6 +45,7 @@ const ProgramContainer = styled.div`
   margin-top: 10px;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  grid-column-gap: 5px;
 `;
 const ProgramList = styled.div`
   width: 100%;
@@ -104,7 +110,9 @@ const Writing = ({ lang }) => (
                 id
                 title
                 desc {
-                  desc
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
                 }
                 node_locale
                 image {
@@ -128,7 +136,7 @@ const Writing = ({ lang }) => (
                 key={id}
                 title={title}
                 image={image.image.src}
-                desc={desc.desc}
+                desc={desc}
               />
             ))}
           </CardContainer>
