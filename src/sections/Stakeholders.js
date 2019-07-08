@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import { Heading, Image, Text } from 'rebass';
 import styled from 'styled-components';
@@ -26,7 +27,6 @@ const ImageContainer = styled.div`
   }
 `;
 
-
 const CallContainer = styled.footer`
   padding: 1em;
   margin-top: 50px;
@@ -50,21 +50,44 @@ const CallColumn = styled.div`
     width: calc(${CARD_HEIGHT} + ${CARD_HEIGHT} / 2);
   }
 `;
+const Button = styled.div`
+  display: inline-flex;
+  background-color: ${colors.secondary};
+  color: ${colors.primary};
+  padding: 5px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: bold;
+`;
 
 const Stakeholders = ({ lang }) => (
   <Section.Container id="stakeholders">
-    <Section.Header name={translations.menu.stakeholders[lang.slice(0,2)]} icon="" Box="notebook" />
+    <Section.Header
+      name={translations.menu.stakeholders[lang.slice(0, 2)]}
+      icon=""
+      Box="notebook"
+    />
     <CallContainer>
-        <CallColumn>
-          <Heading mb={4}>{translations.call[lang.slice(0,2)].modalities[0].toUpperCase()}</Heading>
-          <Image />
-          <Text>{translations.call[lang.slice(0,2)].description[0]}</Text>
-        </CallColumn>
-        <CallColumn>
-          <Heading mb={4}>{translations.call[lang.slice(0,2)].modalities[1].toUpperCase()}</Heading>
-          <Image />
-          <Text>{translations.call[lang.slice(0,2)].description[1]}</Text>
-        </CallColumn>
+      <CallColumn>
+        <Heading mb={4}>
+          {translations.call[lang.slice(0, 2)].modalities[0].toUpperCase()}
+        </Heading>
+        <Image />
+        <Text>{translations.call[lang.slice(0, 2)].description[0]}</Text>
+        <Link to="/en-US/present">
+          <Button>CALL FOR PAPERS</Button>
+        </Link>
+      </CallColumn>
+      <CallColumn>
+        <Heading mb={4}>
+          {translations.call[lang.slice(0, 2)].modalities[1].toUpperCase()}
+        </Heading>
+        <Image />
+        <Text>{translations.call[lang.slice(0, 2)].description[1]}</Text>
+        <Link to="/en-US/attend">
+          <Button>JOIN US</Button>
+        </Link>
+      </CallColumn>
     </CallContainer>
   </Section.Container>
 );

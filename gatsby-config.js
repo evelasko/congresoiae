@@ -21,22 +21,26 @@ const plugins = [
   `gatsby-plugin-netlify`,
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
+  'gatsby-plugin-antd',
   {
-    resolve: 'gatsby-plugin-manifest', options: manifestConfig,
+    resolve: 'gatsby-plugin-manifest',
+    options: manifestConfig,
   },
   'gatsby-plugin-styled-components',
   {
     resolve: 'gatsby-plugin-i18n',
     options: {
-      langKeyForNull: 'any', langKeyDefault: languages.defaultLangKey, useLangKeyLayout: false
-    }
+      langKeyForNull: 'any',
+      langKeyDefault: languages.defaultLangKey,
+      useLangKeyLayout: false,
+    },
   },
   {
     resolve: 'gatsby-source-contentful',
-    options: { spaceId: SPACE_ID, accessToken: ACCESS_TOKEN, },
+    options: { spaceId: SPACE_ID, accessToken: ACCESS_TOKEN },
   },
   {
-    resolve: 'gatsby-plugin-zopfli'
+    resolve: 'gatsby-plugin-zopfli',
   },
 ];
 
@@ -60,7 +64,7 @@ module.exports = client.getEntries().then(entries => {
   return {
     siteMetadata: {
       // isMediumUserDefined: !!mediumUser,
-      languages
+      languages,
     },
     plugins,
   };
