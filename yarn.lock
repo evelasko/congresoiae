@@ -6938,6 +6938,11 @@ hoek@6.x.x:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-6.0.3.tgz#7884360426d927865a0a1251fc9c59313af5b798"
 
+hogler-letra@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hogler-letra/-/hogler-letra-1.0.0.tgz#bcc8321c6b1f312463a61a011cfa9d9c31d3cccd"
+  integrity sha512-BW8qekToLHDxa9UovHPyRK8mou36yVjLF5GSSPn/IdPSysHLnhVj4zHr4lbrwTZwo6ze/hoeOxPwuTs+72ikIA==
+
 hoist-non-react-statics@^2.3.1, hoist-non-react-statics@^2.5.0:
   version "2.5.5"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-2.5.5.tgz#c5903cf409c0dfd908f388e619d86b9c1174cb47"

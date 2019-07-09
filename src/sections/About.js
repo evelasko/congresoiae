@@ -53,15 +53,15 @@ const CommitteeItemName = styled.div`
   width: 100%;
   display: inline-block;
   font-variant: small-caps;
-  font-size: 14px;
+  font-size: 18px;
 `;
 const CommitteeItemTitle = styled.div`
   width: 100%;
   display: inline-block;
   font-family: 'Tranx', sans-serif;
-  font-size: 9px;
+  font-size: 10px;
   text-transform: uppercase;
-  color: ${colors.secondaryLight};
+  color: ${colors.secondary};
 `;
 
 const About = ({ lang }) => (
@@ -137,7 +137,11 @@ const About = ({ lang }) => (
             {Committees.honor.items.map(({ name, title }, i) => (
               <CommitteeItem key={i}>
                 <CommitteeItemName>{name}</CommitteeItemName>
-                <CommitteeItemTitle>{title}</CommitteeItemTitle>
+                <CommitteeItemTitle>
+                  {title.split('\n').map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </CommitteeItemTitle>
               </CommitteeItem>
             ))}
           </CommitteeListContent>
@@ -150,7 +154,11 @@ const About = ({ lang }) => (
             {Committees.organizing.items.map(({ name, title }, i) => (
               <CommitteeItem key={i}>
                 <CommitteeItemName>{name}</CommitteeItemName>
-                <CommitteeItemTitle>{title}</CommitteeItemTitle>
+                <CommitteeItemTitle>
+                  {title.split('\n').map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </CommitteeItemTitle>
               </CommitteeItem>
             ))}
           </CommitteeListContent>
@@ -163,7 +171,11 @@ const About = ({ lang }) => (
             {Committees.cientific.items.map(({ name, title }, i) => (
               <CommitteeItem key={i}>
                 <CommitteeItemName>{name}</CommitteeItemName>
-                <CommitteeItemTitle>{title}</CommitteeItemTitle>
+                <CommitteeItemTitle>
+                  {title.split('\n').map((item, i) => (
+                    <p key={i}>{item}</p>
+                  ))}
+                </CommitteeItemTitle>
               </CommitteeItem>
             ))}
           </CommitteeListContent>

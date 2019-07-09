@@ -4,7 +4,8 @@ const Committees = {
     items: [
       {
         name: 'Prof. Javier Ramos',
-        title: 'Rector Magnífico de la Universidad Rey Juan Carlos',
+        title:
+          'Catedrático. Rector Magnífico de la Universidad Rey Juan Carlos',
       },
       {
         name: 'Prof. Alexis Seijó García',
@@ -13,23 +14,28 @@ const Committees = {
       },
       {
         name: 'Prof. Gustavo Villapalos Salas',
-        title: 'Rector Honorífico de la Universidad Complutense de Madrid',
+        title:
+          'Rector Magnífico de la Universidad de las Artes, Cuba Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica',
       },
       {
         name: 'Prof. Enrique Otero Huerta',
-        title: 'Rector Honorífico de la Universidad Rey Juan Carlos',
+        title:
+          'Catedrático. Rector Honorífico de la Universidad Rey Juan Carlos',
       },
       {
         name: 'Doña Tamara Rojo',
-        title: 'Directora General del English National Ballet',
+        title:
+          'Premio Príncipe de Asturias de las Artes. Directora General del English National Ballet',
       },
       {
         name: 'D. Federico Mayor Zaragosa',
-        title: 'Presidente de la Fundación para la Paz',
+        title:
+          'Presidente de la Fundación para la Paz, ex-Director General de la Organización de Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)',
       },
       {
         name: 'Doña Alicia Alonso',
-        title: 'Embajadora Mundial de la Danza ITI/UNESCO',
+        title:
+          'Embajadora de Buena Voluntad de Naciones Unidas y Embajadora Mundial de la Danza ITI/UNESCO. Directora General del Ballet Nacional de Cuba',
       },
       {
         name: 'D. Daniel Bianco',
@@ -37,20 +43,23 @@ const Committees = {
       },
       {
         name: 'D. Pedro Simón Martínez',
-        title: 'Director del Museo Nacional de la Danza',
+        title:
+          'Miembro de la Academia Cubana de la Lengua. Director del Museo Nacional de la Danza',
       },
       {
         name: 'D. Tobías Bianconne',
-        title: 'Director General del Instituto Internacional de Teatro',
+        title:
+          'Director General del Instituto Internacional de Teatro; Organización Mundial de Artes Escénicas UNESCO',
       },
       {
         name: 'D. Derek Goldman',
         title:
-          'Director del Departamento de Teatro Político, Universidad de Georgetown',
+          'Director del Departamento de Teatro Político, Universidad de Georgetown, Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO',
       },
       {
         name: 'Doña Carmen Caffarel',
-        title: 'Directora de la Cátedra UNESCO Africom',
+        title:
+          'Directora de la Cátedra UNESCO Africom, ex-Directora del Instituto Cervantes y de Radio Televisión Española',
       },
       {
         name: 'D. Jesús Cimarro',
@@ -77,7 +86,7 @@ const Committees = {
       {
         name: 'Doña Amaya de Miguel',
         title:
-          'Directora del Instituto Nacional de las Artes Escénicas y la Música',
+          'Directora del Instituto Nacional de las Artes Escénicas y la Música. (Ministerio de Cultura)',
       },
     ],
   },
@@ -86,53 +95,66 @@ const Committees = {
     items: [
       {
         name: 'Prof. Alberto García Castaño',
-        title:
-          'PRESIDENTE. Director del Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        title: `PRESIDENTE
+          Presidente de Honor del 35 Congreso Mundial del Instituto Internacional de Teatro ITI/UNESCO
+          Director Cátedra UNESCO Iberoamericana de Danza "Alicia Alonso"
+          Miembro del Consejo Ejecutivo del Instituto Internacional de Teatro, Organización Mundial de Artes Escénicas/UNESCO.
+          Miembro del Consejo Ejecutivo de la Cátedra UNITWIN UNESCO Universidades y Centros Superiores de Artes Escénicas
+          Presidente del Comité Internacional de la Danza ITI/UNESCO
+          Presidente de la Delegación Española ITI/UNESCO
+          Director del Máster Universitario en Artes Escénicas, Universidad Rey Juan Carlos.
+          Director del Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos
+          `,
       },
       {
-        name: 'Prof. Luis Llerena',
-        title:
-          'VICE–PRESIDENTE. Secretario General del Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        name: 'Prof. Luis Llerena Díaz',
+        title: `VICE–PRESIDENTE
+          Vice-Presidente de la Delegación Española del Instituto Internacional de Teatro ITI/UNESCO, Coordinador de Actividades de la Cátedra UNESCO Iberoamericana de Danza “Alicia Alonso”
+          Director del Máster Universitario en Gestión y Liderazgo de Proyectos Culturales, Universidad Rey Juan Carlos.
+          Secretario General del Instituto Universitario de Danza “Alicia Alonso”
+          Universidad Rey Juan Carlos.`,
       },
       {
         name: 'Prof. Gloria García Arambarry',
-        title:
-          'Secretaria de la Delegación Española del Instituto Internacional de Teatro ITI/España',
+        title: `COORDINADORA GENERAL
+          Secretaria de la Delegación Española del Instituto Internacional de Teatro ITI/España
+          Directora del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso"
+          Universidad Rey Juan Carlos`,
       },
       {
         name: 'Prof. Carlos Roldán López',
-        title:
-          'Director del Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas: Instituto Universitario de la Danza Alicia Alonso',
+        title: `COORDINADOR GENERAL
+          Profesor Titular, Director del Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso",  Universidad Rey Juan Carlos.
+          Profesor Máster Universitario de Artes Escénicas Universidad Rey Juan Carlos`,
       },
       {
         name: 'Prof. D. Eduardo Blázquez Mateos',
-        title:
-          'Profesor Titular, Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        title: `Profesor Titular, Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos.
+          Profesor Máster  Universitario de Artes Escénicas URJC`,
       },
       {
         name: 'Prof. D. Amador Cernuda Lago',
-        title:
-          'Profesor Titular, Instituto Universitario de la Danza Alicia Alonso y Miembro del Consejo Rector, Universidad Rey Juan Carlos',
+        title: `Profesor Titular, Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso"  y Miembro del Consejo Rector, Universidad Rey Juan Carlos.
+          Profesor Máster  Universitario de Artes Escénicas.`,
       },
       {
         name: 'Prof. Doña Celia Balbina Fernández',
-        title:
-          'Profesora Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        title: `Profesora. Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas,  Instituto Universitario de la Danza “Alicia Alonso”. 
+          Profesora Máster Universitario de Artes Escénicas Universidad Rey Juan Carlos.
+          Premio Extraordinario  de Investigación.`,
       },
       {
         name: 'Prof. Liuba Cid',
-        title:
-          'Directora del Departamento de Teatro Físico del Movimiento, Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        title: `Miembro de la Academia de las Artes Escénicas.
+          Directora del Departamento de Teatro Físico del Movimiento, Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos`,
       },
       {
         name: 'Prof. Alexandra Sandulescu',
-        title:
-          'Departamento de Comunicación de la Facultad de Ciencias de la Comunicación, Universidad Rey Juan Carlos',
+        title: `Departamento de Comunicación de la Facultad de Ciencias de la Comunicación. Universidad Rey Juan Carlos`,
       },
       {
         name: 'Prof. Alma Llerena',
-        title:
-          'Profesora Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        title: `Profesora de Danza. Master Oficial de Artes escénicas`,
       },
     ],
   },
@@ -141,47 +163,46 @@ const Committees = {
     items: [
       {
         name: 'Prof. D. Ioshinobu Navarro Soler',
-        title:
-          'Profesor Instituto Universitario de la Danza Alicia Alonso,  Universidad Rey Juan Carlos',
+        title: `Profesor del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso".
+          Delegado del Rector para los Programas de Movilidad de Estudiantes y Profesores de Artes Escénica.  Universidad Rey Juan Carlos`,
       },
       {
         name: 'Prof. D. Marifé Santiago Bolaños',
-        title:
-          'Profesora Titular, Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos',
+        title: `Profesora Titular. Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso" , Universidad Rey Juan Carlos.
+          Ex-Directora del Gabinete de Educación y Cultura de la Presidencia del Gobierno de España`,
       },
       {
         name: 'Prof. D. Emilio Peral Vega',
-        title: 'Profesor Titular Universidad Complutense de Madrid',
+        title: `Profesor Titular Universidad Complutense de Madrid.
+        Coordinador del Máster en Teatro y Artes escénicas Universidad Complutense de Madrid.
+        Coordinador  del Programa de Doctorado en Lengua y Literatura Españolas de la Universidad Complutense de Madrid`,
       },
       {
         name: 'Prof. Don Juan Antonio Sanchez López',
-        title:
-          'Profesor Titular del Departamento de Historia del Arte de la Universidad de Málaga',
+        title: `Profesor Titular del Departamento de Historia del Arte de la Universidad de Málaga.
+          Codirector del  Máster en Escultura Barroca Española`,
       },
       {
         name: 'Prof. D. Manuel Blanco',
-        title:
-          'Catedrático del Departamento de Composición Arquitectónica de la Escuela Técnica Superior de Arquitectura de la Universidad Politécnica de Madrid',
+        title: `Catedrático del Departamento de Composición Arquitectónica de la Escuela Técnica Superior de Arquitectura de la Universidad Politécnica de Madrid.
+          Director del Museo Nacional de Arquitectura y Urbanismo`,
       },
       {
         name: 'Prof. Doña María Esther Pérez Peláez',
-        title:
-          'Profesora Universidad Internacional de Valencia y Universidad de Salamanca',
+        title: `Profesora  Universidad Internacional de Valencia y colaboradora del  Instituto Universitario de  Investigaciones de Ciencias de la Educación.
+          Coordinadora del Máster en Gestión Cultural. Universidad de Salamanca`,
       },
       {
         name: 'Prof. Doña Marta Egea Ávila',
-        title:
-          'Catedrática, Directora de la Escuela Universitaria de Danza, Universidad Nacional de Costa Rica',
+        title: `Catedrática, Directora de la Escuela  Universitaria de Danza, Universidad Nacional de Costa Rica`,
       },
       {
         name: 'Prof. Doña Ana Rodríguez Allen',
-        title:
-          'Catedrática,  Directora de la Cátedra de Bioética, Universidad Nacional de Costa Rica',
+        title: `Catedrática,  Escuela  Universitaria de Filosofía, Directora de la Cátedra de Bioética. Universidad Nacional de Costa Rica`,
       },
       {
         name: 'Prof. Dione Rufino Díaz',
-        title:
-          'Profesor Titular, Decano Facultad de Artes Escénicas de la Universidad Autónoma de Santo Domingo, Primada de América',
+        title: `Profesor Titular, Decano Facultad de Artes Escénicas de la Universidad  Autónoma de Santo Domingo, Primada de América`,
       },
       {
         name: 'Prof. Enia Rosa Torres Castellano',
@@ -190,17 +211,17 @@ const Committees = {
       },
       {
         name: 'Prof. Liliam Yamila Chacón Benavides',
-        title:
-          'Decana de la Facultad de Artes Escénicas de la Universidad de las Artes de La Habana',
+        title: `Decana de la Facultad de Artes Escénicas de la Universidad de las Artes de La Habana.
+          Vicepresidenta de Artes Escénicas  de la Unión Nacional de Escritores y Artistas de Cuba`,
       },
       {
         name: 'Prof. Doña Regina Llamas',
-        title: 'Profesora de la Universidad de Stanford y IE University',
+        title: `Doctora en Lengua y Cultura Chinas por la Universidad de Harvard.
+        Profesora de la Universidad de Stanford y  de IE University`,
       },
       {
         name: 'Prof. Félix Ortega Mohedano',
-        title:
-          'Secretario Académico del Instituto Universitario de Investigación de Ciencias de la Educación, Universidad de Salamanca',
+        title: `Secretario Académico del Instituto Universitario de Investigación de Ciencias de la Educación. Facultad de Ciencias Sociales, Universidad de Salamanca`,
       },
     ],
   },
