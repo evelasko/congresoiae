@@ -53,6 +53,7 @@ const CommitteeItemName = styled.div`
   width: 100%;
   display: inline-block;
   font-variant: small-caps;
+  font-weight: 700;
   font-size: 18px;
 `;
 const CommitteeItemTitle = styled.div`

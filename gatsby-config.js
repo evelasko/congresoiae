@@ -42,6 +42,15 @@ const plugins = [
   {
     resolve: 'gatsby-plugin-zopfli',
   },
+  {
+    resolve: `gatsby-plugin-google-fonts`,
+    options: {
+      fonts: [
+        `Cormorant Garamond\:300,400,400i,700`, // you can also specify font weights and styles
+      ],
+      display: 'swap',
+    },
+  },
 ];
 
 module.exports = client.getEntries().then(entries => {

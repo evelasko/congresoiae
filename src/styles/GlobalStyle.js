@@ -13,7 +13,7 @@ body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; 
   margin: 0;
-  font-family: 'Hogler, serif';
+  font-family: "Cormorant Garamond", serif;
   font-weight: normal;
   font-size: 18px;
   font-variant-numeric: oldstyle-nums;
