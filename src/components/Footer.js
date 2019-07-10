@@ -1,4 +1,3 @@
-import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
@@ -81,7 +80,7 @@ catedra@alicialonso.org`}
         </Text>
       </FooterColumn>
       <FooterColumn>
-        <Link to="https://admin.alicialonso.org/privacy">Privacidad</Link>
+        <a href="https://admin.alicialonso.org/privacy">Privacidad</a>
       </FooterColumn>
     </Fade>
     <FooterBase>
