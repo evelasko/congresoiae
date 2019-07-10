@@ -12,26 +12,34 @@ const Program = {
       {
         time: '10:00',
         title: {
-          es: 'Inauguración',
+          es: 'Acto de Inauguración',
           en: 'Inaugural Act',
         },
       },
       {
         time: '10:30',
         title: {
-          es: 'Ponencia Oficial ',
-          en: 'Official Speaker',
+          es: 'Presentación Patrocinadores',
+          en: 'Sponsor Showcase',
         },
         subtitle: {
-          es: '(por confirmar)',
-          en: '(TBA)',
+          es: 'Robótica',
+          en: 'Robotics',
         },
       },
       {
-        time: '11:30',
+        time: '11:00',
         title: {
-          es: 'Descanso',
-          en: 'Coffee Break',
+          es: 'Intervenciones de Bienvenida',
+          en: 'Welcoming Speeches',
+        },
+        subtitle: {
+          es: `Prof. D. Javier Ramos
+          Prof. D. Alberto García
+          D. Manuel Borja–Villel`,
+          en: `Prof. D. Javier Ramos
+          Prof. D. Alberto García
+          D. Manuel Borja–Villel`,
         },
       },
       {

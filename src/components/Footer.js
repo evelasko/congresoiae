@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
@@ -31,6 +32,16 @@ const FooterColumn = styled.div`
   }
 `;
 
+const FooterBase = styled.div`
+  width: 100%;
+  font-family: 'Tranx', sans-serif;
+  font-weight: 300;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+`;
+
 const Logo = ({ url, logo, alt = '' }) => (
   <Box>
     <a href={url} rel="noopener noreferrer" target="_blank">
@@ -58,22 +69,23 @@ const Footer = () => (
       <FooterColumn>
         <Text fontWeight={600}>Contacto</Text>
         <Text>
-        {
-`Cátedra Iberoamericana de Danza
+          {`Cátedra Iberoamericana de Danza
 Alicia Alonso
 Camino del Molino SN
 Campus URJC Edificio Gestión
 28943, Fuenlabrada
 Madrid. España
 Tel: (123) - 123 123
-catedra@alicialonso.org`
-        }
+catedra@alicialonso.org`}
         </Text>
       </FooterColumn>
       <FooterColumn>
-        <Text>Links</Text>
+        <Link to="https://admin.alicialonso.org/privacy">Privacidad</Link>
       </FooterColumn>
     </Fade>
+    <FooterBase>
+      {`FUNDACIÓN DE LA DANZA ALICIA ALONSO [ CIF: G81731705 ]`}
+    </FooterBase>
   </FooterContainer>
 );
 
