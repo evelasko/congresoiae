@@ -43,10 +43,21 @@ const Program = {
         },
       },
       {
-        time: '12:00',
+        time: '11:30',
         title: {
-          es: 'Mesa 2: Nuevas tecnologías del espectáculo',
-          en: 'Board 2: Technology',
+          es: 'Oficial Speaker',
+          en: 'Ponencia Oficial',
+        },
+        subtitle: {
+          es: 'Prof. D. Derek Goldman',
+          en: 'Prof. D. Derek Goldman',
+        },
+      },
+      {
+        time: '12:30',
+        title: {
+          es: 'Mesa 1: Tecnologías del Espectáculo',
+          en: 'Board 1: Technology',
         },
         subtitle: {
           es: 'Modera: D. Adriana Moscoso',
@@ -54,32 +65,32 @@ const Program = {
         },
       },
       {
-        time: '14:00',
+        time: '14:30',
         title: {
           es: 'Almuerzo',
           en: 'Lunch Break',
         },
       },
       {
-        time: '15.30',
+        time: '16.00',
         title: {
           es: 'Ponencia Oficial',
           en: 'Oficial Speaker',
         },
         subtitle: {
-          es: 'D. Derek Goldman',
-          en: 'D. Derek Goldman',
+          es: 'Prof. D. Yunyu Wang',
+          en: 'D. Yunyu Wang',
         },
       },
       {
-        time: '16:30',
+        time: '17:00',
         title: {
           es: 'Mesa 1: Artes escénicas e investigación',
           en: 'Board 1: Performing Arts and Research',
         },
         subtitle: {
-          es: 'Modera: Prof .D .Derek Goldman',
-          en: 'Moderator: Prof .D .Derek Goldman',
+          es: 'Modera: Prof. D. Derek Goldman',
+          en: 'Moderator: Prof. D. Derek Goldman',
         },
       },
     ],
@@ -88,7 +99,7 @@ const Program = {
     title: { en: 'October 25th', es: 'Octubre 25' },
     items: [
       {
-        time: '10:00',
+        time: '09:30',
         title: {
           es: 'Ponencia Oficial',
           en: 'Official Speaker',
@@ -99,21 +110,43 @@ const Program = {
         },
       },
       {
-        time: '11:00',
+        time: '10:00',
+        title: {
+          es: 'Mesa 3: Conservación del Patrimonio y artes escénicas',
+          en: 'Board 3: Cultural Heritage and Perfroming Arts',
+        },
+        subtitle: {
+          es: 'Modera: Prof. D. Fabio Tolledi',
+          en: 'Moderator: Prof. D. Fabio Tolledi',
+        },
+      },
+      {
+        time: '12:00',
         title: {
           es: 'Descanso',
           en: 'Coffee Break',
         },
       },
       {
-        time: '11:30',
+        time: '10:00',
         title: {
-          es: 'Mesa 3: Conservación del Patrimonio y artes escénicas',
-          en: 'Board 3: Cultural Heritage and Perfroming Arts',
+          es: 'Ponencia Oficial',
+          en: 'Official Speaker',
         },
         subtitle: {
-          es: 'Modera: D. Román Fernández Baca-Casares',
-          en: 'Moderator: D. Román Fernández Baca-Casares',
+          es: 'Prof. D. Jessica Kaahwa',
+          en: 'Prof. D. Jessica Kaahwa',
+        },
+      },
+      {
+        time: '14:30',
+        title: {
+          es: 'Visita MNCARS',
+          en: 'MNCARS Visit',
+        },
+        subtitle: {
+          es: 'Prof. D. Eduardo Blázquez',
+          en: 'Moderator: Prof. D. Eduardo Blázquez',
         },
       },
     ],
@@ -125,7 +158,7 @@ const Program = {
     },
     items: [
       {
-        time: '10:00',
+        time: '09:30',
         title: {
           es: 'Ponencia Oficial',
           en: 'Official Speaker',
@@ -136,14 +169,7 @@ const Program = {
         },
       },
       {
-        time: '11:00',
-        title: {
-          es: 'Descanso',
-          en: 'Coffee Break',
-        },
-      },
-      {
-        time: '11:30',
+        time: '10:30',
         title: {
           es: 'Mesa 4: Educación y artes escénicas',
           en: 'Board 4: Education and Performing Arts',
@@ -154,14 +180,25 @@ const Program = {
         },
       },
       {
+        time: '12:00',
+        title: {
+          es: 'Descanso',
+          en: 'Coffee Break',
+        },
+      },
+      {
         time: '14:00',
         title: {
           es: 'Clausura: Ponencia Oficial',
           en: 'Closing Official Speaker',
         },
         subtitle: {
-          es: 'D. Tamara Rojo',
-          en: 'D. Tamara Rojo',
+          es: `Prof. D. Alberto García
+Prof. D. Eduardo Blázquez
+D. Tamara Rojo`,
+          en: `Prof. D. Alberto García
+          Prof. D. Eduardo Blázquez
+          D. Tamara Rojo`,
         },
       },
     ],

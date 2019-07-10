@@ -40,6 +40,7 @@ const FooterBase = styled.div`
   text-align: center;
   margin-top: 50px;
   margin-bottom: 20px;
+  white-space: pre-wrap;
 `;
 
 const Logo = ({ url, logo, alt = '' }) => (
@@ -84,7 +85,9 @@ catedra@alicialonso.org`}
       </FooterColumn>
     </Fade>
     <FooterBase>
-      {`FUNDACIÓN DE LA DANZA ALICIA ALONSO [ CIF: G81731705 ]`}
+      {`FUNDACIÓN DE LA DANZA ALICIA ALONSO [ CIF: G81731705 ]
+Camino del Molino SN, Fuenlabrada. Madrid
+© Enrique Velasco`}
     </FooterBase>
   </FooterContainer>
 );
