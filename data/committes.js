@@ -152,10 +152,6 @@ const Committees = {
         name: 'Prof. Alexandra Sandulescu',
         title: `Departamento de Comunicación de la Facultad de Ciencias de la Comunicación. Universidad Rey Juan Carlos`,
       },
-      {
-        name: 'Prof. Alma Llerena',
-        title: `Profesora de Danza. Master Oficial de Artes escénicas`,
-      },
     ],
   },
   cientific: {
