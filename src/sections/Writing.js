@@ -89,7 +89,6 @@ const ProgramItemTitle = styled.div`
   color: ${colors.secondary};
 `;
 const ProgramItemSubtitle = styled.div`
-  color: ${colors.secondaryLight};
   font-size: 12px;
 `;
 const ProgramItemData = styled.div``;
