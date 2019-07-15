@@ -42,8 +42,8 @@ const translations = {
     es: {
       modalities: ['expone', 'atiende'],
       description: [
-        `Si quiere presentar su investigación por favor léa detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
-        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? Involúcrate y participa!',
+        `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
+        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? ¡Involúcrate y participa!',
       ],
       buttons: ['Bases de Convocatoria', 'Participa'],
     },
