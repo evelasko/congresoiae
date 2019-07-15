@@ -180,11 +180,6 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
           Codirector del  Máster en Escultura Barroca Española`,
       },
       {
-        name: 'Prof. D. Manuel Blanco',
-        title: `Catedrático del Departamento de Composición Arquitectónica de la Escuela Técnica Superior de Arquitectura de la Universidad Politécnica de Madrid.
-          Director del Museo Nacional de Arquitectura y Urbanismo`,
-      },
-      {
         name: 'Prof. Dª. María Esther Pérez Peláez',
         title: `Profesora  Universidad Internacional de Valencia y colaboradora del  Instituto Universitario de  Investigaciones de Ciencias de la Educación.
           Coordinadora del Máster en Gestión Cultural. Universidad de Salamanca`,
