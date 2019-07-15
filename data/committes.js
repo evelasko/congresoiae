@@ -165,8 +165,10 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       },
       {
         name: 'Prof. Dª. Marifé Santiago Bolaños',
-        title: `Profesora Titular. Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso" , Universidad Rey Juan Carlos.
-          Ex-Directora del Gabinete de Educación y Cultura de la Presidencia del Gobierno de España`,
+        title: `Profesora Titular. Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos.
+        Ex Directora del Gabinete de Educación y Cultura de la Presidencia del Gobierno de España.
+        Académica correspondiente de la Real Academia de Historia y Arte de San Quirce.
+        Patrona de la Fundación María Zambrano.`,
       },
       {
         name: 'Prof. D. Emilio Peral Vega',
@@ -218,7 +220,7 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       {
         name: 'Prof. Dª. Yunyu Wang',
         title:
-          'CEO de la Fundación Chin Miembro de la Junta Directiva de la Alianza Mundial de Danza para Asia-Pacífico (Ex–Presidenta).',
+          'CEO de la Fundación ChinLin Miembro de la Junta Directiva de la Alianza Mundial de Danza para Asia-Pacífico (Ex–Presidenta).',
       },
     ],
   },

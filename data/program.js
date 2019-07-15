@@ -43,7 +43,7 @@ const Program = {
         },
       },
       {
-        time: '11:30',
+        time: '11:45',
         title: {
           es: 'Oficial Speaker',
           en: 'Ponencia Oficial',
@@ -54,7 +54,7 @@ const Program = {
         },
       },
       {
-        time: '12:30',
+        time: '12:15',
         title: {
           es: 'Mesa 1: Tecnologías del Espectáculo',
           en: 'Board 1: Technology',
@@ -99,6 +99,13 @@ const Program = {
     title: { en: 'October 25th', es: 'Octubre 25' },
     items: [
       {
+        time: '09:00',
+        title: {
+          es: 'Entrada',
+          en: 'Entrada',
+        },
+      },
+      {
         time: '09:30',
         title: {
           es: 'Ponencia Oficial',
@@ -110,7 +117,7 @@ const Program = {
         },
       },
       {
-        time: '10:00',
+        time: '10:15',
         title: {
           es: 'Mesa 3: Conservación del Patrimonio y artes escénicas',
           en: 'Board 3: Cultural Heritage and Perfroming Arts',
@@ -121,14 +128,14 @@ const Program = {
         },
       },
       {
-        time: '12:00',
+        time: '12:15',
         title: {
           es: 'Descanso',
           en: 'Coffee Break',
         },
       },
       {
-        time: '10:00',
+        time: '13:00',
         title: {
           es: 'Ponencia Oficial',
           en: 'Official Speaker',
@@ -158,6 +165,13 @@ const Program = {
     },
     items: [
       {
+        time: '09:00',
+        title: {
+          es: 'Entrada',
+          en: 'Entrada',
+        },
+      },
+      {
         time: '09:30',
         title: {
           es: 'Ponencia Oficial',
@@ -169,7 +183,7 @@ const Program = {
         },
       },
       {
-        time: '10:30',
+        time: '10:15',
         title: {
           es: 'Mesa 4: Educación y artes escénicas',
           en: 'Board 4: Education and Performing Arts',
@@ -180,17 +194,17 @@ const Program = {
         },
       },
       {
-        time: '12:00',
+        time: '12:15',
         title: {
           es: 'Descanso',
           en: 'Coffee Break',
         },
       },
       {
-        time: '14:00',
+        time: '13:30',
         title: {
-          es: 'Clausura: Ponencia Oficial',
-          en: 'Closing Official Speaker',
+          es: 'Acto de Clausura',
+          en: 'Closing Ceremony',
         },
         subtitle: {
           es: `Prof. D. Alberto García
