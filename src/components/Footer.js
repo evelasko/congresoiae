@@ -75,7 +75,7 @@ Camino del Molino SN
 Campus URJC Edificio Gestión
 28943, Fuenlabrada
 Madrid. España
-Tel: (123) - 123 123
+Tel: (+34) 914 888 177
 congreso@alicialonso.org`}
         </Text>
       </FooterColumn>

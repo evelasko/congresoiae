@@ -77,7 +77,7 @@ const Stakeholders = ({ lang }) => (
         </Heading>
         <Image />
         <Text>{translations.call[lang.slice(0, 2)].description[0]}</Text>
-        <Link to="/en-US/present">
+        <Link to={`/${lang}/call`}>
           <Button>
             {translations.call[lang.slice(0, 2)].buttons[0].toUpperCase()}
           </Button>
@@ -89,7 +89,7 @@ const Stakeholders = ({ lang }) => (
         </Heading>
         <Image />
         <Text>{translations.call[lang.slice(0, 2)].description[1]}</Text>
-        <Link to="/en-US/attend">
+        <Link to={`/${lang}/attend`}>
           <Button>
             {translations.call[lang.slice(0, 2)].buttons[1].toUpperCase()}
           </Button>
