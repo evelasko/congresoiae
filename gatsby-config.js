@@ -22,6 +22,7 @@ const plugins = [
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
   'gatsby-plugin-antd',
+  'gatsby-plugin-sitemap',
   {
     resolve: 'gatsby-plugin-manifest',
     options: manifestConfig,
