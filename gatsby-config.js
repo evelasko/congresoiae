@@ -73,7 +73,7 @@ module.exports = client.getEntries().then(entries => {
 
   return {
     siteMetadata: {
-      // isMediumUserDefined: !!mediumUser,
+      siteUrl: `https://congreso.alicialonso.org`,
       languages,
     },
     plugins,
