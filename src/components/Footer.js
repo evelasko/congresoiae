@@ -9,10 +9,15 @@ import { colors } from '../styles/theme';
 const CARD_HEIGHT = '200px';
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
-const FooterContainer = styled.footer`
-  padding: 1em;
+const FooterWrapper = styled.div`
   background: ${props => props.theme.colors.primary};
   color: ${colors.secondaryDark};
+  width: 100%;
+`;
+
+const FooterContainer = styled.footer`
+  padding: 1em;
+
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -57,19 +62,20 @@ Logo.propTypes = {
 };
 
 const Footer = () => (
-  <FooterContainer>
-    <Fade bottom>
-      <FooterColumn>
-        <Logo
-          url="https://www.alicialonso.org/"
-          logo={Catedra}
-          alt="Cátedra UNESCO de Danza Alicia Alonso"
-        />
-      </FooterColumn>
-      <FooterColumn>
-        <Text fontWeight={600}>Contacto</Text>
-        <Text>
-          {`Cátedra Iberoamericana de Danza
+  <FooterWrapper>
+    <FooterContainer>
+      <Fade bottom>
+        <FooterColumn>
+          <Logo
+            url="https://www.alicialonso.org/"
+            logo={Catedra}
+            alt="Cátedra UNESCO de Danza Alicia Alonso"
+          />
+        </FooterColumn>
+        <FooterColumn>
+          <Text fontWeight={600}>Contacto</Text>
+          <Text>
+            {`Cátedra Iberoamericana de Danza
 Alicia Alonso
 Camino del Molino SN
 Campus URJC Edificio Gestión
@@ -77,18 +83,19 @@ Campus URJC Edificio Gestión
 Madrid. España
 Tel: (+34) 914 888 177
 congreso@alicialonso.org`}
-        </Text>
-      </FooterColumn>
-      <FooterColumn>
-        <a href="https://admin.alicialonso.org/privacy">Privacidad</a>
-      </FooterColumn>
-    </Fade>
+          </Text>
+        </FooterColumn>
+        <FooterColumn>
+          <a href="https://admin.alicialonso.org/privacy">Privacidad</a>
+        </FooterColumn>
+      </Fade>
+    </FooterContainer>
     <FooterBase>
       {`FUNDACIÓN DE LA DANZA ALICIA ALONSO [ CIF: G81731705 ]
 Camino del Molino SN, Fuenlabrada. Madrid
 © Enrique Velasco`}
     </FooterBase>
-  </FooterContainer>
+  </FooterWrapper>
 );
 
 export default Footer;
