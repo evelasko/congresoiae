@@ -3,39 +3,84 @@ const Committees = {
     header: { en: 'Honor Committee', es: 'Comité de Honor' },
     items: [
       {
+        name: 'Dª. Alicia Alonso',
+        title: `Embajadora de Buena Voluntad de Naciones Unidas y Embajadora Mundial de la Danza ITI/UNESCO.
+          Directora General del Ballet Nacional de Cuba.
+          Gran Premio de la Ciudad de París (1966, 1970).
+          Doctorado Honoris Causa: Universidad de Costa Rica; Universidad Autónoma de Guadalajara, México; Universidad de El Salvador; Universidad Politécnica de Valencia, España.
+          Condecorada en el Reino de España con la Encomienda de Isabel la Católica por su lealtad acrisolada.
+          Medalla de Oro al Mérito de las Bellas Artes.
+          Miembro de la Legión de Honor de la República de Francia en el Grado de Oficial Mayor y de Comendadora de las Artes y las Letras.
+          Distinguida con la Orden de Elizabeth II del Reino Unido.
+          Miembro de Honor del Congreso de los Estados Unidos de Norteamérica.`,
+      },
+      {
+        name: 'Dª. Cristina Hoyos',
+        title: `Embajadora Mundial de la Danza ITI/UNESCO.
+        Premio Pegaso de Spoleto.
+        Premio Nacional de Danza.
+        Medalla de Oro de Andalucía.
+        Medalla de Oro de las Bellas Artes.
+        Caballero de la Real Orden de las Artes y las Letras de la República de Francia.
+        Claustral del claustro de las Artes de la universidad de Alcalá de Henares.
+        Embajadora de Cultura de Pekín.
+        Gran Medalla de la Villa de París.
+        Miembro de Honor de la Academia de Artes Escénicas de España.`,
+      },
+      {
+        name: 'Dª. Tamara Rojo',
+        title: `Premio Príncipe de Asturias de las Artes.
+          Directora General del English National Ballet`,
+      },
+      {
+        name: 'Doña Loipa Araújo Carruana',
+        title: `Directora Adjunta del English National Ballet.
+        Miembro de la Legión de Honor de la República de Francia en el Grado de Caballero de las Artes y las Letras.
+        Doctora Honoris Causa de la Universidad de las Artes, La Habana, Cuba.
+        Maître Invitada del Ballet de la Ópera de París, Royal Ballet de Londres, Real Ballet de Dinamarca, Béjart Ballet de Suiza, entre otras compañías.
+        Ex Primera Bailarina del Ballet Nacional de Cuba.
+        Grand Prix de la Villa de París.
+        Medalla de Oro del Concurso Internacional de Varna.
+        Orden Padre Félix Varela de la Cultura de la República de Cuba`,
+      },
+      {
         name: 'Prof. D. Javier Ramos',
         title:
           'Catedrático. Rector Magnífico de la Universidad Rey Juan Carlos',
       },
       {
-        name: 'Prof. D. Alexis Seijó García',
-        title:
-          'Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica',
+        name: 'Prof. D. Gustavo Villapalos Salas',
+        title: `Catedrático. Rector Honorífico de la Universidad Complutense de Madrid.
+          Ex Consejero de Educación de la Comunidad de Madrid.
+          Miembro de la Real Academia de Doctores.
+          Miembro de número de la Real Academia de Jurisprudencia y Legislación.
+          Doctor Honoris Causa: Universidad de Lisboa; Universidad de París XIII; Universidad de Bratislava; Universidad Carolina de Praga; Universidad de Saint Louis, Missouri.
+          Académico de Honor de la Real Academia de Cultura de Valencia`,
       },
       {
-        name: 'Prof. D. Gustavo Villapalos Salas',
-        title:
-          'Rector Magnífico de la Universidad de las Artes, Cuba Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica',
+        name: 'Dª. Carmen Caffarel Serra',
+        title: `Catedrática de Comunicación Audiovisual de la Universidad Rey Juan Carlos.
+          Directora de la Cátedra UNESCO de Investigación en Comunicación y África (AFRICOM).
+          Especialista en Lingüística Hispánica.
+          Ex Directora del Ente Público de Radio Televisión Española.
+          Ex Directora General del Instituto Cervantes adscrito al Ministerio de Asuntos Exteriores y Cooperación`,
       },
       {
         name: 'Prof. D. Enrique Otero Huerta',
-        title:
-          'Catedrático. Rector Honorífico de la Universidad Rey Juan Carlos',
+        title: `Catedrático. Rector Honorífico de la Universidad Rey Juan Carlos.
+          Medalla de Oro de la URJC.
+          Experto en Ciencias e Ingeniería de la Sociedad Alemana de Cooperación Técnica.
+          Miembro de la Organización de las Naciones Unidas para el Desarrollo Industrial`,
       },
       {
-        name: 'Dª. Tamara Rojo',
+        name: 'Prof. D. Alexis Seijo García',
         title:
-          'Premio Príncipe de Asturias de las Artes. Directora General del English National Ballet',
+          'Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica',
       },
       {
         name: 'D. Federico Mayor Zaragoza',
         title:
           'Presidente de la Fundación para la Paz, ex-Director General de la Organización de Naciones Unidas para la Educación, la Ciencia y la Cultura (UNESCO)',
-      },
-      {
-        name: 'Dª. Alicia Alonso',
-        title:
-          'Embajadora de Buena Voluntad de Naciones Unidas y Embajadora Mundial de la Danza ITI/UNESCO. Directora General del Ballet Nacional de Cuba',
       },
       {
         name: 'D. Daniel Bianco',
@@ -58,11 +103,6 @@ Profesor de Teatro y Estudios de Interpretación, Universidad de Georgetown.
 Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       },
       {
-        name: 'Dª. Carmen Caffarel',
-        title:
-          'Directora de la Cátedra UNESCO Africom, ex-Directora del Instituto Cervantes y de Radio Televisión Española',
-      },
-      {
         name: 'D. Jesús Cimarro',
         title: 'Presidente de la Academia Española de las Artes Escénicas',
       },
@@ -77,17 +117,13 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
           'Director General de Bellas Artes y Patrimonio (Ministerio de Cultura y Deporte)',
       },
       {
-        name: 'Dª. Paloma Pedrero',
-        title: 'Embajadora Mundial del Teatro ITI/UNESCO',
-      },
-      {
-        name: 'Dª. Cristina Hoyos',
-        title: 'Embajadora Mundial de la Danza ITI/UNESCO',
-      },
-      {
         name: 'Dª. Amaya de Miguel',
         title:
           'Directora del Instituto Nacional de las Artes Escénicas y la Música. (Ministerio de Cultura y Deporte)',
+      },
+      {
+        name: 'Dª. Paloma Pedrero',
+        title: 'Embajadora Mundial del Teatro ITI/UNESCO',
       },
     ],
   },
@@ -216,11 +252,6 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       {
         name: 'Prof. Félix Ortega Mohedano',
         title: `Secretario Académico del Instituto Universitario de Investigación de Ciencias de la Educación. Facultad de Ciencias Sociales, Universidad de Salamanca`,
-      },
-      {
-        name: 'Prof. Dª. Yunyu Wang',
-        title:
-          'CEO de la Fundación ChinLin Miembro de la Junta Directiva de la Alianza Mundial de Danza para Asia-Pacífico (Ex–Presidenta).',
       },
     ],
   },

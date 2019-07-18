@@ -48,6 +48,27 @@ const translations = {
       buttons: ['Bases de Convocatoria', 'Participa'],
     },
   },
+  form: {
+    actions: {
+      submit: { en: 'submit', es: 'enviar' },
+      reset: { en: 'reset', es: 'limpiar' },
+      change: { en: 'Change File', es: 'Cambiar Archivo' },
+      select: { en: 'Select File', es: 'Seleccionar Archivo' },
+    },
+    labels: {
+      name: { en: 'Name', es: 'Nombre' },
+      lastname: { en: 'Lastname', es: 'Apellidos' },
+      topic: { en: 'Topic', es: 'Tema' },
+      resume: { en: 'Resume', es: 'Currículum' },
+      abstract: { en: 'Abstract', es: 'Resumen' },
+    },
+    topics: [
+      { value: 'investigación', es: 'Research', en: 'Investigación' },
+      { value: 'tecnología', es: 'Technology', en: 'Tecnología' },
+      { value: 'educación', es: 'Education', en: 'Educación' },
+      { value: 'patrimonio', es: 'Heritage', en: 'Patrimonio' },
+    ],
+  },
 };
 
 export default translations;
