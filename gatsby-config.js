@@ -24,6 +24,13 @@ const plugins = [
   'gatsby-plugin-antd',
   'gatsby-plugin-sitemap',
   {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `downloads`,
+      path: `${__dirname}/src/downloads/`,
+    },
+  },
+  {
     resolve: 'gatsby-plugin-manifest',
     options: manifestConfig,
   },
