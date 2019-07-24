@@ -104,7 +104,7 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       },
       {
         name: 'D. Jesús Cimarro',
-        title: 'Presidente de la Academia Española de las Artes Escénicas',
+        title: 'Director de la Academia Española de las Artes Escénicas',
       },
       {
         name: 'Dª. Adriana Moscoso',
