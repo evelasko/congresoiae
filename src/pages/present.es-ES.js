@@ -13,7 +13,7 @@ const IndexPage = props => {
     <Layout lang={langKey}>
       <Header lang={langKey} pathname={pathname} />
       <PresentSections lang={langKey} />
-      <Footer />
+      <Footer lang={langKey} />
     </Layout>
   );
 };

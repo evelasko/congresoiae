@@ -12,7 +12,7 @@ const IndexPage = props => {
     <Layout lang={langKey}>
       <Header lang={langKey} pathname={pathname} />
       <p>Participa</p>
-      <Footer />
+      <Footer lang={langKey} />
     </Layout>
   );
 };

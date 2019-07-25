@@ -295,7 +295,7 @@ class IndexPage extends React.Component {
             </Actions>
           </form>
         </div>
-        <Footer />
+        <Footer lang={langKey} />
       </Layout>
     );
   }

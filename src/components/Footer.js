@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Fade from 'react-reveal/Fade';
@@ -61,7 +62,7 @@ Logo.propTypes = {
   alt: PropTypes.string,
 };
 
-const Footer = () => (
+const Footer = ({ lang = 'es-ES' }) => (
   <FooterWrapper>
     <FooterContainer>
       <Fade bottom>
@@ -86,7 +87,8 @@ congreso@alicialonso.org`}
           </Text>
         </FooterColumn>
         <FooterColumn>
-          <a href="https://admin.alicialonso.org/privacy">Privacidad</a>
+          <Link to={`/${lang}/privacy/`}>Privacidad de Datos</Link>
+          <Link to={`/${lang}/policy/`}>Política de Cancelaciones</Link>
         </FooterColumn>
       </Fade>
     </FooterContainer>
