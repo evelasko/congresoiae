@@ -29,8 +29,16 @@ const Committees = {
       },
       {
         name: 'Dª. Tamara Rojo',
-        title: `Premio Príncipe de Asturias de las Artes.
-          Directora General del English National Ballet`,
+        title: `Premio Príncipe de Asturias de las Artes 2005.
+Directora General del English National Ballet.
+Commander of the Order of the British Empire.
+Encomienda de Isabel la Católica, España.
+Grand Prix de la Ville de Paris.
+Medalla de Oro de las Bellas Artes, Centro para las Artes Escénicas John F. Kennedy.
+Medalla Internacional de las Artes, Comunidad de Madrid.
+Premio Benois de la Danza.
+Embajadora para la Fundación Hans Christian Andersen, Dinamarca, entre otros reconocimientos.
+Ha sido estrella del Royal Ballet de Londres e invitada de las compañías más prestigiosas del mundo, entre las que podemos citar, el Mariinskyn¡ Ballet, el Ballet Teatro alla Scala de Milán, Ballet de la Ópera de Berlín, Ballet Nacional de Cuba, Ballet de la Ópera de Niza, entre otras.`,
       },
       {
         name: 'Doña Loipa Araújo Carruana',
@@ -44,9 +52,19 @@ const Committees = {
         Orden Padre Félix Varela de la Cultura de la República de Cuba`,
       },
       {
+        name: 'Dª. Paloma Pedrero',
+        title: 'Embajadora Mundial del Teatro ITI/UNESCO',
+      },
+      {
+        name: 'D. Jesús Cimarro',
+        title: 'Director de la Academia Española de las Artes Escénicas',
+      },
+      {
         name: 'Prof. D. Javier Ramos',
-        title:
-          'Catedrático. Rector Magnífico de la Universidad Rey Juan Carlos',
+        title: `Catedrático. Rector Magnífico de la Universidad Rey Juan Carlos.
+Destacado investigador del área de las telecomunicaciones. Experto en Teoría de la señal.
+Posee numerosas publicaciones e investigaciones de alto impacto con gran reconocimiento nacional e internacional.
+Colabora con instituciones académicas de reconocido prestigio como la universidad de Minnesota, EE.UU., o el Massachusetts Institute of Technology (MIT), U.S.A., entre otras.`,
       },
       {
         name: 'Prof. D. Gustavo Villapalos Salas',
@@ -73,6 +91,12 @@ const Committees = {
           Miembro de la Organización de las Naciones Unidas para el Desarrollo Industrial`,
       },
       {
+        name: 'D. Derek Goldman',
+        title: `Co-Director del “Laboratory for Global Performance and Politics”, Universidad de Georgetown.
+Profesor de Teatro y Estudios de Interpretación, Universidad de Georgetown.
+Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
+      },
+      {
         name: 'Prof. D. Alexis Seijo García',
         title:
           'Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica',
@@ -84,7 +108,10 @@ const Committees = {
       },
       {
         name: 'D. Daniel Bianco',
-        title: 'Director del Teatro de la Zarzuela',
+        title: `Director del Teatro de la Zarzuela.
+Destacado escenógrafo, productor y director teatral.
+Ha producido numerosas obras de teatro, ópera, zarzuela y ballet, tanto en España como en Europa.
+Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por Luis Olmos, "Cyrano de Bergerac” (John Strasberg), “Carmen”, “La Corte del Faraón” y “Las Bodas de Fígaro” (Emilio Sagi), entre otras.`,
       },
       {
         name: 'D. Pedro Simón Martínez',
@@ -96,16 +123,7 @@ const Committees = {
         title:
           'Director General del Instituto Internacional de Teatro; Organización Mundial de Artes Escénicas UNESCO',
       },
-      {
-        name: 'D. Derek Goldman',
-        title: `Co-Director del “Laboratory for Global Performance and Politics”, Universidad de Georgetown.
-Profesor de Teatro y Estudios de Interpretación, Universidad de Georgetown.
-Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
-      },
-      {
-        name: 'D. Jesús Cimarro',
-        title: 'Director de la Academia Española de las Artes Escénicas',
-      },
+
       {
         name: 'Dª. Adriana Moscoso',
         title:
@@ -120,10 +138,6 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
         name: 'Dª. Amaya de Miguel',
         title:
           'Directora del Instituto Nacional de las Artes Escénicas y la Música. (Ministerio de Cultura y Deporte)',
-      },
-      {
-        name: 'Dª. Paloma Pedrero',
-        title: 'Embajadora Mundial del Teatro ITI/UNESCO',
       },
     ],
   },
@@ -146,7 +160,7 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       {
         name: 'Prof. D. Luis Llerena Díaz',
         title: `VICE–PRESIDENTE
-          Vice-Presidente de la Delegación Española del Instituto Internacional de Teatro ITI/UNESCO, Coordinador de Actividades de la Cátedra UNESCO Iberoamericana de Danza “Alicia Alonso”
+          Vice-Presidente de la Delegación Española del Instituto Internacional de Teatro ITI/UNESCO.
           Director del Máster Universitario en Gestión y Liderazgo de Proyectos Culturales, Universidad Rey Juan Carlos.
           Secretario General del Instituto Universitario de Danza “Alicia Alonso”
           Universidad Rey Juan Carlos.`,
@@ -194,6 +208,15 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
   cientific: {
     header: { en: 'Cientific Committee', es: 'Comité Científico' },
     items: [
+      {
+        name: 'Dª. Carmen Caffarel Serra',
+        title: `PRESIDENTA
+        Catedrática de Comunicación Audiovisual de la Universidad Rey Juan Carlos.
+          Directora de la Cátedra UNESCO de Investigación en Comunicación y África (AFRICOM).
+          Especialista en Lingüística Hispánica.
+          Ex Directora del Ente Público de Radio Televisión Española.
+          Ex Directora General del Instituto Cervantes adscrito al Ministerio de Asuntos Exteriores y Cooperación`,
+      },
       {
         name: 'Prof. D. Ioshinobu Navarro Sanler',
         title: `Profesor del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso".

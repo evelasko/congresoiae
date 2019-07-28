@@ -10,7 +10,7 @@ const Program = {
         },
       },
       {
-        time: '10:00',
+        time: '09:30',
         title: {
           es: 'Acto de Inauguración',
           en: 'Inaugural Act',
@@ -46,7 +46,7 @@ const Program = {
         time: '11:45',
         title: {
           es: 'Oficial Speaker',
-          en: 'Ponencia Oficial',
+          en: 'Ponente Oficial',
         },
         subtitle: {
           es: 'Prof. D. Derek Goldman',
@@ -54,14 +54,14 @@ const Program = {
         },
       },
       {
-        time: '12:15',
+        time: '12:30',
         title: {
           es: 'Mesa 1: Tecnologías del Espectáculo',
           en: 'Board 1: Technology',
         },
         subtitle: {
           es: 'Modera: D. Adriana Moscoso',
-          en: 'Moderator: D. Adriana Moscoso',
+          en: 'Moderator: Dª. Adriana Moscoso',
         },
       },
       {
@@ -78,15 +78,15 @@ const Program = {
           en: 'Oficial Speaker',
         },
         subtitle: {
-          es: 'Prof. D. Yunyu Wang',
-          en: 'D. Yunyu Wang',
+          es: 'por anunciar',
+          en: 'TBA',
         },
       },
       {
         time: '17:00',
         title: {
-          es: 'Mesa 1: Artes escénicas e investigación',
-          en: 'Board 1: Performing Arts and Research',
+          es: 'Mesa 2: Artes escénicas e investigación',
+          en: 'Board 2: Performing Arts and Research',
         },
         subtitle: {
           es: 'Modera: Prof. D. Derek Goldman',
@@ -130,7 +130,7 @@ const Program = {
       {
         time: '12:15',
         title: {
-          es: 'Descanso',
+          es: 'Descanso–Café',
           en: 'Coffee Break',
         },
       },
@@ -196,23 +196,19 @@ const Program = {
       {
         time: '12:15',
         title: {
-          es: 'Descanso',
+          es: 'Descanso–Café',
           en: 'Coffee Break',
         },
       },
       {
-        time: '13:30',
+        time: '13:00',
         title: {
           es: 'Acto de Clausura',
           en: 'Closing Ceremony',
         },
         subtitle: {
-          es: `Prof. D. Alberto García
-Prof. D. Eduardo Blázquez
-D. Tamara Rojo`,
-          en: `Prof. D. Alberto García
-          Prof. D. Eduardo Blázquez
-          D. Tamara Rojo`,
+          es: `Representación Artística`,
+          en: `Artistic Performance`,
         },
       },
     ],
