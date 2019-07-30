@@ -35,7 +35,7 @@ const translations = {
       modalities: ['present', 'attend'],
       description: [
         'If you would like to present a keynote of your research please read thoroughly the Call for Papers and once you are ready send the proposal to papers@alicialonso.org',
-        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!\nRegistration for participants will open July 18, 2019.',
+        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!\nRegistration for participants will open September 1st, 2019.',
       ],
       buttons: ['Call for Papers', 'Join Us'],
     },
@@ -43,7 +43,7 @@ const translations = {
       modalities: ['expone', 'asiste'],
       description: [
         `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
-        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? ¡Involúcrate y participa!',
+        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? ¡Involúcrate y participa!\nRegistro para participantes abierto a partir del 1 de Septiembre de 2019.',
       ],
       buttons: ['Bases de Convocatoria', 'Participa'],
     },

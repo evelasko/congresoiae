@@ -4,7 +4,7 @@ import React from 'react';
 import Fade from 'react-reveal/Fade';
 import { Box, Image, Text } from 'rebass';
 import styled from 'styled-components';
-import Catedra from '../../assets/catedra.svg';
+import Catedra from '../../assets/fundacion.svg';
 import { colors } from '../styles/theme';
 
 const CARD_HEIGHT = '200px';
@@ -29,6 +29,7 @@ const FooterColumn = styled.div`
   padding: 10px;
   width: 100%;
   align-content: center;
+  align-items: center;
   white-space: pre-wrap;
   font-family: 'Tranx', sans-serif;
   font-weight: 100;
@@ -74,10 +75,8 @@ const Footer = ({ lang = 'es-ES' }) => (
           />
         </FooterColumn>
         <FooterColumn>
-          <Text fontWeight={600}>Contacto</Text>
           <Text>
-            {`Cátedra Iberoamericana de Danza
-Alicia Alonso
+            {`Fundación Alicia Alonso
 Camino del Molino SN
 Campus URJC Edificio Gestión
 28943, Fuenlabrada
@@ -87,8 +86,14 @@ congreso@alicialonso.org`}
           </Text>
         </FooterColumn>
         <FooterColumn>
-          <Link to={`/${lang}/privacy/`}>Privacidad de Datos</Link>
-          <Link to={`/${lang}/policy/`}>Política de Cancelaciones</Link>
+          <Box>
+            <p>
+              <Link to={`/${lang}/privacy/`}>Privacidad de Datos</Link>
+            </p>
+            <p>
+              <Link to={`/${lang}/policy/`}>Política de Cancelaciones</Link>
+            </p>
+          </Box>
         </FooterColumn>
       </Fade>
     </FooterContainer>
