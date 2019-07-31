@@ -5,6 +5,7 @@ import Fade from 'react-reveal/Fade';
 import { Box, Image, Text } from 'rebass';
 import styled from 'styled-components';
 import Catedra from '../../assets/fundacion.svg';
+import VM from '../../media/vmlogos.png';
 import { colors } from '../styles/theme';
 
 const CARD_HEIGHT = '200px';
@@ -93,6 +94,7 @@ congreso@alicialonso.org`}
             <p>
               <Link to={`/${lang}/policy/`}>Política de Cancelaciones</Link>
             </p>
+            <img src={VM} width="100" />
           </Box>
         </FooterColumn>
       </Fade>
