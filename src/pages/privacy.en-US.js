@@ -30,12 +30,11 @@ const IndexPage = props => {
         <p>
           En este sentido, Fundación Alicia Alonso garantiza el cumplimiento de
           la normativa vigente en materia de protección de datos personales,
-          reflejada en la Ley Orgánica 15⁄1999, de 13 de diciembre, de
-          Protección de Datos de Carácter Personal (LOPD), y al Real Decreto
-          1720⁄2007, de 21 de diciembre, conocido como el Reglamento de
-          desarrollo de la LOPD. Cumple también con el Reglamento (UE) 2016⁄679
-          del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a
-          la protección de las personas físicas (RGPD).
+          reflejada en la Ley Orgánica 3/2018 de 5 de diciembre, de Protección
+          de Datos Personales y garantías de los derechos digitales. Cumple
+          también con el Reglamento (UE) 2016⁄679 del Parlamento Europeo y del
+          Consejo de 27 de abril de 2016 relativo a la protección de las
+          personas físicas (RGPD).
         </p>
         <p>
           El uso de sitio Web implica la aceptación de esta Política de
