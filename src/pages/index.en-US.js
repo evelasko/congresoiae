@@ -31,7 +31,7 @@ const IndexPage = props => {
       />
       <Writing lang={langKey} />
       <Stakeholders lang={langKey} />
-      <SponsorSection />
+      <SponsorSection lang={langKey} />
       <Footer lang={langKey} />
     </Layout>
   );
