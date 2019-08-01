@@ -57,7 +57,7 @@ Ha sido estrella del Royal Ballet de Londres e invitada de las compañías más 
       },
       {
         name: 'D. Jesús Cimarro',
-        title: 'Director de la Academia Española de las Artes Escénicas',
+        title: 'Presidente de la Academia de las Artes Escénicas de España',
       },
       {
         name: 'Prof. D. Javier Ramos',
