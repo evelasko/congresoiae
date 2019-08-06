@@ -31,7 +31,7 @@ const IndexPage = ({ pageContext: { langKey }, location: { pathname } }) => (
     <Footer lang={langKey} />
     <CookieConsent
       location="bottom"
-      buttonText="I Understand"
+      buttonText="Entendido"
       cookieName="cookieNi"
       style={{ background: '#2B373B' }}
       buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
