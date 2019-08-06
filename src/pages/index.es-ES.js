@@ -1,4 +1,5 @@
 import React from 'react';
+import CookieConsent from 'react-cookie-consent';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
@@ -28,6 +29,17 @@ const IndexPage = ({ pageContext: { langKey }, location: { pathname } }) => (
     <Stakeholders lang={langKey} />
     <SponsorSection />
     <Footer lang={langKey} />
+    <CookieConsent
+      location="bottom"
+      buttonText="I Understand"
+      cookieName="cookieNi"
+      style={{ background: '#2B373B' }}
+      buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
+      expires={150}
+    >
+      Este sitio web utiliza cookies para ofrecer una mejor experiencia de
+      usuario.{' '}
+    </CookieConsent>
   </Layout>
 );
 

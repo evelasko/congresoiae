@@ -50,6 +50,7 @@
     "netlify-cms": "^2.9.6",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "react-cookie-consent": "^2.3.2",
     "react-dom": "^16.8.6",
     "react-dropzone": "^10.1.5",
     "react-fontawesome": "^1.6.1",

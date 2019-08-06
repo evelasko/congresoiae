@@ -92,6 +92,9 @@ congreso@alicialonso.org`}
               <Link to={`/${lang}/privacy/`}>Privacidad de Datos</Link>
             </p>
             <p>
+              <Link to={`/${lang}/cookies/`}>Política de Cookies</Link>
+            </p>
+            <p>
               <Link to={`/${lang}/policy/`}>Política de Cancelaciones</Link>
             </p>
             <img src={VM} width="100" />
