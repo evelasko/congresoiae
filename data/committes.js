@@ -7,9 +7,13 @@ const Committees = {
         title: `Embajadora de Buena Voluntad de Naciones Unidas y Embajadora Mundial de la Danza ITI/UNESCO.
           Directora General del Ballet Nacional de Cuba.
           Gran Premio de la Ciudad de París (1966, 1970).
-          Doctorado Honoris Causa: Universidad de Costa Rica; Universidad Autónoma de Guadalajara, México; Universidad de El Salvador; Universidad Politécnica de Valencia, España.
+          Doctorado Honoris Causa: Universidad d e la Habana; Universidad de Costa Rica; Universidad Autónoma de Guadalajara, México; Universidad de El Salvador; Universidad Politécnica de Valencia, España.
+          Premio Alba de las Artes de la alianza Bolivariana para las Américas.
+          Premio Irene Lidova, Cannes, Francia.
+          Directora Honoraria del Ballet Nacional de Panamá.
+          Título de Ciudadana Honoraria de Buenos Aires.
           Condecorada en el Reino de España con la Encomienda de Isabel la Católica por su lealtad acrisolada.
-          Medalla de Oro al Mérito de las Bellas Artes.
+          Medalla de Oro al Mérito de las Bellas Artes España.
           Miembro de la Legión de Honor de la República de Francia en el Grado de Oficial Mayor y de Comendadora de las Artes y las Letras.
           Distinguida con la Orden de Elizabeth II del Reino Unido.
           Miembro de Honor del Congreso de los Estados Unidos de Norteamérica.`,
@@ -98,8 +102,8 @@ Vicepresidente para América del Instituto Internacional de Teatro ITI/UNESCO`,
       },
       {
         name: 'Prof. D. Alexis Seijo García',
-        title:
-          'Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica',
+        title: `Rector  Universidad de las Artes, La Habana.
+          Presidente de la Red de Universidades de Artes Escénicas de Latinoamérica`,
       },
       {
         name: 'D. Federico Mayor Zaragoza',

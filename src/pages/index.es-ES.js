@@ -1,3 +1,4 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import CookieConsent from 'react-cookie-consent';
 import Footer from '../components/Footer';
@@ -37,8 +38,10 @@ const IndexPage = ({ pageContext: { langKey }, location: { pathname } }) => (
       buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
       expires={150}
     >
-      Este sitio web utiliza cookies para ofrecer una mejor experiencia de
-      usuario.{' '}
+      Este sitio web utiliza cookies para ofrecer sus servicios con la mejor
+      experiencia de usuario posible. Al hacer uso del mismo asumimos tu
+      conformidad hacia nuestra{' '}
+      <Link to={`/${langKey}/cookies/`}>Política de Cookies</Link>
     </CookieConsent>
   </Layout>
 );
