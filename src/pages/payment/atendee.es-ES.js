@@ -85,6 +85,9 @@ class IndexPage extends React.Component {
             cardNonceResponseReceived={this.cardNonceResponseReceived}
             createVerificationDetails={this.createVerificationDetails}
           >
+            {
+              // <form action="http://localhost:4000/payment" method="POST" ref="payform" >
+            }
             <fieldset className="sq-fieldset">
               <CreditCardNumberInput />
               <div className="sq-form-third">
@@ -99,6 +102,9 @@ class IndexPage extends React.Component {
                 <CreditCardCVVInput />
               </div>
             </fieldset>
+            <button type="submit" value="Submit" className="sq-creditcard">
+              Submit
+            </button>
 
             <CreditCardSubmitButton>Pay $1.00</CreditCardSubmitButton>
           </SquarePaymentForm>

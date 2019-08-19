@@ -13,6 +13,14 @@ const client = contentful.createClient({
 const getAboutEntry = entry => entry.sys.contentType.sys.id === 'about';
 
 const plugins = [
+  {
+    resolve: `gatsby-plugin-material-ui`,
+    options: {
+      stylesProvider: {
+        injectFirst: true,
+      },
+    },
+  },
   'gatsby-plugin-react-helmet',
   'gatsby-transformer-sharp',
   'gatsby-plugin-sharp',
