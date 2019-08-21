@@ -1,7 +1,7 @@
 const contentful = require('contentful');
 const manifestConfig = require('./manifest-config');
 const languages = require('./data/languages');
-require('dotenv').config();
+require('dotenv').config({ path: `.env` });
 
 const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID } = process.env;
 
