@@ -1,16 +1,18 @@
 import React from 'react';
-import CryptoJS from 'crypto-js';
-import { RedsysBuilder, PaymentBuilder } from 'redsys-polite';
+// import CryptoJS from 'crypto-js';
+// import { RedsysBuilder, PaymentBuilder } from 'redsys-polite';
+import RedSys from 'redsys-pos';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
 import styled from 'styled-components';
 import csc from 'country-state-city';
-const orderid = require('order-id')(process.env.JWT_SECRET);
-// import 'react-credit-cards/es/styles-compiled.css';
+const orderid = require('order-id')(process.env.GATSBY_POPYTO);
+const shortid = require('shortid');
 import AutosuggestInput from '../../../components/inputs/autosuggest';
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
 import Layout from '../../../components/Layout';
+// import {rqConfirm} from '../../../util/requests'
 
 const Container = styled.div`
   display: inline-block;
@@ -23,10 +25,21 @@ const Container = styled.div`
 
 const generateOrderId = () => {
   var chars = 'abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ';
-  return orderid
-    .generate()
-    .replace('-', chars.substr(Math.floor(Math.random() * 53), 1))
-    .slice(0, 10);
+  shortid.characters(
+    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_',
+  );
+  return (
+    orderid
+      .generate()
+      .slice(12, 16)
+      .split('')
+      .reverse()
+      .join('') +
+    shortid
+      .generate()
+      .replace('-', chars.substr(Math.floor(Math.random() * 53), 1))
+      .replace('_', chars.substr(Math.floor(Math.random() * 53), 1))
+  ).slice(0, 11);
 };
 
 class IndexPage extends React.Component {
@@ -116,31 +129,66 @@ class IndexPage extends React.Component {
       total,
       orderId,
     };
-    const redsys = new RedsysBuilder()
-      .setMerchantCode(process.env.GATSBY_COM_CODE)
-      .setName('Fundacion Alicia Alonso')
-      .setTitular('Fundacion Alicia Alonso')
-      .setSecret(process.env.GATSBY_COM_CLVE)
-      .setTerminal(process.env.GATSBY_COM_TERM)
-      .enableDebug()
-      .build();
 
-    const payment = new PaymentBuilder()
-      .setTotal(total)
-      .setOrderId(orderId)
-      .setData(orderData)
-      .setUrlMerchant('https://api.alicialonso.org/confirmation')
-      .setUrlCancel(`https://congreso.alicialonso.org/${langKey}/payment/error`)
-      .setUrlOK(
-        `https://congreso.alicialonso.org/${langKey}/payment/confirmation`,
-      )
-      .build();
+    // const redsys = new RedsysBuilder()
+    //   .setMerchantCode(process.env.GATSBY_COM_CODE)
+    //   .setName('Fundacion Alicia Alonso')
+    //   .setTitular('Fundacion Alicia Alonso')
+    //   .setSecret(process.env.GATSBY_COM_CLVE)
+    //   .enableDebug()
+    //   .build();
 
-    const pForm = redsys.getFormData(payment);
-    console.log('re-rendered...');
-    console.log('orderData:', orderData);
-    console.log('orderDataLength: ', JSON.stringify(orderData).length);
-    console.log('formData: ', pForm);
+    // console.log('MERCHANT CLVE: ', process.env.GATSBY_COM_CLVE)
+
+    // const payment = new PaymentBuilder()
+    //   .setTotal(total)
+    //   .setOrderId(orderId)
+    //   .setData(orderData)
+    //   .setUrlMerchant('https://api.alicialonso.org/confirmation')
+    //   .setUrlCancel(`https://congreso.alicialonso.org/${langKey}/payment/error`)
+    //   .setUrlOK(
+    //     `https://congreso.alicialonso.org/${langKey}/payment/confirmation`,
+    //   )
+    //   .build();
+
+    // const {Ds_Signature, Ds_MerchantParameters, Ds_SignatureVersion} = redsys.getFormData(payment);
+    // console.log('re-rendered...');
+    // console.log('orderData:', orderData);
+    // console.log('orderDataLength: ', JSON.stringify(orderData).length);
+    // console.log('Signature: ', Ds_Signature);
+    // console.log('Merchant Params:', Ds_MerchantParameters)
+    // console.log('DECODED MIDDLE PARAM; ', JSON.parse(new Buffer(Ds_MerchantParameters,'base64')))
+    // redsys.decodeNotifiedMerchantParams(Ds_Signature, Ds_MerchantParameters)
+    //   .then((decodedParams) => console.log('Decoded Data: ', decodedParams))
+    //   .catch(e => console.log('Decode Error: ',e)); // Catch error for invalid signature
+
+    const { CURRENCIES, TRANSACTION_TYPES } = RedSys;
+    const redsys = new RedSys(process.env.GATSBY_COM_CLVE);
+
+    var obj = {
+      amount: '100', // cents (in euro)
+      orderReference: generateOrderId(),
+      merchantName: 'Fundacion Alicia Alonso',
+      merchantCode: process.env.GATSBY_COM_CODE,
+      currency: CURRENCIES.EUR,
+      transactionType: TRANSACTION_TYPES.AUTHORIZATION, // '0'
+      terminal: process.env.GATSBY_COM_TERM,
+      merchantURL: 'https://api.alicialonso.org/payment/confirmation',
+      successURL: `https://congreso.alicialonso.org/${langKey}/payment/error`,
+      errorURL: `https://congreso.alicialonso.org/${langKey}/payment/confirm`,
+    };
+
+    console.log('Params: ', obj);
+
+    const {
+      Ds_SignatureVersion,
+      Ds_MerchantParameters,
+      Ds_Signature,
+    } = redsys.makePaymentParameters(obj);
+
+    console.log('Signature: ', Ds_Signature);
+    console.log('Merchant Params:', Ds_MerchantParameters);
+
     return (
       <Layout lang={langKey}>
         <Header lang={langKey} pathname={pathname} />
@@ -156,18 +204,14 @@ class IndexPage extends React.Component {
                 <input
                   type="hidden"
                   name="Ds_SignatureVersion"
-                  value={pForm.Ds_SignatureVersion}
+                  value={Ds_SignatureVersion}
                 />
                 <input
                   type="hidden"
                   name="Ds_MerchantParameters"
-                  value={pForm.Ds_MerchantParameters}
+                  value={Ds_MerchantParameters}
                 />
-                <input
-                  type="hidden"
-                  name="Ds_Signature"
-                  value={pForm.Ds_Signature}
-                />
+                <input type="hidden" name="Ds_Signature" value={Ds_Signature} />
                 <Grid container alignItems="center" spacing={3}>
                   <Grid item xs={12}>
                     <TextField
