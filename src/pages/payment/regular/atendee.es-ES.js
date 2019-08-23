@@ -1,18 +1,17 @@
 import React from 'react';
-// import CryptoJS from 'crypto-js';
-// import { RedsysBuilder, PaymentBuilder } from 'redsys-polite';
-import RedSys from 'redsys-pos';
 import TextField from '@material-ui/core/TextField';
 import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import csc from 'country-state-city';
-const orderid = require('order-id')(process.env.GATSBY_POPYTO);
-const shortid = require('shortid');
 import AutosuggestInput from '../../../components/inputs/autosuggest';
 import Footer from '../../../components/Footer';
 import Header from '../../../components/Header';
 import Layout from '../../../components/Layout';
-// import {rqConfirm} from '../../../util/requests'
+import { setTx } from '../../../util/payments';
+import { colors } from '../../../styles/theme';
+import RedSys from 'redsys-pos';
 
 const Container = styled.div`
   display: inline-block;
@@ -23,24 +22,27 @@ const Container = styled.div`
   padding: 20px;
 `;
 
-const generateOrderId = () => {
-  var chars = 'abcdefghijklmnopqurstuvwxyzABCDEFGHIJKLMNOPQURSTUVWXYZ';
-  shortid.characters(
-    '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_',
-  );
-  return (
-    orderid
-      .generate()
-      .slice(12, 16)
-      .split('')
-      .reverse()
-      .join('') +
-    shortid
-      .generate()
-      .replace('-', chars.substr(Math.floor(Math.random() * 53), 1))
-      .replace('_', chars.substr(Math.floor(Math.random() * 53), 1))
-  ).slice(0, 11);
-};
+const ColorButton = withStyles(theme => ({
+  root: {
+    fontFamily: [
+      '"Tranx"',
+      '"Montserrat"',
+      '"Segoe UI"',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif',
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(','),
+    color: colors.secondaryLight,
+    backgroundColor: colors.secondary,
+    '&:hover': {
+      backgroundColor: colors.secondaryDark,
+    },
+  },
+}))(Button);
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -50,26 +52,35 @@ class IndexPage extends React.Component {
       allStates = allStates.concat(csc.getStatesOfCountry(id));
     });
     this.state = {
-      errorMessages: [],
-      firstname: '',
-      lastname: '',
-      email: '',
-      address1: '',
-      address2: '',
+      loading: false,
+      errorMessages: '',
       country: null,
-      regionName: '',
-      countryName: '',
       region: null,
-      city: '',
-      zip: '',
-      total: 1, // change here !!!
-      attendees: 0,
+      txData: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        address1: '',
+        address2: '',
+        country: '',
+        region: '',
+        city: '',
+        zip: '',
+        total: 1, // change here !!!
+        attendees: 1,
+      },
     };
   }
 
-  updateFormData({ target }) {
-    this.setState({ [target.id]: target.value });
+  updateFormData({ target: { id, value } }) {
+    this.setState({
+      txData: {
+        ...this.state.txData,
+        [id]: value,
+      },
+    });
   }
+
   setCountry(element) {
     if (element) {
       const country = csc
@@ -80,6 +91,7 @@ class IndexPage extends React.Component {
       }
     }
   }
+
   setRegion(element) {
     const { country } = this.state;
     if (element && country) {
@@ -92,102 +104,70 @@ class IndexPage extends React.Component {
     }
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+    const { langKey } = this.props;
+    const { txData } = this.state;
+
+    // Create form
+    var form = document.createElement('form');
+    form.setAttribute(
+      'action',
+      'https://sis-t.redsys.es:25443/sis/realizarPago',
+    );
+    form.setAttribute('method', 'POST');
+    form.setAttribute('style', 'display: none');
+
+    // Set parameters
+
+    const redsys = new RedSys(process.env.GATSBY_COM_CLVE);
+
+    var obj = {
+      amount: '100', // cents (in euro)
+      orderReference: '1508428360',
+      merchantName: 'FUNDACION ALICIA ALONSO',
+      merchantCode: process.env.GATSBY_COM_CODE,
+      currency: '978',
+      transactionType: '0', // '0'
+      terminal: '002',
+      merchantURL: 'http://www.my-shop.com/',
+      successURL: 'http://localhost:8080/success',
+      errorURL: 'http://localhost:8080/error',
+    };
+
+    const tx = redsys.makePaymentParameters(obj);
+
+    // const tx = setTx({
+    //     txData,
+    //     description: "Congress Single Regular Entry",
+    //     total: 1,
+    //     url: "https://api.alicialonso.org/payment/confirmation",
+    //     urlOk: `https://congreso.alicialonso.org/${langKey}/payment/error`,
+    //     urlKo: `https://congreso.alicialonso.org/${langKey}/payment/confirm`
+    // })
+
+    // Create form fields
+    for (var k in tx) {
+      var field = document.createElement('input');
+      field.setAttribute('type', 'hidden');
+      field.setAttribute('name', k);
+      field.setAttribute('value', tx[k]);
+      form.appendChild(field);
+    }
+
+    console.log('ready form submission');
+
+    // Append and submit form -  this will leave the page
+    document.body.appendChild(form);
+    form.submit();
+  }
+
   render() {
     const {
       pageContext: { langKey },
       location: { pathname },
     } = this.props;
-    const {
-      firstname,
-      lastname,
-      email,
-      address1,
-      address2,
-      country,
-      region,
-      countryName,
-      regionName,
-      city,
-      zip,
-      attendees,
-      total,
-    } = this.state;
-
-    const orderId = generateOrderId();
-
-    const orderData = {
-      firstname,
-      lastname,
-      email,
-      address1,
-      address2,
-      country: countryName,
-      region: regionName,
-      city,
-      zip,
-      attendees,
-      total,
-      orderId,
-    };
-
-    // const redsys = new RedsysBuilder()
-    //   .setMerchantCode(process.env.GATSBY_COM_CODE)
-    //   .setName('Fundacion Alicia Alonso')
-    //   .setTitular('Fundacion Alicia Alonso')
-    //   .setSecret(process.env.GATSBY_COM_CLVE)
-    //   .enableDebug()
-    //   .build();
-
-    // console.log('MERCHANT CLVE: ', process.env.GATSBY_COM_CLVE)
-
-    // const payment = new PaymentBuilder()
-    //   .setTotal(total)
-    //   .setOrderId(orderId)
-    //   .setData(orderData)
-    //   .setUrlMerchant('https://api.alicialonso.org/confirmation')
-    //   .setUrlCancel(`https://congreso.alicialonso.org/${langKey}/payment/error`)
-    //   .setUrlOK(
-    //     `https://congreso.alicialonso.org/${langKey}/payment/confirmation`,
-    //   )
-    //   .build();
-
-    // const {Ds_Signature, Ds_MerchantParameters, Ds_SignatureVersion} = redsys.getFormData(payment);
-    // console.log('re-rendered...');
-    // console.log('orderData:', orderData);
-    // console.log('orderDataLength: ', JSON.stringify(orderData).length);
-    // console.log('Signature: ', Ds_Signature);
-    // console.log('Merchant Params:', Ds_MerchantParameters)
-    // console.log('DECODED MIDDLE PARAM; ', JSON.parse(new Buffer(Ds_MerchantParameters,'base64')))
-    // redsys.decodeNotifiedMerchantParams(Ds_Signature, Ds_MerchantParameters)
-    //   .then((decodedParams) => console.log('Decoded Data: ', decodedParams))
-    //   .catch(e => console.log('Decode Error: ',e)); // Catch error for invalid signature
-
-    const { CURRENCIES, TRANSACTION_TYPES } = RedSys;
-    const redsys = new RedSys(process.env.GATSBY_COM_CLVE);
-
-    var obj = {
-      amount: '100', // cents (in euro)
-      orderReference: generateOrderId(),
-      merchantName: 'Fundacion Alicia Alonso',
-      merchantCode: process.env.GATSBY_COM_CODE,
-      currency: CURRENCIES.EUR,
-      transactionType: TRANSACTION_TYPES.AUTHORIZATION, // '0'
-      terminal: process.env.GATSBY_COM_TERM,
-      merchantURL: 'https://api.alicialonso.org/payment/confirmation',
-      successURL: `https://congreso.alicialonso.org/${langKey}/payment/error`,
-      errorURL: `https://congreso.alicialonso.org/${langKey}/payment/confirm`,
-    };
-
-    console.log('Params: ', obj);
-
-    const {
-      Ds_SignatureVersion,
-      Ds_MerchantParameters,
-      Ds_Signature,
-    } = redsys.makePaymentParameters(obj);
-
-    console.log('Signature: ', Ds_Signature);
-    console.log('Merchant Params:', Ds_MerchantParameters);
+    const { country, region } = this.state;
 
     return (
       <Layout lang={langKey}>
@@ -196,132 +176,120 @@ class IndexPage extends React.Component {
           <h2>Payments</h2>
           <center>
             <div style={{ width: '80%', alignSelf: 'center' }}>
-              <form
-                action={process.env.GATSBY_COM_GATE}
-                method="POST"
-                ref="payform"
-              >
-                <input
-                  type="hidden"
-                  name="Ds_SignatureVersion"
-                  value={Ds_SignatureVersion}
-                />
-                <input
-                  type="hidden"
-                  name="Ds_MerchantParameters"
-                  value={Ds_MerchantParameters}
-                />
-                <input type="hidden" name="Ds_Signature" value={Ds_Signature} />
-                <Grid container alignItems="center" spacing={3}>
-                  <Grid item xs={12}>
-                    <TextField
-                      id="firstname"
-                      label="First Name"
-                      placeholder="firstName"
-                      margin="normal"
-                      fullWidth
-                      onBlur={this.updateFormData.bind(this)}
-                    />
-                    <TextField
-                      id="lastname"
-                      label="Last Name"
-                      placeholder="lastName"
-                      margin="normal"
-                      fullWidth
-                      onBlur={this.updateFormData.bind(this)}
-                    />
-                    <TextField
-                      required={true}
-                      id="email"
-                      label="Email"
-                      placeholder="email"
-                      margin="normal"
-                      fullWidth
-                      onBlur={this.updateFormData.bind(this)}
-                    />
+              <Grid container alignItems="center" spacing={3}>
+                <Grid item xs={12}>
+                  <TextField
+                    id="firstname"
+                    label="First Name"
+                    placeholder="firstName"
+                    margin="normal"
+                    fullWidth
+                    onBlur={this.updateFormData.bind(this)}
+                  />
+                  <TextField
+                    id="lastname"
+                    label="Last Name"
+                    placeholder="lastName"
+                    margin="normal"
+                    fullWidth
+                    onBlur={this.updateFormData.bind(this)}
+                  />
+                  <TextField
+                    required={true}
+                    id="email"
+                    label="Email"
+                    placeholder="email"
+                    margin="normal"
+                    fullWidth
+                    onBlur={this.updateFormData.bind(this)}
+                  />
 
-                    <TextField
-                      id="address1"
-                      label="Street Address"
-                      placeholder="address"
-                      margin="normal"
-                      fullWidth
-                      onBlur={this.updateFormData.bind(this)}
-                    />
-                    <TextField
-                      id="address2"
-                      label="Building/Apt"
-                      placeholder="building/apt."
-                      margin="normal"
-                      fullWidth
-                      onBlur={this.updateFormData.bind(this)}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <AutosuggestInput
-                      suggestions={csc.getAllCountries()}
-                      inputProps={{
-                        label: 'Country',
-                        id: 'countryName',
-                        placeholder: 'your country...',
-                        margin: 'normal',
-                        inputRef: this.setCountry.bind(this),
-                        onBlur: this.updateFormData.bind(this),
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <AutosuggestInput
-                      suggestions={
-                        country ? csc.getStatesOfCountry(country.id) : []
-                      }
-                      inputProps={{
-                        label: 'Region',
-                        id: 'regionName',
-                        placeholder: 'your region...',
-                        margin: 'normal',
-                        inputRef: this.setRegion.bind(this),
-                        onBlur: this.updateFormData.bind(this),
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <AutosuggestInput
-                      suggestions={
-                        region ? csc.getCitiesOfState(region.id) : []
-                      }
-                      inputProps={{
-                        label: 'City',
-                        id: 'city',
-                        placeholder: 'your city...',
-                        margin: 'normal',
-                        onBlur: this.updateFormData.bind(this),
-                      }}
-                    />
-                  </Grid>
-                  <Grid item xs={12} sm={6}>
-                    <TextField
-                      id="zip"
-                      label="Postal Code"
-                      placeholder="zip/postal code"
-                      margin="normal"
-                      fullWidth
-                      onBlur={this.updateFormData.bind(this)}
-                    />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <button type="submit" value="Submit">
-                      Submit
-                    </button>
-                  </Grid>
+                  <TextField
+                    id="address1"
+                    label="Street Address"
+                    placeholder="address"
+                    margin="normal"
+                    fullWidth
+                    onBlur={this.updateFormData.bind(this)}
+                  />
+                  <TextField
+                    id="address2"
+                    label="Building/Apt"
+                    placeholder="building/apt."
+                    margin="normal"
+                    fullWidth
+                    onBlur={this.updateFormData.bind(this)}
+                  />
                 </Grid>
-              </form>
+                <Grid item xs={12} sm={6}>
+                  <AutosuggestInput
+                    suggestions={csc.getAllCountries()}
+                    inputProps={{
+                      label: 'Country',
+                      id: 'country',
+                      placeholder: 'your country...',
+                      margin: 'normal',
+                      inputRef: this.setCountry.bind(this),
+                      onBlur: this.updateFormData.bind(this),
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <AutosuggestInput
+                    suggestions={
+                      country ? csc.getStatesOfCountry(country.id) : []
+                    }
+                    inputProps={{
+                      label: 'Region',
+                      id: 'region',
+                      placeholder: 'your region...',
+                      margin: 'normal',
+                      inputRef: this.setRegion.bind(this),
+                      onBlur: this.updateFormData.bind(this),
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <AutosuggestInput
+                    suggestions={region ? csc.getCitiesOfState(region.id) : []}
+                    inputProps={{
+                      label: 'City',
+                      id: 'city',
+                      placeholder: 'your city...',
+                      margin: 'normal',
+                      onBlur: this.updateFormData.bind(this),
+                    }}
+                  />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                  <TextField
+                    id="zip"
+                    label="Postal Code"
+                    placeholder="zip/postal code"
+                    margin="normal"
+                    fullWidth
+                    onBlur={this.updateFormData.bind(this)}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <ColorButton
+                    variant="contained"
+                    size="large"
+                    onClick={this.onSubmit.bind(this)}
+                  >
+                    Datos de Pago
+                  </ColorButton>
+                </Grid>
+              </Grid>
             </div>
           </center>
           <div className="sq-error-message">
-            {this.state.errorMessages.map(errorMessage => (
-              <li key={`sq-error-${errorMessage}`}>{errorMessage}</li>
-            ))}
+            {
+              this.state.errorMessages
+              //     this.state.errorMessages.map(errorMessage => (
+              //   <li key={`sq-error-${errorMessage}`}>{errorMessage}</li>
+              // ))
+            }
           </div>
         </Container>
         <Footer />
