@@ -235,6 +235,9 @@ class IndexPage extends React.Component {
     const {
       pageContext: { langKey },
     } = this.props;
+    const {
+      selectedProduct: { name, description, unitprice },
+    } = this.state;
     axios({
       method: 'POST',
       url: `${process.env.GATSBY_API_SERVER}payment/getsignature/`,
@@ -242,8 +245,8 @@ class IndexPage extends React.Component {
         'Content-Type': 'application/json',
       },
       params: {
-        description: 'Single Seat',
-        total: 1,
+        description: `${name} - ${description}`,
+        total: unitprice,
         urlOk: `https://congreso.alicialonso.org/${langKey}/payment/confirm/`,
         urlKo: `https://congreso.alicialonso.org/${langKey}/payment/error/`,
         txData: this.state.txData,
@@ -336,7 +339,7 @@ class IndexPage extends React.Component {
                   <TextField
                     required={true}
                     id="firstname"
-                    label="First Name"
+                    label="Nombre"
                     placeholder="firstName"
                     margin="normal"
                     fullWidth
@@ -345,7 +348,7 @@ class IndexPage extends React.Component {
                   <TextField
                     required={true}
                     id="lastname"
-                    label="Last Name"
+                    label="Apellidos"
                     placeholder="lastName"
                     margin="normal"
                     fullWidth
@@ -355,7 +358,7 @@ class IndexPage extends React.Component {
                   <TextField
                     required={true}
                     id="address1"
-                    label="Street Address"
+                    label="Dirección"
                     placeholder="address"
                     margin="normal"
                     fullWidth
@@ -363,7 +366,7 @@ class IndexPage extends React.Component {
                   />
                   <TextField
                     id="address2"
-                    label="Building/Apt"
+                    label="Edificio / Bloque / Puerta"
                     placeholder="building/apt."
                     margin="normal"
                     fullWidth
@@ -375,7 +378,7 @@ class IndexPage extends React.Component {
                     suggestions={csc.getAllCountries()}
                     inputProps={{
                       required: true,
-                      label: 'Country',
+                      label: 'País',
                       id: 'country',
                       placeholder: 'your country...',
                       margin: 'normal',
@@ -405,7 +408,7 @@ class IndexPage extends React.Component {
                     suggestions={region ? csc.getCitiesOfState(region.id) : []}
                     inputProps={{
                       required: true,
-                      label: 'City',
+                      label: 'Ciudad',
                       id: 'city',
                       placeholder: 'your city...',
                       margin: 'normal',
@@ -417,7 +420,7 @@ class IndexPage extends React.Component {
                   <TextField
                     required={true}
                     id="zip"
-                    label="Postal Code"
+                    label="Código Postal"
                     placeholder="zip/postal code"
                     margin="normal"
                     fullWidth
