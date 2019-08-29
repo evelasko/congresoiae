@@ -105,7 +105,8 @@ class IndexPage extends React.Component {
         region: '',
         city: '',
         zip: '',
-        total: 0, // change here !!!
+        total: 0,
+        productId: '',
       },
     };
   }
@@ -129,6 +130,7 @@ class IndexPage extends React.Component {
         txData: {
           ...this.state.txData,
           total: baseProduct.unitprice,
+          productId: baseProduct.id,
         },
       });
     } catch (e) {
@@ -164,11 +166,11 @@ class IndexPage extends React.Component {
     }
 
     const foundDiscount = this.state.discounts.filter(
-      ({ email }) => email === e.target.value,
+      ({ email, applied }) => email === e.target.value && applied == true,
     );
     // if found, set the product accordingly
     if (foundDiscount[0]) {
-      const { unitprice, name, description } = foundDiscount[0].product;
+      const { unitprice, name, description, id } = foundDiscount[0].product;
       this.setState({
         selectedProduct: foundDiscount[0].product,
         dialog: {
@@ -181,6 +183,7 @@ class IndexPage extends React.Component {
           ...this.state.txData,
           email: e.target.value,
           total: unitprice,
+          productId: id,
         },
       });
     } else {
@@ -191,6 +194,7 @@ class IndexPage extends React.Component {
           ...this.state.txData,
           email: e.target.value,
           total: this.state.baseProduct.unitprice,
+          productId: this.state.baseProduct.id,
         },
       });
     }
