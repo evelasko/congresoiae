@@ -7,7 +7,7 @@ const Committees = {
         title: `Embajadora de Buena Voluntad de Naciones Unidas y Embajadora Mundial de la Danza ITI/UNESCO.
           Directora General del Ballet Nacional de Cuba.
           Gran Premio de la Ciudad de París (1966, 1970).
-          Doctorado Honoris Causa: Universidad d e la Habana; Universidad de Costa Rica; Universidad Autónoma de Guadalajara, México; Universidad de El Salvador; Universidad Politécnica de Valencia, España.
+          Doctorado Honoris Causa: Universidad de la Habana; Universidad de Costa Rica; Universidad Autónoma de Guadalajara, México; Universidad de El Salvador; Universidad Politécnica de Valencia, España.
           Premio Alba de las Artes de la alianza Bolivariana para las Américas.
           Premio Irene Lidova, Cannes, Francia.
           Directora Honoraria del Ballet Nacional de Panamá.
@@ -210,7 +210,7 @@ Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por 
     ],
   },
   cientific: {
-    header: { en: 'Cientific Committee', es: 'Comité Científico' },
+    header: { en: 'Scientific Committee', es: 'Comité Científico' },
     items: [
       {
         name: 'Dª. Carmen Caffarel Serra',
