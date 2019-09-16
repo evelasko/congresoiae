@@ -90,11 +90,19 @@ const Stakeholders = ({ lang }) => (
         <Image />
         <Text>{translations.call[lang.slice(0, 2)].description[1]}</Text>
         {
-          // <Link to={`/${lang}/attend`}>
-          // <Button>
-          //   {translations.call[lang.slice(0, 2)].buttons[1].toUpperCase()}
-          // </Button>
-          // </Link>
+          <Link to={`/${lang}/payment/atendee/`}>
+            <Button>
+              {translations.call[lang.slice(0, 2)].buttons[1].toUpperCase()}
+            </Button>
+          </Link>
+        }
+        <Text>{translations.call[lang.slice(0, 2)].discount}</Text>
+        {
+          <Link to={`/${lang}/payment/discount/`}>
+            <Button>
+              {translations.call[lang.slice(0, 2)].buttons[2].toUpperCase()}
+            </Button>
+          </Link>
         }
       </CallColumn>
     </CallContainer>

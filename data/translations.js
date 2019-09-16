@@ -37,7 +37,9 @@ const translations = {
         'If you would like to present a keynote of your research please read thoroughly the Call for Papers and once you are ready send the proposal to papers@alicialonso.org',
         'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!\nRegistration for participants will open September 1st, 2019.',
       ],
-      buttons: ['Call for Papers', 'Join Us'],
+      buttons: ['Call for Papers', 'Join Us', 'Apply for Discount'],
+      discount:
+        'The organization grant discounts to students and alumni of Alicia Alonso Institute, URJC University and members of ITI/UNITWIN Network, click below to apply.',
     },
     es: {
       modalities: ['expone', 'asiste'],
@@ -45,7 +47,9 @@ const translations = {
         `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
         '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? ¡Involúcrate y participa!\nRegistro para participantes abierto a partir del 1 de Septiembre de 2019.',
       ],
-      buttons: ['Bases de Convocatoria', 'Participa'],
+      buttons: ['Bases de Convocatoria', 'Participa', 'Solicitar Descuento'],
+      discount:
+        'La organización ofrece descuentos a estudiantes y ex-alumnos del Instituto Alicia Alonso y la Universidad Rey Juan Carlos, así como a los miembros de ITI y la Red UNITWIN, haga click abajo para solicitar tu descuento.',
     },
   },
   form: {

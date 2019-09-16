@@ -15,6 +15,7 @@ import Loading from '../../components/store/Loading';
 import StoreDialog from '../../components/store/Dialogs';
 import translations from '../../../data/translations';
 import HeaderCompact from '../../components/HeaderCompact';
+import { Link } from 'gatsby';
 
 const Container = styled.div`
   display: inline-block;
@@ -29,7 +30,6 @@ const StoreContainer = styled.div`
   padding: 1em;
   margin-top: 50px;
   width: 100%;
-
   color: ${colors.secondaryDark};
   display: grid;
   width: 100%;
@@ -79,6 +79,7 @@ class IndexPage extends React.Component {
     });
     this.state = {
       loading: true,
+      emailLoading: false,
       dialog: {
         open: false,
         title: '',
@@ -92,21 +93,13 @@ class IndexPage extends React.Component {
       region: null,
       products: [],
       baseProduct: {},
-      selectedProduct: {},
       discounts: [],
-      userDiscount: {},
+      userDiscount: undefined,
       txData: {
         firstname: '',
         lastname: '',
         email: '',
-        address1: '',
-        address2: '',
-        country: '',
-        region: '',
-        city: '',
-        zip: '',
-        total: 0,
-        productId: '',
+        institution: '',
       },
     };
   }
@@ -115,23 +108,20 @@ class IndexPage extends React.Component {
     // populate store data
     try {
       const {
-        data: { products, discounts, baseProduct },
+        data: { baseProduct },
       } = await axios({
         method: 'GET',
-        url: `${process.env.GATSBY_API_SERVER}payment/attendee/data`,
+        url: `${process.env.GATSBY_API_SERVER}payment/attendee/base`,
         headers: { 'Content-Type': 'application/json' },
       });
+      if (!baseProduct) {
+        console.log('NO BASE PRODUCT RECEIVED...');
+        this.setState({ dataError: true, loading: false });
+        return null;
+      }
       this.setState({
-        products,
-        discounts,
         baseProduct,
-        selectedProduct: baseProduct,
         loading: false,
-        txData: {
-          ...this.state.txData,
-          total: baseProduct.unitprice,
-          productId: baseProduct.id,
-        },
       });
     } catch (e) {
       console.log('Error: ', e);
@@ -151,7 +141,7 @@ class IndexPage extends React.Component {
 
   checkTxData(obj) {
     for (var key in obj) {
-      if (key === 'address2') {
+      if (key === 'institution') {
         continue;
       }
       if (obj[key] === 0 || obj[key] === '') return false;
@@ -159,45 +149,67 @@ class IndexPage extends React.Component {
     return true;
   }
 
-  updateEmail(e) {
-    let emailError = '';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e.target.value)) {
-      emailError = 'please enter a valid email address';
+  async updateEmail(e) {
+    const email = e.target.value;
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      this.setState({ emailError: 'please enter a valid email address' });
+      return null;
     }
 
-    const foundDiscount = this.state.discounts.filter(
-      ({ email, applied }) => email === e.target.value && applied == true,
-    );
-    // if found, set the product accordingly
-    if (foundDiscount[0]) {
-      const { unitprice, name, description, id } = foundDiscount[0].product;
+    this.setState({ emailLoading: true });
+
+    const {
+      data: { foundDiscount, error },
+    } = await axios({
+      headers: { 'Content-Type': 'application/json' },
+      method: 'GET',
+      params: { email },
+      url: `${process.env.GATSBY_API_SERVER}payment/attendee/find/discount/`,
+    });
+    console.log('ERROR: ', error);
+    if (!foundDiscount) {
       this.setState({
-        selectedProduct: foundDiscount[0].product,
+        userDiscount: null,
+        emailLoading: false,
+        txData: {
+          ...this.state.txData,
+          email,
+        },
+      });
+      return;
+    }
+
+    if (foundDiscount) {
+      const {
+        unitPrice,
+        name,
+        description,
+      } = foundDiscount.discountRequests[0].discount;
+      this.setState({
+        userDiscount: foundDiscount.discountRequests[0].discount,
         dialog: {
           open: !this.state.dialog.open,
           title: 'Descuento',
-          body: `La dirección de email introducida tiene asignado el siguiente descuento:\n${name}\n${description}\nPrecio: ${unitprice}€`,
+          body: `La dirección de email introducida tiene asignado el siguiente descuento:\n${name}\n${description}\nPrecio: ${unitPrice}€`,
         },
-        emailError,
+        emailLoading: false,
+        emailError: '',
         txData: {
           ...this.state.txData,
-          email: e.target.value,
-          total: unitprice,
-          productId: id,
+          email,
         },
       });
-    } else {
-      this.setState({
-        selectedProduct: this.state.baseProduct,
-        emailError,
-        txData: {
-          ...this.state.txData,
-          email: e.target.value,
-          total: this.state.baseProduct.unitprice,
-          productId: this.state.baseProduct.id,
-        },
-      });
+      return;
     }
+
+    // if none of the above then just reset product and email field
+    this.setState({
+      selectedProduct: this.state.baseProduct,
+      userDiscount: {},
+      emailError: '',
+      emailLoading: false,
+    });
   }
 
   updateFormData({ target: { id, value } }) {
@@ -211,37 +223,20 @@ class IndexPage extends React.Component {
     });
   }
 
-  setCountry(element) {
-    if (element) {
-      const country = csc
-        .getAllCountries()
-        .filter(({ name }) => name === element.value)[0];
-      if (country != this.state.country) {
-        this.setState({ country });
-      }
-    }
-  }
-
-  setRegion(element) {
-    const { country } = this.state;
-    if (element && country) {
-      const region = csc
-        .getStatesOfCountry(country.id)
-        .filter(({ name }) => name === element.value)[0];
-      if (region != this.state.region) {
-        this.setState({ region });
-      }
-    }
-  }
-
   onSubmit(e) {
     e.preventDefault();
     const {
       pageContext: { langKey },
     } = this.props;
-    const {
-      selectedProduct: { name, description, unitprice },
+    let {
+      baseProduct: { name, description, unitPrice, id },
     } = this.state;
+    let discountId = null;
+    if (this.state.userDiscount) {
+      unitPrice = this.state.userDiscount.unitPrice;
+      description = `${description}\n${this.state.userDiscount.name}`;
+      discountId = this.state.userDiscount.id;
+    }
     axios({
       method: 'POST',
       url: `${process.env.GATSBY_API_SERVER}payment/getsignature/`,
@@ -250,10 +245,15 @@ class IndexPage extends React.Component {
       },
       params: {
         description: `${name} - ${description}`,
-        total: unitprice,
+        total: unitPrice,
         urlOk: `https://congreso.alicialonso.org/${langKey}/payment/confirm/`,
         urlKo: `https://congreso.alicialonso.org/${langKey}/payment/error/`,
-        txData: this.state.txData,
+        txData: {
+          ...this.state.txData,
+          productId: id,
+          discountId,
+          total: unitPrice,
+        },
       },
     })
       .then(function(response) {
@@ -289,13 +289,17 @@ class IndexPage extends React.Component {
       pageContext: { langKey },
       location: { pathname },
     } = this.props;
-    const {
+
+    let {
       loading,
       dialog: { open, title, body },
-      country,
-      region,
-      selectedProduct: { name, description, content, unitprice, iconurl, id },
+      baseProduct: { name, description, content, unitPrice, id },
     } = this.state;
+
+    if (this.state.userDiscount) {
+      unitPrice = this.state.userDiscount.unitPrice;
+      description = `${description}\n${this.state.userDiscount.name}`;
+    }
 
     if (loading) {
       return <Loading />;
@@ -304,8 +308,17 @@ class IndexPage extends React.Component {
       <Layout lang={langKey}>
         <HeaderCompact lang={langKey} pathname={pathname} />
         <Container>
-          <h1 style={{ fontFamily: 'Tranx, sans-serif' }}>Participación</h1>
+          <h1 style={{ fontFamily: 'Tranx, sans-serif' }}>
+            Formulario de Participación
+          </h1>
           <h2>{translations.name[[langKey.slice(0, 2)]]}</h2>
+          <p>
+            La organización ofrece descuentos a alumnos del Instituto
+            Universitario Alicia Alonso, a alumnos de Tercer Ciclo de la URJC, a
+            miembros del ITI y de la Red UNITWIN. Si cumples con alguno de estos
+            requisitos puedes solicitar tu descuento siguiendo este{' '}
+            <Link to={`/${langKey}/payment/discount/`}>enlace</Link>.
+          </p>
           <StoreDialog
             open={open}
             close={this.toggleDialog.bind(this)}
@@ -315,14 +328,18 @@ class IndexPage extends React.Component {
           />
           <StoreContainer>
             <StoreColumn>
-              <ProductCard
-                name={name || 'no product selected'}
-                description={description || ''}
-                content={content || ''}
-                unitprice={unitprice || '00.0'}
-                iconurl={iconurl || ''}
-                id={id || 'productcard'}
-              />
+              {this.state.emailLoading ? (
+                <Loading />
+              ) : (
+                <ProductCard
+                  name={name || 'ningún producto seleccionado'}
+                  description={description || ''}
+                  content={content || ''}
+                  unitprice={unitPrice || '00.0'}
+                  iconurl={''}
+                  id={id || 'productcard'}
+                />
+              )}
             </StoreColumn>
             <StoreColumn>
               <Grid container alignItems="center" spacing={3}>
@@ -358,74 +375,10 @@ class IndexPage extends React.Component {
                     fullWidth
                     onBlur={this.updateFormData.bind(this)}
                   />
-
                   <TextField
-                    required={true}
-                    id="address1"
-                    label="Dirección"
-                    placeholder="address"
-                    margin="normal"
-                    fullWidth
-                    onBlur={this.updateFormData.bind(this)}
-                  />
-                  <TextField
-                    id="address2"
-                    label="Edificio / Bloque / Puerta"
-                    placeholder="building/apt."
-                    margin="normal"
-                    fullWidth
-                    onBlur={this.updateFormData.bind(this)}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <AutosuggestInput
-                    suggestions={csc.getAllCountries()}
-                    inputProps={{
-                      required: true,
-                      label: 'País',
-                      id: 'country',
-                      placeholder: 'your country...',
-                      margin: 'normal',
-                      inputRef: this.setCountry.bind(this),
-                      onBlur: this.updateFormData.bind(this),
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <AutosuggestInput
-                    suggestions={
-                      country ? csc.getStatesOfCountry(country.id) : []
-                    }
-                    inputProps={{
-                      required: true,
-                      label: 'Region',
-                      id: 'region',
-                      placeholder: 'your region...',
-                      margin: 'normal',
-                      inputRef: this.setRegion.bind(this),
-                      onBlur: this.updateFormData.bind(this),
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <AutosuggestInput
-                    suggestions={region ? csc.getCitiesOfState(region.id) : []}
-                    inputProps={{
-                      required: true,
-                      label: 'Ciudad',
-                      id: 'city',
-                      placeholder: 'your city...',
-                      margin: 'normal',
-                      onBlur: this.updateFormData.bind(this),
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                  <TextField
-                    required={true}
-                    id="zip"
-                    label="Código Postal"
-                    placeholder="zip/postal code"
+                    id="institution"
+                    label="Institución"
+                    placeholder="lastName"
                     margin="normal"
                     fullWidth
                     onBlur={this.updateFormData.bind(this)}
@@ -438,7 +391,7 @@ class IndexPage extends React.Component {
                     disabled={!this.state.go}
                     onClick={this.onSubmit.bind(this)}
                   >
-                    {`Proceder al Pago (${unitprice}€)`}
+                    {`Proceder al Pago (${unitPrice}€)`}
                   </ColorButton>
                 </Grid>
               </Grid>
