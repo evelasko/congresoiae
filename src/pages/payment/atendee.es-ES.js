@@ -271,7 +271,7 @@ class IndexPage extends React.Component {
 
         // Create form
         var form = document.createElement('form');
-        form.setAttribute('action', process.env.GATSBY_PAY_SERVER);
+        form.setAttribute('action', 'https://sis.redsys.es/sis/realizarPago');
         form.setAttribute('method', 'POST');
         form.setAttribute('style', 'display: none');
 
