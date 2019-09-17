@@ -153,7 +153,9 @@ class IndexPage extends React.Component {
   async updateEmail(e) {
     const email = e.target.value;
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      this.setState({ emailError: 'please enter a valid email address' });
+      this.setState({
+        emailError: 'Por favor introduzca una dirección de email válida',
+      });
       return null;
     }
 
@@ -168,7 +170,7 @@ class IndexPage extends React.Component {
 
     if (foundDiscount) {
       this.setState({
-        emailError: 'This email address has already been used...',
+        emailError: 'Este email ya ha sido utilizado en otra solicitud...',
       });
       return null;
     }
@@ -238,7 +240,9 @@ class IndexPage extends React.Component {
           </h1>
           <p>
             Por favor completa el siguiente formulario para solicitar tu
-            descuento.
+            descuento, incluyendo los archivos que se indican en la sección
+            Requisitos y Documentación correspondiente al descuento que va a
+            solicitar.
           </p>
           <StoreDialog
             open={open}

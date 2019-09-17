@@ -181,31 +181,40 @@ class IndexPage extends React.Component {
     }
 
     if (foundDiscount) {
-      const {
-        unitPrice,
-        name,
-        description,
-      } = foundDiscount.discountRequests[0].discount;
-      this.setState({
-        userDiscount: foundDiscount.discountRequests[0].discount,
-        dialog: {
-          open: !this.state.dialog.open,
-          title: 'Descuento',
-          body: `La dirección de email introducida tiene asignado el siguiente descuento:\n${name}\n${description}\nPrecio: ${unitPrice}€`,
-        },
-        emailLoading: false,
-        emailError: '',
-        txData: {
-          ...this.state.txData,
-          email,
-        },
-      });
-      return;
+      if (foundDiscount.discountRequests.length) {
+        console.log('IN A');
+        const {
+          unitPrice,
+          name,
+          description,
+        } = foundDiscount.discountRequests[0].discount;
+        this.setState({
+          userDiscount: foundDiscount.discountRequests[0].discount,
+          dialog: {
+            open: !this.state.dialog.open,
+            title: 'Descuento',
+            body: `La dirección de email introducida tiene asignado el siguiente descuento:\n${name}\n${description}\nPrecio: ${unitPrice}€`,
+          },
+          emailLoading: false,
+          emailError: '',
+          txData: {
+            ...this.state.txData,
+            email,
+          },
+        });
+        return;
+      } else {
+        console.log('IN B');
+        this.setState({
+          userDiscount: null,
+          emailError: '',
+          emailLoading: false,
+        });
+      }
     }
 
     // if none of the above then just reset product and email field
     this.setState({
-      selectedProduct: this.state.baseProduct,
       userDiscount: {},
       emailError: '',
       emailLoading: false,
@@ -296,7 +305,10 @@ class IndexPage extends React.Component {
       baseProduct: { name, description, content, unitPrice, id },
     } = this.state;
 
-    if (this.state.userDiscount) {
+    if (
+      this.state.userDiscount != null ||
+      this.state.userDiscount != undefined
+    ) {
       unitPrice = this.state.userDiscount.unitPrice;
       description = `${description}\n${this.state.userDiscount.name}`;
     }
@@ -353,7 +365,10 @@ class IndexPage extends React.Component {
                     fullWidth
                     onBlur={this.updateEmail.bind(this)}
                     error={!!this.state.emailError}
-                    helperText={this.state.emailError}
+                    helperText={
+                      this.state.emailError ||
+                      'Si tiene un descuento confirmado por favor introduzca la dirección de email que indicó en la solicitud para actualizar la petición.'
+                    }
                   />
                 </Grid>
                 <Grid item xs={12}>

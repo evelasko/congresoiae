@@ -45,11 +45,22 @@ const translations = {
       modalities: ['expone', 'asiste'],
       description: [
         `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
-        '¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas? ¡Involúcrate y participa!\nRegistro para participantes abierto a partir del 1 de Septiembre de 2019.',
+        `¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas?\n¡Involúcrate y participa!\n\nEl Registro para participantes general tiene una Tasa de 150 €.\n
+Si prefieres abonar las tasas a través de transferencia puedes hacerlo a la cuenta #### indicando su nombre completo y una dirección de email en el concepto de la misma.
+Para efectuar el pago con con tarjeta por favor haz clic en el siguiente botón`,
       ],
       buttons: ['Bases de Convocatoria', 'Participa', 'Solicitar Descuento'],
-      discount:
-        'La organización ofrece descuentos a estudiantes y ex-alumnos del Instituto Alicia Alonso y la Universidad Rey Juan Carlos, así como a los miembros de ITI y la Red UNITWIN, haga click abajo para solicitar tu descuento.',
+      discount: `La organización ofrece descuentos los siguientes descuentos en las tasas de participación en calidad de «oyente» :
+
+Estudiante Tercer Ciclo o Aspirante Doctor: 90 €
+
+Miembro ITI / UNITWIN / WDA: 90 €
+
+Estudiante Universitario: 90 €
+
+Estudiante de Grado/Título del Instituto Alicia Alonso: 40 €
+
+Haga click en el siguiente botón para solicitar tu descuento.`,
     },
   },
   form: {
