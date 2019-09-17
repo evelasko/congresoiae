@@ -46,7 +46,7 @@ const translations = {
       description: [
         `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
         `¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas?\n¡Involúcrate y participa!\n\nEl Registro para participantes general tiene una Tasa de 150 €.\n
-Si prefieres abonar las tasas a través de transferencia puedes hacerlo a la cuenta #### indicando su nombre completo y una dirección de email en el concepto de la misma.
+Si prefieres abonar las tasas a través de transferencia puedes hacerlo al número de cuenta 2038 2483 7060 0034 2347 indicando su nombre completo y una dirección de email en el concepto de la misma.
 Para efectuar el pago con con tarjeta por favor haz clic en el siguiente botón`,
       ],
       buttons: ['Bases de Convocatoria', 'Participa', 'Solicitar Descuento'],
