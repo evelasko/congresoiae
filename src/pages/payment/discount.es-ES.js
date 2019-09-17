@@ -90,6 +90,8 @@ class IndexPage extends React.Component {
     this.state = {
       firstname: '',
       lastname: '',
+      institution: '',
+      foreignUser: true,
       title: '',
       body: '',
       open: false,
@@ -98,7 +100,7 @@ class IndexPage extends React.Component {
       dataError: false,
       emailError: '',
       files: [],
-      discount: {},
+      discount: '',
       discounts: [],
       go: false,
     };
@@ -127,13 +129,28 @@ class IndexPage extends React.Component {
   }
 
   updateFormData({ target: { id, value } }) {
-    this.setState({ [id]: value });
+    this.setState({
+      [id]: value,
+      go:
+        this.state.email &&
+        this.state.discount &&
+        this.state.files.length &&
+        !this.state.emailError
+          ? true
+          : false,
+    });
   }
 
   handleChange(files) {
     this.setState({
       files,
-      go: this.state.email && files.length ? true : false,
+      go:
+        this.state.email &&
+        this.state.discount &&
+        files.length &&
+        !this.state.emailError
+          ? true
+          : false,
     });
   }
 
@@ -155,12 +172,13 @@ class IndexPage extends React.Component {
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       this.setState({
         emailError: 'Por favor introduzca una dirección de email válida',
+        go: false,
       });
-      return null;
+      return;
     }
 
     const {
-      data: { foundDiscount },
+      data: { foundUser, error },
     } = await axios({
       headers: { 'Content-Type': 'application/json' },
       method: 'GET',
@@ -168,18 +186,31 @@ class IndexPage extends React.Component {
       url: `${process.env.GATSBY_API_SERVER}payment/attendee/find/discount/`,
     });
 
-    if (foundDiscount) {
-      this.setState({
-        emailError: 'Este email ya ha sido utilizado en otra solicitud...',
-      });
-      return null;
+    if (foundUser) {
+      const { firstname, lastname } = foundUser;
+      this.setState({ foreignUser: false, firstname, lastname });
+    } else {
+      this.setState({ foreignUser: true });
+    }
+
+    if (error) {
+      this.setState({ emailError: error, go: false });
+      return;
+    } else {
+      this.setState({ emailError: '' });
     }
 
     // if none of the above then just set email field
     this.setState({
       email,
       emailError: '',
-      go: this.state.files.length > 0 ? true : false,
+      go:
+        this.state.email &&
+        this.state.discount &&
+        this.state.files.length &&
+        !this.state.emailError
+          ? true
+          : false,
     });
   }
 
@@ -225,19 +256,35 @@ class IndexPage extends React.Component {
       pageContext: { langKey },
       location: { pathname },
     } = this.props;
-    const { discount, discounts, loading, open, title, body } = this.state;
+    const {
+      emailError,
+      institution,
+      foreignUser,
+      firstname,
+      lastname,
+      discount,
+      discounts,
+      loading,
+      open,
+      title,
+      body,
+    } = this.state;
     const discountObj = discounts.filter(({ id }) => id === discount)[0];
     let requirements = discountObj ? discountObj.requirements : undefined;
 
+    console.log('DISCOUNT: ', discount);
     if (loading) return <Loading />;
 
     return (
       <Layout lang={langKey}>
         <HeaderCompact lang={langKey} pathname={pathname} />
         <Container>
-          <h1 style={{ fontFamily: 'Tranx, sans-serif' }}>
+          <h1 style={{ fontFamily: 'Tranx, sans-serif', marginTop: 50 }}>
             Solicitud de Descuento
           </h1>
+          <h2>
+            Categoría: <strong>Oyente</strong>
+          </h2>
           <p>
             Por favor completa el siguiente formulario para solicitar tu
             descuento, incluyendo los archivos que se indican en la sección
@@ -269,14 +316,18 @@ class IndexPage extends React.Component {
                 margin="normal"
                 fullWidth
                 onBlur={this.updateEmail.bind(this)}
-                // error={!!this.state.emailError}
-                helperText="Se le notificará a la dirección de email que indique aquí. Por favor asegúrese de introducirla correctamente."
+                error={!!emailError}
+                helperText={
+                  emailError ||
+                  'Se le notificará a la dirección de email que indique aquí. Por favor asegúrese de introducirla correctamente.'
+                }
               />
               <TextField
                 required={true}
                 id="firstname"
+                disabled={!foreignUser}
+                value={firstname}
                 label="Nombre"
-                placeholder="firstName"
                 margin="normal"
                 fullWidth
                 onBlur={this.updateFormData.bind(this)}
@@ -284,8 +335,19 @@ class IndexPage extends React.Component {
               <TextField
                 required={true}
                 id="lastname"
+                disabled={!foreignUser}
+                value={lastname}
                 label="Apellidos"
-                placeholder="lastName"
+                margin="normal"
+                fullWidth
+                onBlur={this.updateFormData.bind(this)}
+              />
+              <TextField
+                required={true}
+                id="institution"
+                disabled={!foreignUser}
+                value={institution}
+                label="Institución"
                 margin="normal"
                 fullWidth
                 onBlur={this.updateFormData.bind(this)}
