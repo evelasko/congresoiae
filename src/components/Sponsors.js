@@ -5,13 +5,14 @@ import { Heading } from 'rebass';
 import styled from 'styled-components';
 import Bcm from '../../assets/bcm.svg';
 import Fundacion from '../../assets/fundacionaa.svg';
+import BTravel from '../../assets/btravel.svg';
 import Iti from '../../assets/iti.svg';
 import ReinaSofia from '../../assets/rsofia.svg';
 import Unitwin from '../../assets/unitwin.svg';
 import Urjc from '../../assets/urjc.svg';
 import { colors } from '../styles/theme';
 
-const sponsors = [ReinaSofia, Fundacion, Iti, Unitwin, Bcm, Urjc];
+const sponsors = [ReinaSofia, Fundacion, BTravel, Iti, Unitwin, Bcm, Urjc];
 
 const SponsorWrapper = styled.div`
   width: 100%;
