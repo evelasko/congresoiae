@@ -104,6 +104,7 @@ const Stakeholders = ({ lang }) => (
             </Button>
           </Link>
         }
+        <Text>{translations.call[lang.slice(0, 2)].credit}</Text>
       </CallColumn>
     </CallContainer>
   </Section.Container>
