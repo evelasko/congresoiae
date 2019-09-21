@@ -222,11 +222,6 @@ Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por 
           Ex Directora General del Instituto Cervantes adscrito al Ministerio de Asuntos Exteriores y Cooperación`,
       },
       {
-        name: 'Prof. D. Ioshinobu Navarro Sanler',
-        title: `Profesor del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso".
-          Delegado del Rector para los Programas de Movilidad de Estudiantes y Profesores de Artes Escénicas.  Universidad Rey Juan Carlos`,
-      },
-      {
         name: 'Prof. Dª. Marifé Santiago Bolaños',
         title: `Profesora Titular. Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos.
         Ex Directora del Gabinete de Educación y Cultura de la Presidencia del Gobierno de España.
@@ -279,6 +274,21 @@ Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por 
       {
         name: 'Prof. Félix Ortega Mohedano',
         title: `Secretario Académico del Instituto Universitario de Investigación de Ciencias de la Educación. Facultad de Ciencias Sociales, Universidad de Salamanca`,
+      },
+      {
+        name: 'Prof. D. Carlos Roldán López',
+        title:
+          'Profesor Titular, Director del Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos. Profesor Máster Universitario de Artes Escénicas, Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos. Licenciado en Derecho y Filosofía, Universidad de Málaga. Doctor en Filosofía, Universidad de Málaga. Experto Universitario en Teoría Estética y Arte Contemporáneo, Universidad de Alcalá de Henares. Máster en Salud Mental y Clínica Psicoanalítica, Universidad de León',
+      },
+      {
+        name: 'Prof. Da Alexandra Sandulescu Budea',
+        title:
+          'Departamento de Comunicación de la Facultad de Ciencias de la Comunicación. Universidad Rey Juan Carlos. Miembro de IAMCR/AE-IC. Grupos de investigación INECO/MAPCOM. Fundador SPA Productions. Directora “Uverano Música”',
+      },
+      {
+        name: 'Prof. D. Amador Cernuda Lago',
+        title:
+          'Profesor Titular, Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso" y Miembro del Consejo Rector, Universidad Rey Juan Carlos. Profesor Máster Universitario de Artes Escénicas',
       },
     ],
   },
