@@ -276,7 +276,7 @@ Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por 
         title: `Secretario Académico del Instituto Universitario de Investigación de Ciencias de la Educación. Facultad de Ciencias Sociales, Universidad de Salamanca`,
       },
       {
-        name: 'Prof. D. Carlos Roldán López',
+        name: 'Prof. D. Carlos Roldán López',
         title:
           'Profesor Titular, Director del Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos. Profesor Máster Universitario de Artes Escénicas, Instituto Universitario de la Danza "Alicia Alonso", Universidad Rey Juan Carlos. Licenciado en Derecho y Filosofía, Universidad de Málaga. Doctor en Filosofía, Universidad de Málaga. Experto Universitario en Teoría Estética y Arte Contemporáneo, Universidad de Alcalá de Henares. Máster en Salud Mental y Clínica Psicoanalítica, Universidad de León',
       },
