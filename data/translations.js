@@ -35,7 +35,7 @@ const translations = {
       modalities: ['present', 'attend'],
       description: [
         'If you would like to present a keynote of your research please read thoroughly the Call for Papers and once you are ready send the proposal to papers@alicialonso.org',
-        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!\nRegistration for participants will open September 1st, 2019.',
+        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!',
       ],
       buttons: ['Call for Papers', 'Join Us', 'Apply for Discount'],
       discount:
@@ -53,7 +53,7 @@ Si prefieres abonar las tasas a través de transferencia puedes hacerlo al núme
 Para efectuar el pago con con tarjeta por favor haz clic en el siguiente botón`,
       ],
       buttons: ['Bases de Convocatoria', 'Participa', 'Solicitar Descuento'],
-      discount: `La organización ofrece descuentos los siguientes descuentos en las tasas de participación en calidad de «oyente» :
+      discount: `La organización ofrece los siguientes descuentos en las tasas de participantes :
 
 Estudiante Tercer Ciclo o Aspirante Doctor: 90 €
 
