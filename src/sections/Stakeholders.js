@@ -105,6 +105,21 @@ const Stakeholders = ({ lang }) => (
           </Link>
         }
         <Text>{translations.call[lang.slice(0, 2)].credit}</Text>
+        <Text>{`
+Descuentos especiales en viajes y alojamiento para participantes del congreso:
+B THE TRAVEL BRAND
+Pagina web: www.bthetravelbrand.com/886
+Teléfono fijo: +34942897000
+
+Personas de contacto:
+Sheila Gutiérrez
+email: grupos-torrelavega@bthetravelbrand.com
+Teléfono directo: +34625588611
+
+Mila Gómez
+email: grupos-torrelavega@bthetravelbrand.com
+Teléfono directo: +34625569816
+        `}</Text>
       </CallColumn>
     </CallContainer>
   </Section.Container>

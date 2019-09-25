@@ -222,6 +222,10 @@ Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por 
           Ex Directora General del Instituto Cervantes adscrito al Ministerio de Asuntos Exteriores y Cooperación`,
       },
       {
+        name: `Prof. D. Ioshinobu Navarro Sanler`,
+        title: `Profesor del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso". Delegado del Rector para los Programas de Movilidad de Estudiantes y Profesores de Artes Escénicas.  Universidad Rey Juan Carlos.`,
+      },
+      {
         name: 'Prof. Dª. Marifé Santiago Bolaños',
         title: `Profesora Titular. Departamento de Teoría de las Artes Escénicas y Ciencias Aplicadas, Instituto Universitario de la Danza Alicia Alonso, Universidad Rey Juan Carlos.
         Ex Directora del Gabinete de Educación y Cultura de la Presidencia del Gobierno de España.
