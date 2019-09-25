@@ -330,7 +330,7 @@ class IndexPage extends React.Component {
                 label="Nombre"
                 margin="normal"
                 fullWidth
-                onBlur={this.updateFormData.bind(this)}
+                onChange={this.updateFormData.bind(this)}
               />
               <TextField
                 required={true}
@@ -340,7 +340,7 @@ class IndexPage extends React.Component {
                 label="Apellidos"
                 margin="normal"
                 fullWidth
-                onBlur={this.updateFormData.bind(this)}
+                onChange={this.updateFormData.bind(this)}
               />
               <TextField
                 required={true}
@@ -350,7 +350,7 @@ class IndexPage extends React.Component {
                 label="Institución"
                 margin="normal"
                 fullWidth
-                onBlur={this.updateFormData.bind(this)}
+                onChange={this.updateFormData.bind(this)}
               />
               <DropzoneLabel required={true}>Documentación</DropzoneLabel>
               <DropZoneHelperText>

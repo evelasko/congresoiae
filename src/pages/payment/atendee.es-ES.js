@@ -80,6 +80,7 @@ class IndexPage extends React.Component {
     this.state = {
       loading: true,
       emailLoading: false,
+      foreignUser: false,
       dialog: {
         open: false,
         title: '',
@@ -159,15 +160,15 @@ class IndexPage extends React.Component {
 
     this.setState({ emailLoading: true });
 
-    const {
-      data: { foundDiscount, error },
-    } = await axios({
+    const { data } = await axios({
       headers: { 'Content-Type': 'application/json' },
       method: 'GET',
       params: { email },
       url: `${process.env.GATSBY_API_SERVER}payment/attendee/find/discount/`,
     });
+    const { foundDiscount, error } = data;
     console.log('ERROR: ', error);
+    console.log('FOUND DISCOUNT: ', foundDiscount);
     if (!foundDiscount) {
       this.setState({
         userDiscount: null,
@@ -182,14 +183,15 @@ class IndexPage extends React.Component {
 
     if (foundDiscount) {
       if (foundDiscount.discountRequests.length) {
-        console.log('IN A');
         const {
           unitPrice,
           name,
           description,
         } = foundDiscount.discountRequests[0].discount;
+        const { firstname, lastname } = foundDiscount;
         this.setState({
           userDiscount: foundDiscount.discountRequests[0].discount,
+          foreignUser: true,
           dialog: {
             open: !this.state.dialog.open,
             title: 'Descuento',
@@ -197,18 +199,21 @@ class IndexPage extends React.Component {
           },
           emailLoading: false,
           emailError: '',
+          go: true,
           txData: {
             ...this.state.txData,
             email,
+            firstname,
+            lastname,
           },
         });
         return;
       } else {
-        console.log('IN B');
         this.setState({
           userDiscount: null,
           emailError: '',
           emailLoading: false,
+          foreignUser: false,
         });
       }
     }
@@ -226,10 +231,12 @@ class IndexPage extends React.Component {
       ...this.state.txData,
       [id]: value,
     };
-    this.setState({
-      go: this.checkTxData(txData),
-      txData,
-    });
+    if (this.state.go === false) {
+      this.setState({
+        go: this.checkTxData(txData),
+        txData,
+      });
+    }
   }
 
   onSubmit(e) {
@@ -301,6 +308,7 @@ class IndexPage extends React.Component {
 
     let {
       loading,
+      foreignUser,
       dialog: { open, title, body },
       baseProduct: { name, description, content, unitPrice, id },
     } = this.state;
@@ -376,6 +384,7 @@ class IndexPage extends React.Component {
                     required={true}
                     id="firstname"
                     label="Nombre"
+                    disabled={foreignUser}
                     placeholder="firstName"
                     margin="normal"
                     fullWidth
@@ -385,6 +394,7 @@ class IndexPage extends React.Component {
                     required={true}
                     id="lastname"
                     label="Apellidos"
+                    disabled={foreignUser}
                     placeholder="lastName"
                     margin="normal"
                     fullWidth
@@ -393,6 +403,7 @@ class IndexPage extends React.Component {
                   <TextField
                     id="institution"
                     label="Institución"
+                    disabled={foreignUser}
                     placeholder="lastName"
                     margin="normal"
                     fullWidth
