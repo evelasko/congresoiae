@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 import csc from 'country-state-city';
-import AutosuggestInput from '../../components/inputs/autosuggest';
 import Footer from '../../components/Footer';
 import Layout from '../../components/Layout';
 import { colors } from '../../styles/theme';
@@ -24,6 +23,12 @@ const Container = styled.div`
   align-items: center;
   margin-top: 80px;
   padding: 20px;
+`;
+
+const DiscountInfo = styled.div`
+  font-weight: 800;
+  border: 1 red;
+  padding: 10px;
 `;
 
 const StoreContainer = styled.div`
@@ -339,6 +344,15 @@ class IndexPage extends React.Component {
             requisitos puedes solicitar tu descuento siguiendo este{' '}
             <Link to={`/${langKey}/payment/discount/`}>enlace</Link>.
           </p>
+          <DiscountInfo>
+            Si ha recibido la confirmación del descuento por parte de la
+            organización, por favor introduzca la dirección de email vinculada a
+            la solicitud y una vez haga clic fuera del cuadro el sistema
+            detectará su descuento. En caso de no detectarlo una vez realizada
+            la acción anterior y habiendo recibido la confirmación del
+            descuento, por favor póngase en contacto con la misma a través del
+            email congreso@alicialonso.org
+          </DiscountInfo>
           <StoreDialog
             open={open}
             close={this.toggleDialog.bind(this)}
