@@ -34,11 +34,9 @@ const Program = {
           en: 'Welcoming Speeches',
         },
         subtitle: {
-          es: `Prof. D. Javier Ramos
-          Prof. D. Alberto García
+          es: `Prof. D. Alberto García
           D. Manuel Borja–Villel`,
-          en: `Prof. D. Javier Ramos
-          Prof. D. Alberto García
+          en: `Prof. D. Alberto García
           D. Manuel Borja–Villel`,
         },
       },

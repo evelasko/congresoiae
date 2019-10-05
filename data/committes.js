@@ -64,13 +64,6 @@ Ha sido estrella del Royal Ballet de Londres e invitada de las compañías más 
         title: 'Presidente de la Academia de las Artes Escénicas de España',
       },
       {
-        name: 'Prof. D. Javier Ramos',
-        title: `Catedrático. Rector Magnífico de la Universidad Rey Juan Carlos.
-Destacado investigador del área de las telecomunicaciones. Experto en Teoría de la señal.
-Posee numerosas publicaciones e investigaciones de alto impacto con gran reconocimiento nacional e internacional.
-Colabora con instituciones académicas de reconocido prestigio como la universidad de Minnesota, EE.UU., o el Massachusetts Institute of Technology (MIT), U.S.A., entre otras.`,
-      },
-      {
         name: 'Prof. D. Gustavo Villapalos Salas',
         title: `Catedrático. Rector Honorífico de la Universidad Complutense de Madrid.
           Ex Consejero de Educación de la Comunidad de Madrid.
