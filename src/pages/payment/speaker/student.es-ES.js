@@ -97,7 +97,7 @@ class IndexPage extends React.Component {
       userDiscount: {
         id: 'ck0myx7zu09ol0831hbyydmcp',
         name: 'Descuento Estudiante',
-        unitPrice: 90,
+        unitPrice: 1,
       },
       txData: {
         firstname: '',
