@@ -90,7 +90,7 @@ class IndexPage extends React.Component {
         description: 'Congreso IAE 2019',
         content:
           'La tasa de participación incluye la acreditación al Congreso que da acceso al evento, materiales del Congreso y la participación en otras actividades programadas, así como la entrega de un Certificado que acredita la asistencia al Congreso con el número de horas efectivas, que también acredita una certificación académica a efectos de reconocimiento de créditos ECTS por su participación. Será reconocido 1 ECTS.',
-        unitPrice: 1,
+        unitPrice: 180,
         id: 'ck0myx7z109of0831uuf0rjtc',
       },
       discounts: {},
