@@ -9,6 +9,7 @@ import { Card, CardContainer } from '../components/Card';
 import markdownRenderer from '../components/MarkdownRenderer';
 import Section from '../components/Section';
 import { colors } from '../styles/theme';
+import Button from '@material-ui/core/Button';
 
 const CoverImage = styled.img`
   width: 100%;
@@ -205,6 +206,27 @@ const Writing = ({ lang }) => (
         </ProgramListContent>
       </ProgramList>
     </ProgramContainer>
+    <div
+      style={{
+        marginTop: '60px',
+        paddingTop: '10px',
+        borderTop: `1px solid ${colors.primary}`,
+        alignContent: 'center',
+        alignItems: 'center',
+        alignSelf: 'center',
+      }}
+    >
+      <center>
+        <p>Puede descargar aquí el programa detallado en formato pdf:</p>
+        <a
+          style={{ alignSelf: 'center' }}
+          href="https://drive.google.com/open?id=1Bozsq-PlvAMlm8lfbTrZ4nZLFL8B9uaQ"
+          target="_blank"
+        >
+          <Button>Programa CMIAE'19</Button>
+        </a>
+      </center>
+    </div>
   </Section.Container>
 );
 

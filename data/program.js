@@ -36,6 +36,16 @@ const Program = {
           es: 'Presentación',
           en: 'Sponsor Showcase',
         },
+        subtitle: {
+          en: `Sr. D. Román Fernández-Baca Casares
+          Director General de Bellas Artes, Ministerio de Cultura y Deporte, España.
+          Sr. D. Jesús Cimarro
+          Presidente de la Academia de las Artes Escénicas de España.`,
+          es: `Sr. D. Román Fernández-Baca Casares
+          Director General de Bellas Artes, Ministerio de Cultura y Deporte, España.
+          Sr. D. Jesús Cimarro
+          Presidente de la Academia de las Artes Escénicas de España.`,
+        },
       },
       {
         time: '11:00',
@@ -51,8 +61,8 @@ const Program = {
           en: 'Ponente Oficial',
         },
         subtitle: {
-          es: 'Prof. D. Derek Goldman',
-          en: 'Prof. D. Derek Goldman',
+          es: 'Prof. Dª. Jessica A. Kaahwa',
+          en: 'Prof. Dª. Jessica A. Kaahwa',
         },
       },
       {
@@ -91,8 +101,8 @@ const Program = {
           en: 'Oficial Speaker',
         },
         subtitle: {
-          es: 'Prof. D. Gloria Gómez–Escalonilla',
-          en: 'Prof. D. Gloria Gómez–Escalonilla',
+          es: 'Prof. Dª. Gloria Gómez–Escalonilla',
+          en: 'Prof. Dª. Gloria Gómez–Escalonilla',
         },
       },
       {
@@ -102,8 +112,8 @@ const Program = {
           en: 'Board 2: Technology',
         },
         subtitle: {
-          es: 'Modera: Prof. D. Adriana Moscoso',
-          en: 'Moderator: Prof. D. Adriana Moscoso',
+          es: 'Modera: Prof. Dª. Adriana Moscoso',
+          en: 'Moderator: Prof. Dª. Adriana Moscoso',
         },
       },
     ],
@@ -125,8 +135,8 @@ const Program = {
           en: 'Official Speaker',
         },
         subtitle: {
-          es: 'Prof. D. Lilliam Chacón',
-          en: 'Prof. D. Lilliam Chacón',
+          es: 'Prof. Dª. Lilliam Chacón',
+          en: 'Prof. Dª. Lilliam Chacón',
         },
       },
       {
@@ -176,8 +186,8 @@ const Program = {
           en: 'Official Speaker',
         },
         subtitle: {
-          es: 'Prof. D. Jessica A. Kaahwa',
-          en: 'Prof. D. Jessica A. Kaahwa',
+          es: 'Prof. Dª. Alina Sánchez',
+          en: 'Prof. Dª. Alina Sánchez',
         },
       },
     ],
@@ -213,8 +223,8 @@ const Program = {
           en: 'Board 4: Education and Performing Arts',
         },
         subtitle: {
-          es: 'Modera: D. Carmen Caffarel',
-          en: 'Moderator: D. Carmen Caffarel',
+          es: 'Modera: Dª. Carmen Caffarel',
+          en: 'Moderator: Dª. Carmen Caffarel',
         },
       },
       {
@@ -231,8 +241,8 @@ const Program = {
           en: 'Final Words',
         },
         subtitle: {
-          es: `Intervienen: Prof. D. Alberto García, Prof. D. Eduardo Blázquez, Prof. D. Celia Fernández y D. Tamara Rojo`,
-          en: `Intervienen: Prof. D. Alberto García, Prof. D. Eduardo Blázquez, Prof. D. Celia Fernández y D. Tamara Rojo`,
+          es: `Intervienen: Prof. D. Alberto García, Prof. D. Eduardo Blázquez, Prof. Dª. Celia Fernández y Dª. Tamara Rojo`,
+          en: `Intervienen: Prof. D. Alberto García, Prof. D. Eduardo Blázquez, Prof. Dª. Celia Fernández y Dª. Tamara Rojo`,
         },
       },
       {

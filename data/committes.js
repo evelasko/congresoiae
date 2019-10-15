@@ -216,7 +216,8 @@ Entre ellas podemos citar “Las bicicletas son para el verano”, dirigida por 
       },
       {
         name: `Prof. D. Ioshinobu Navarro Sanler`,
-        title: `Profesor del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso". Delegado del Rector para los Programas de Movilidad de Estudiantes y Profesores de Artes Escénicas.  Universidad Rey Juan Carlos.`,
+        title: `COORDINADOR
+        Profesor del Departamento de Danza Contemporánea del Instituto Universitario de la Danza "Alicia Alonso". Delegado del Rector para los Programas de Movilidad de Estudiantes y Profesores de Artes Escénicas.  Universidad Rey Juan Carlos.`,
       },
       {
         name: 'Prof. Dª. Marifé Santiago Bolaños',
