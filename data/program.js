@@ -34,14 +34,18 @@ const Program = {
         time: '10:30',
         title: {
           es: 'Presentación',
-          en: 'Sponsor Showcase',
+          en: 'Showcase',
         },
         subtitle: {
-          en: `Sr. D. Román Fernández-Baca Casares
+          en: `Prof. D. Alberto García Castaño
+          Director del Instituto Universitario de Danza ‘Alicia Alonso’.
+          Sr. D. Román Fernández-Baca Casares
           Director General de Bellas Artes, Ministerio de Cultura y Deporte, España.
           Sr. D. Jesús Cimarro
           Presidente de la Academia de las Artes Escénicas de España.`,
-          es: `Sr. D. Román Fernández-Baca Casares
+          es: `Prof. D. Alberto García Castaño
+          Director del Instituto Universitario de Danza ‘Alicia Alonso’.
+          Sr. D. Román Fernández-Baca Casares
           Director General de Bellas Artes, Ministerio de Cultura y Deporte, España.
           Sr. D. Jesús Cimarro
           Presidente de la Academia de las Artes Escénicas de España.`,
@@ -49,13 +53,6 @@ const Program = {
       },
       {
         time: '11:00',
-        title: {
-          es: 'Descanso / Café',
-          en: 'Coffee Break',
-        },
-      },
-      {
-        time: '11:30',
         title: {
           es: 'Oficial Speaker',
           en: 'Ponente Oficial',
@@ -66,18 +63,25 @@ const Program = {
         },
       },
       {
-        time: '12:15',
+        time: '11:30',
         title: {
-          es: 'Mesa 1: Investigación y Artes Escénicas',
-          en: 'Board 1: Research and Performing Arts',
-        },
-        subtitle: {
-          es: 'Modera: Prof. D. Derek Goldman',
-          en: 'Moderator: Prof. D. Derek Goldman',
+          es: 'Descanso / Café',
+          en: 'Coffee Break',
         },
       },
       {
-        time: '14:30',
+        time: '12:15',
+        title: {
+          es: 'Mesa 1: Investigación y Artes Escénicas I',
+          en: 'Board 1: Research and Performing Arts I',
+        },
+        subtitle: {
+          es: 'Modera: D. Daniel Bianco',
+          en: 'Moderator: D. Daniel Bianco',
+        },
+      },
+      {
+        time: '14:00',
         title: {
           es: 'Almuerzo',
           en: 'Lunch Break',
@@ -86,16 +90,27 @@ const Program = {
       {
         time: '16:00',
         title: {
+          es: 'Mesa 1: Investigación y Artes Escénicas II',
+          en: 'Board 1: Research and Performing Arts II',
+        },
+        subtitle: {
+          es: 'Modera: D. Daniel Bianco',
+          en: 'Moderator: D. Daniel Bianco',
+        },
+      },
+      {
+        time: '17:00',
+        title: {
           es: 'Ponencia Oficial',
           en: 'Oficial Speaker',
         },
         subtitle: {
-          es: 'Prof. D. Amador Cernuda',
-          en: 'Prof. D. Amador Cernuda',
+          es: 'Prof. D. Amador Cernuda Lago',
+          en: 'Prof. D. Amador Cernuda Lago',
         },
       },
       {
-        time: '16:25',
+        time: '17:25',
         title: {
           es: 'Ponencia Oficial',
           en: 'Oficial Speaker',
@@ -106,7 +121,14 @@ const Program = {
         },
       },
       {
-        time: '17:00',
+        time: '18:00',
+        title: {
+          es: 'Descanso–Café',
+          en: 'Coffee Break',
+        },
+      },
+      {
+        time: '18:15',
         title: {
           es: 'Mesa 2: Nuevas Tecnologías del Espectáculo',
           en: 'Board 2: Technology',
@@ -114,6 +136,17 @@ const Program = {
         subtitle: {
           es: 'Modera: Prof. Dª. Adriana Moscoso',
           en: 'Moderator: Prof. Dª. Adriana Moscoso',
+        },
+      },
+      {
+        time: '18:25',
+        title: {
+          es: 'Ponencia Oficial',
+          en: 'Oficial Speaker',
+        },
+        subtitle: {
+          es: 'Prof. D. José M. Álvarez Monzoncillo',
+          en: 'Prof. D. José M. Álvarez Monzoncillo',
         },
       },
     ],
@@ -169,7 +202,7 @@ const Program = {
         },
       },
       {
-        time: '12:45',
+        time: '12:30',
         title: {
           es: 'Ponencia Oficial',
           en: 'Official Speaker',
@@ -180,7 +213,7 @@ const Program = {
         },
       },
       {
-        time: '13:30',
+        time: '13:15',
         title: {
           es: 'Ponencia Oficial',
           en: 'Official Speaker',
@@ -188,6 +221,17 @@ const Program = {
         subtitle: {
           es: 'Prof. Dª. Alina Sánchez',
           en: 'Prof. Dª. Alina Sánchez',
+        },
+      },
+      {
+        time: '14:00',
+        title: {
+          es: 'Intervención Especial',
+          en: 'Featured Keynote',
+        },
+        subtitle: {
+          es: 'Dª. Teresa Berganza',
+          en: 'Dª. Teresa Berganza',
         },
       },
     ],

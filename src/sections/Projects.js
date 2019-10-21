@@ -64,7 +64,9 @@ const Project = ({ fullName, description, photo }) => (
     >
       <SpeakerPhoto src={photo.image.src} alt={photo.title} />
       <TextContainer>
-        <Title>{fullName}</Title>
+        <center>
+          <Title>{fullName}</Title>
+        </center>
         <Description>
           <Text width={[1]} style={{ overflow: 'auto', fontSize: 12 }}>
             {description}
