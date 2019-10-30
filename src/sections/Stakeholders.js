@@ -70,58 +70,6 @@ const Stakeholders = ({ lang }) => (
       icon=""
       Box="notebook"
     />
-    <CallContainer>
-      <CallColumn>
-        <Heading mb={4}>
-          {translations.call[lang.slice(0, 2)].modalities[0].toUpperCase()}
-        </Heading>
-        <Image />
-        <Text>{translations.call[lang.slice(0, 2)].description[0]}</Text>
-        <Link to={`/${lang}/call`}>
-          <Button>
-            {translations.call[lang.slice(0, 2)].buttons[0].toUpperCase()}
-          </Button>
-        </Link>
-      </CallColumn>
-      <CallColumn>
-        <Heading mb={4}>
-          {translations.call[lang.slice(0, 2)].modalities[1].toUpperCase()}
-        </Heading>
-        <Image />
-        <Text>{translations.call[lang.slice(0, 2)].description[1]}</Text>
-        {
-          <Link to={`/${lang}/payment/atendee/`}>
-            <Button>
-              {translations.call[lang.slice(0, 2)].buttons[1].toUpperCase()}
-            </Button>
-          </Link>
-        }
-        <Text>{translations.call[lang.slice(0, 2)].discount}</Text>
-        {
-          <Link to={`/${lang}/payment/discount/`}>
-            <Button>
-              {translations.call[lang.slice(0, 2)].buttons[2].toUpperCase()}
-            </Button>
-          </Link>
-        }
-        <Text>{translations.call[lang.slice(0, 2)].credit}</Text>
-        <Text>{`
-Descuentos especiales en viajes y alojamiento para participantes del congreso:
-B THE TRAVEL BRAND
-Pagina web: www.bthetravelbrand.com/886
-Teléfono fijo: +34942897000
-
-Personas de contacto:
-Sheila Gutiérrez
-email: grupos-torrelavega@bthetravelbrand.com
-Teléfono directo: +34625588611
-
-Mila Gómez
-email: grupos-torrelavega@bthetravelbrand.com
-Teléfono directo: +34625569816
-        `}</Text>
-      </CallColumn>
-    </CallContainer>
   </Section.Container>
 );
 
