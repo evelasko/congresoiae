@@ -18,13 +18,13 @@ const IndexPage = ({ pageContext: { langKey }, location: { pathname } }) => (
     <Landing lang={langKey} />
     <About lang={langKey} />
     <ParallaxBanner
-      text={`Museo Nacional\nCentro de Arte Reina Sofía`}
-      src="https://res.cloudinary.com/huh9ixig7/image/upload/v1560197964/congreso/_edificio.jpg"
+      text={`Palacio de Congresos de Castilla y León`}
+      src="https://res.cloudinary.com/dmpl8wypd/image/upload/v1655751593/alicialonso/Exterior_-2-_vrsiar.jpg"
     />
     <Projects lang={langKey} />
     <ParallaxBanner
-      text={`Auditorio 400\nEdificio Nouvel`}
-      src="https://res.cloudinary.com/huh9ixig7/image/upload/v1560197964/congreso/_auditorio.jpg"
+      text={`Sala Mayor`}
+      src="https://res.cloudinary.com/dmpl8wypd/image/upload/v1655751597/alicialonso/Sala_Mayor_-3-_ex3zrt.jpg"
     />
     <Writing lang={langKey} />
     <Stakeholders lang={langKey} />
