@@ -1,11 +1,11 @@
 const translations = {
   name: {
-    en: 'Research in Performing Arts World Congress',
-    es: 'Congreso Mundial de Investigación en Artes del Espectáculo',
+    en: '2nd Research in Performing Arts World Congress',
+    es: 'II Congreso Mundial de Investigación en Artes del Espectáculo',
   },
   date: {
-    en: 'October 24th — 26th, 2019',
-    es: 'Octubre 24 — 26, 2019',
+    en: 'October 13th — 15th, 2022',
+    es: 'Octubre 13 — 15, 2022',
   },
   place: {
     en: `Madrid, Spain`,
@@ -47,10 +47,8 @@ const translations = {
       description: [
         `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org
 
-«El plazo de presentación de propuestas de comunicación vence el día 15 de octubre de 2019.»        `,
-        `¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas?\n¡Involúcrate y participa!\n\nEl Registro para participantes general tiene una Tasa de 150 €.\n
-Si prefieres abonar las tasas a través de transferencia puedes hacerlo al número de cuenta 2038 2483 7060 0034 2347 indicando su nombre completo y una dirección de email en el concepto de la misma.
-Para efectuar el pago con con tarjeta por favor haz clic en el siguiente botón`,
+«El plazo de presentación de propuestas de comunicación vence el día 20 de septiembre de 2022.»        `,
+        `¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas?\n¡Involúcrate y participa!`,
       ],
       buttons: ['Bases de Convocatoria', 'Participa', 'Solicitar Descuento'],
       discount: `La organización ofrece los siguientes descuentos en las tasas de participantes :

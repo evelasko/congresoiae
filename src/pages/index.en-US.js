@@ -25,12 +25,12 @@ const IndexPage = props => {
         text={`Palacio de Congresos de Castilla y León`}
         src="https://res.cloudinary.com/dmpl8wypd/image/upload/v1655751593/alicialonso/Exterior_-2-_vrsiar.jpg"
       />
-      <Projects lang={langKey} />
+      {/* <Projects lang={langKey} /> */}
+      <Writing lang={langKey} />
       <ParallaxBanner
         text={`Sala Mayor`}
         src="https://res.cloudinary.com/dmpl8wypd/image/upload/v1655751597/alicialonso/Sala_Mayor_-3-_ex3zrt.jpg"
       />
-      <Writing lang={langKey} />
       <Stakeholders lang={langKey} />
       <SponsorSection lang={langKey} />
       <Footer lang={langKey} />

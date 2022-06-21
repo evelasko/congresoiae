@@ -70,6 +70,8 @@ const Stakeholders = ({ lang }) => (
       icon=""
       Box="notebook"
     />
+    <p>{translations.call[lang.slice(0, 2)].description}</p>
+    <Link to="/call">{translations.call[lang.slice(0, 2)].buttons[0]}</Link>
   </Section.Container>
 );
 

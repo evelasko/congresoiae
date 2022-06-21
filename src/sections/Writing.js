@@ -143,7 +143,7 @@ const Writing = ({ lang }) => (
         );
       }}
     />
-    <Section.Header name={translations.headers.program[lang.slice(0, 2)]} />
+    {/* <Section.Header name={translations.headers.program[lang.slice(0, 2)]} />
     <ProgramContainer>
       <ProgramList>
         <ProgramListHeader>
@@ -205,7 +205,7 @@ const Writing = ({ lang }) => (
           ))}
         </ProgramListContent>
       </ProgramList>
-    </ProgramContainer>
+    </ProgramContainer> */}
   </Section.Container>
 );
 
