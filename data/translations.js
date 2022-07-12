@@ -4,12 +4,12 @@ const translations = {
     es: 'II Congreso Mundial de Investigación en Artes del Espectáculo',
   },
   date: {
-    en: 'October 13th — 15th, 2022',
-    es: 'Octubre 13 — 15, 2022',
+    en: 'November 9th — 11th, 2022',
+    es: 'Noviembre 9 — 11, 2022',
   },
   place: {
-    en: `Madrid, Spain`,
-    es: `Madrid, España`,
+    en: `Salamanca, Spain`,
+    es: `Salamanca, España`,
   },
   subjects: {
     en: ['technology', 'industry', 'heritage', 'education'],
