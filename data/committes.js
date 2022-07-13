@@ -156,7 +156,7 @@ const Committees = {
   },
   cientific: {
     header: { en: 'Scientific Committee', es: 'Comité Científico' },
-    ims: [
+    items: [
       {
         name: 'Doña Carmen Caffarel Serra',
         title: `PRESIDENTA
