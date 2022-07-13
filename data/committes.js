@@ -2,7 +2,7 @@ const Committees = {
   honor: {
     header: { en: 'Honor Committee', es: 'Comité de Honor' },
 
-    Items: [
+    items: [
       {
         name: 'D. Carlos Manuel García Carbayo* ',
         title: `excmo. alcalde de la ciudad de salamanca
