@@ -35,7 +35,7 @@ const translations = {
       modalities: ['present', 'attend'],
       description: [
         'If you would like to present a keynote of your research please read thoroughly the Call for Papers and once you are ready send the proposal to papers@alicialonso.org',
-        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and participate!',
+        'Do you want to expand your view and stay relevant in the evolution of the performing arts? Get involved and join us!',
       ],
       buttons: ['Call for Papers', 'Join Us', 'Apply for Discount'],
       discount:
