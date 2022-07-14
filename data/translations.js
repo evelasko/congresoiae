@@ -45,9 +45,7 @@ const translations = {
     es: {
       modalities: ['expone', 'asiste'],
       description: [
-        `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org
-
-«El plazo de presentación de propuestas de comunicación vence el día 20 de septiembre de 2022.»        `,
+        `Si quiere presentar su investigación, por favor, lea detenidamente las Bases de la Convocatoria y una vez tenga lista la documentación háganosla llegar por email a papers@alicialonso.org`,
         `¿Quieres expandir tu visión y mantenerte relevante en la evolución de las artes escénicas?\n¡Involúcrate y participa!`,
       ],
       buttons: ['Bases de Convocatoria', 'Participa', 'Solicitar Descuento'],
