@@ -6,24 +6,31 @@ const Committees = {
       {
         name: 'D. Carlos Manuel García Carbayo* ',
         title: `excmo. alcalde de la ciudad de salamanca
-  `}, {
+  `,
+      },
+      {
         name: 'D. Ricardo Rivero Ortega',
         title: `rector universidad de salamanca
-  `}, 
-//   {
-//         name: 'D. Ricardo Díaz Martín*  ',
-//         title: `DIRECTOR general de universidades y enseñanzas ARTÍSTICAS superiores de la comunidad AUTÓNOMA de madrid
-//   `}, 
-//   {
-//         name: 'D. Enrique Ossorio Crespo*',
-//         title: `Consejero de Educación, Universidades, Ciencia y Portavoz del Gobierno de la comunidad de madrid.
-//   `}, 
-  {
+  `,
+      },
+      //   {
+      //         name: 'D. Ricardo Díaz Martín*  ',
+      //         title: `DIRECTOR general de universidades y enseñanzas ARTÍSTICAS superiores de la comunidad AUTÓNOMA de madrid
+      //   `},
+      //   {
+      //         name: 'D. Enrique Ossorio Crespo',
+      //         title: `Consejero de Educación, Universidades, Ciencia y Portavoz del Gobierno de la comunidad de madrid.
+      //   `},
+      {
         name: 'Doña Cayeta Guillén Cuervo',
-        title: `PRESIDENTa DE LA ACADEMIA DE LAS ARTES ESCÉNICAS DE ESPAÑA`}, {
+        title: `PRESIDENTa DE LA ACADEMIA DE LAS ARTES ESCÉNICAS DE ESPAÑA`,
+      },
+      {
         name: 'D. Tobias Biancone',
         title: `DIRECTOR GENERAL DEL INSTITUTO INTERNACIONAL DE TEATRO; ORGANIZACIÓN MUNDIAL DE ARTES ESCÉNICAS UNESCO
-  `}, {
+  `,
+      },
+      {
         name: 'Doña Cristina Hoyos',
         title: `EMBAJADORA MUNDIAL DE LA DANZA ITI/UNESCO.
   PREMIO PEGASO DE SPOLETO.
@@ -35,7 +42,9 @@ const Committees = {
   EMBAJADORA DE CULTURA DE PEKÍN.
   GRAN MEDALLA DE LA VILLA DE PARÍS.
   MIEMBRO DE HONOR DE LA ACADEMIA DE ARTES ESCÉNICAS DE ESPAÑA.
-  `}, {
+  `,
+      },
+      {
         name: 'Doña Tamara Rojo',
         title: `PREMIO PRÍNCIPE DE ASTURIAS DE LAS ARTES 2005.
   DIRECTORA GENERAL DEL ENGLISH NATIONAL BALLET.
@@ -47,7 +56,9 @@ const Committees = {
   PREMIO BENOIS DE LA DANZA.
   EMBAJADORA PARA LA FUNDACIÓN HANS CHRISTIAN ANDERSEN, DINAMARCA, ENTRE OTROS RECONOCIMIENTOS.
   HA SIDO ESTRELLA DEL ROYAL BALLET DE LONDRES E INVITADA DE LAS COMPAÑÍAS MÁS PRESTIGIOSAS DEL MUNDO, ENTRE LAS QUE PODEMOS CITAR, EL MARIINSKYN¡ BALLET, EL BALLET TEATRO ALLA SCALA DE MILÁN, BALLET DE LA ÓPERA DE BERLÍN, BALLET NACIONAL DE CUBA, BALLET DE LA ÓPERA DE NIZA, ENTRE OTRAS.
-  `}, {
+  `,
+      },
+      {
         name: 'Doña Loipa Araújo Carruana',
         title: `DIRECTORA ADJUNTA DEL ENGLISH NATIONAL BALLET.
   MIEMBRO DE LA LEGIÓN DE HONOR DE LA REPÚBLICA DE FRANCIA EN EL GRADO DE CABALLERO DE LAS ARTES Y LAS LETRAS.
@@ -57,44 +68,61 @@ const Committees = {
   GRAND PRIX DE LA VILLA DE PARÍS.
   MEDALLA DE ORO DEL CONCURSO INTERNACIONAL DE VARNA.
   ORDEN PADRE FÉLIX VARELA DE LA CULTURA DE LA REPÚBLICA DE CUBA
-  `}, {
+  `,
+      },
+      {
         name: 'Doña Maribel Gallardo',
         title: `prima bailarina y maître del ballet nacional de españa.
   medalla de oro al mérito de las bellas artes de españa.
-  `}, {
+  `,
+      },
+      {
         name: 'Doña Paloma Pedrero',
         title: `EMBAJADORA MUNDIAL DEL TEATRO ITI/UNESCO
-  `}, {
-        name: 'Doña Rosangeles Valls*',
+  `,
+      },
+      {
+        name: 'Doña Rosangeles Valls',
         title: `Medalla de Oro al Mérito de las Bellas Artes 2019. Premio Nacional de Danza 2006. Premio Precrea 2020. Master en Gestión Cultural –Música, Teatro y Danza– por el Instituto Complutense de Ciencias Musicales de la Universidad Complutense de Madrid. Premios max de creación.
-  `}, {
+  `,
+      },
+      {
         name: 'Doña Carmen Caffarel Serra',
         title: `CATEDRÁTICA DE COMUNICACIÓN AUDIOVISUAL DE LA UNIVERSIDAD REY JUAN CARLOS.
   DIRECTORA DE LA CÁTEDRA UNESCO DE INVESTIGACIÓN EN COMUNICACIÓN Y ÁFRICA (AFRICOM).
   ESPECIALISTA EN LINGÜÍSTICA HISPÁNICA.
   EX DIRECTORA DEL ENTE PÚBLICO DE RADIO TELEVISIÓN ESPAÑOLA.
   EX DIRECTORA GENERAL DEL INSTITUTO CERVANTES ADSCRITO AL MINISTERIO DE ASUNTOS EXTERIORES Y COOPERACIÓN
-  `}, {
+  `,
+      },
+      {
         name: 'D. Pedro Simón Martínez',
         title: `ACADÉMICO. DIRECTOR DEL MUSEO NACIONAL DE LA DANZA de cuba
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Enrique Otero Huerta',
         title: `CATEDRÁTICO. RECTOR HONORÍFICO DE LA UNIVERSIDAD REY JUAN CARLOS.
   MEDALLA DE ORO DE LA URJC.
   EXPERTO EN CIENCIAS E INGENIERÍA DE LA SOCIEDAD ALEMANA DE COOPERACIÓN TÉCNICA.
   MIEMBRO DE LA ORGANIZACIÓN DE LAS NACIONES UNIDAS PARA EL DESARROLLO INDUSTRIAL
-  `}, {
+  `,
+      },
+      {
         name: 'D. Derek Goldman',
         title: `CO-DIRECTOR DEL “LABORATORY FOR GLOBAL PERFORMANCE AND POLITICS”, UNIVERSIDAD DE GEORGETOWN.
   PROFESOR DE TEATRO Y ESTUDIOS DE INTERPRETACIÓN, UNIVERSIDAD DE GEORGETOWN.
   VICEPRESIDENTE PARA AMÉRICA DEL INSTITUTO INTERNACIONAL DE TEATRO ITI/UNESCO
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. José Ernesto Nováez',
         title: `RECTOR UNIVERSIDAD DE LAS ARTES, LA HABANA.
   PRESIDENTE DE LA RED DE UNIVERSIDADES DE ARTES ESCÉNICAS DE LATINOAMÉRICA
-  `}
-],
-},
+  `,
+      },
+    ],
+  },
   organizing: {
     header: { en: 'Organizing Committee', es: 'Comité Organizador' },
     items: [
@@ -110,79 +138,100 @@ const Committees = {
   DIRECTOR DEL MÁSTER UNIVERSITARIO EN ARTES ESCÉNICAS, UNIVERSIDAD REY JUAN CARLOS.
   DIRECTOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO", UNIVERSIDAD REY JUAN CARLOS
   
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Luis Llerena Díaz',
         title: `VICE– PRESIDENTE
   VICE - PRESIDENTE DE LA DELEGACIÓN ESPAÑOLA DEL INSTITUTO INTERNACIONAL DE TEATRO ITI/UNESCO.
   DIRECTOR DEL MÁSTER UNIVERSITARIO EN GESTIÓN Y LIDERAZGO DE PROYECTOS CULTURALES, UNIVERSIDAD REY JUAN CARLOS.
   SECRETARIO GENERAL DEL INSTITUTO UNIVERSITARIO DE DANZA “ALICIA ALONSO” UNIVERSIDAD REY JUAN CARLOS.
   
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Gloria García Arambarry',
         title: `COORDINADORA GENERAL
   SECRETARIA DE LA DELEGACIÓN ESPAÑOLA DEL INSTITUTO INTERNACIONAL DE TEATRO ITI/ESPAÑA
   DIRECTORA DEL DEPARTAMENTO DE DANZA CONTEMPORÁNEA DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO" UNIVERSIDAD REY JUAN CARLOS
   
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Carlos Roldán López',
         title: `COORDINADOR GENERAL
   PROFESOR TITULAR, DIRECTOR DEL DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO", UNIVERSIDAD REY JUAN CARLOS.
   PROFESOR MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
   
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Amador Cernuda Lago',
         title: `PROFESOR TITULAR, DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO" Y MIEMBRO DEL CONSEJO RECTOR, UNIVERSIDAD REY JUAN CARLOS.
   PROFESOR MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS.
   
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Doña Celia Balbina Fernández',
         title: `PROFESORA. DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”. 
   PROFESORA MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS.
   PREMIO EXTRAORDINARIO DE INVESTIGACIÓN.
   
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Enrique Pérez Velasco',
         title: `doctor en comunicación audiovisual por la universidad rey juan carlos. 
   Profesor e investigador del INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO
   PROFESOR MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
-  `}, {
-      name: 'Prof. D. José Manuel Buzón',
-      title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
+  `,
+      },
+      {
+        name: 'Prof. D. José Manuel Buzón',
+        title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
 DIRECTOR DEL DEPARTAMENTO DE DANZA ESPAÑOLA DEL INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
 PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
 PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
-`},{
-name: 'Prof. D. Oscar Torrado del Puerto',
-title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
+`,
+      },
+      {
+        name: 'Prof. D. Oscar Torrado del Puerto',
+        title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
 DIRECTOR DEL DEPARTAMENTO DE DANZA CLÁSICA DEL INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
 PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
 PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
-`}, {
-name: 'Prof. D. Jorge Gallego Silva',
-title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
+`,
+      },
+      {
+        name: 'Prof. D. Jorge Gallego Silva',
+        title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
 DIRECTOR DEL DEPARTAMENTO DE DANZA TEATRO Y DANZAS ACROBÁTICAS CIRCENSES DEL INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
 PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
 PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
-`}, {
-name: 'Prof. Dª. Gemma Pagés',
-title: `MÁSTER EN ARTES ESCENICAS POR LA UNIVERSIDAD REY JUAN CARLOS / INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
+`,
+      },
+      {
+        name: 'Prof. Dª. Gemma Pagés',
+        title: `MÁSTER EN ARTES ESCENICAS POR LA UNIVERSIDAD REY JUAN CARLOS / INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
 PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
 PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
-`}, {
-name: 'Prof. D. Eduardo Lucas Muñoz',
-title: `CANDIDATO A DOCTOR POR LA UNIVERSIDAD COMPLUTENSE DE MADRID
+`,
+      },
+      {
+        name: 'Prof. D. Eduardo Lucas Muñoz',
+        title: `CANDIDATO A DOCTOR POR LA UNIVERSIDAD COMPLUTENSE DE MADRID
 PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
 PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
-`}
-
-
-],
+`,
+      },
+    ],
   },
   cientific: {
     header: { en: 'Scientific Committee', es: 'Comité Científico' },
@@ -195,62 +244,89 @@ PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
   ESPECIALISTA EN LINGÜÍSTICA HISPÁNICA.
   EX DIRECTORA DEL ENTE PÚBLICO DE RADIO TELEVISIÓN ESPAÑOLA.
   EX DIRECTORA GENERAL DEL INSTITUTO CERVANTES ADSCRITO AL MINISTERIO DE ASUNTOS EXTERIORES Y COOPERACIÓN
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Ioshinobu Navarro Sanler',
         title: `COORDINADOR
   PROFESOR DEL DEPARTAMENTO DE DANZA CONTEMPORÁNEA DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO". DELEGADO DEL RECTOR PARA LOS PROGRAMAS DE MOVILIDAD DE ESTUDIANTES Y PROFESORES DE ARTES ESCÉNICAS. UNIVERSIDAD REY JUAN CARLOS.
-  `}, {
-        name: 'Prof. D. Emilio Peral Vega*',
+  `,
+      },
+      {
+        name: 'Prof. D. Emilio Peral Vega',
         title: `PROFESOR TITULAR UNIVERSIDAD COMPLUTENSE DE MADRID.
   COORDINADOR DEL MÁSTER EN TEATRO Y ARTES ESCÉNICAS UNIVERSIDAD COMPLUTENSE DE MADRID.
   COORDINADOR DEL PROGRAMA DE DOCTORADO EN LENGUA Y LITERATURA ESPAÑOLAS DE LA UNIVERSIDAD COMPLUTENSE DE MADRID
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Juan Antonio Sánchez López',
         title: `PROFESOR TITULAR DEL DEPARTAMENTO DE HISTORIA DEL ARTE DE LA UNIVERSIDAD DE MÁLAGA.
   CODIRECTOR DEL MÁSTER EN ESCULTURA BARROCA ESPAÑOLA
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Doña María Esther Pérez Peláez',
         title: `PROFESORA UNIVERSIDAD INTERNACIONAL DE VALENCIA Y COLABORADORA DEL INSTITUTO UNIVERSITARIO DE INVESTIGACIONES DE CIENCIAS DE LA EDUCACIÓN.
   COORDINADORA DEL MÁSTER EN GESTIÓN CULTURAL. UNIVERSIDAD DE SALAMANCA
-  `}, {
-      name: 'Prof. José Luis Linaza',
-      title: `CATEDRÁTICO DE PSICOLOGÍA EVOLUTIVA Y DE LA EDUCACIÓN DE LA UNIVERSIDAD AUTÓNOMA DE MADRID.
+  `,
+      },
+      {
+        name: 'Prof. José Luis Linaza',
+        title: `CATEDRÁTICO DE PSICOLOGÍA EVOLUTIVA Y DE LA EDUCACIÓN DE LA UNIVERSIDAD AUTÓNOMA DE MADRID.
 MIEMBRO DE LA CÁTEDRA UNESCO EN EDUCACIÓN PARA LA JUSTICIA.
 DOCTOR EN PSICOLOGÍA POR LA UNIVERSIDAD DE OXFORD
 LICENCIADO EN FILOSOFÍA Y LETRAS POR LA COMPLUTENSE DE MADRID (UCM),
 EXPERTO MUNDIALES DE LA PSICOLOGÍA EVOLUTIVA.
-`}, 
-  {
+`,
+      },
+      {
         name: 'Prof. Doña Marta Egea Ávila',
         title: `CATEDRÁTICA, DIRECTORA DE LA ESCUELA UNIVERSITARIA DE DANZA, UNIVERSIDAD NACIONAL DE COSTA RICA
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Doña Ana Rodríguez Allen',
         title: `CATEDRÁTICA, ESCUELA UNIVERSITARIA DE FILOSOFÍA, DIRECTORA DE LA CÁTEDRA DE BIOÉTICA. UNIVERSIDAD NACIONAL DE COSTA RICA
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. D. Dione Rufino Díaz',
         title: `PROFESOR TITULAR, DECANO FACULTAD DE ARTES ESCÉNICAS DE LA UNIVERSIDAD AUTÓNOMA DE SANTO DOMINGO, PRIMADA DE AMÉRICA
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Doña Enia Rosa Torres Castellano',
         title: `PROFESORA TITULAR, VICERRECTORA UNIVERSIDAD DE LAS ARTES DE LA HABANA
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Liliam Yamila Chacón Benavides',
         title: `DECANA DE LA FACULTAD DE ARTES ESCÉNICAS DE LA UNIVERSIDAD DE LAS ARTES DE LA HABANA.
   VICEPRESIDENTA DE ARTES ESCÉNICAS DE LA UNIÓN NACIONAL DE ESCRITORES Y ARTISTAS DE CUBA
-  `}, {
+  `,
+      },
+      {
         name: 'Prof. Doña Regina Llamas',
         title: `DOCTORA EN LENGUA Y CULTURA CHINAS POR LA UNIVERSIDAD DE HARVARD.
   PROFESORA DE LA UNIVERSIDAD DE STANFORD Y DE IE UNIVERSITY
-  `}, {
-        name: 'Prof. Félix Ortega Mohedano*',
+  `,
+      },
+      {
+        name: 'Prof. Félix Ortega Mohedano',
         title: `MIEMBRO DEL OBSERVATORIO DE CONTENIDOS AUDIOVISUALES (OCA), UNIDAD DE INVESTIGACIÓN CONSOLIDADA 313 DE LA JUNTA DE CASTILLA Y LEÓN.
 DIRECTOR DEL MÁSTER EN COMUNICACIÓN AUDIOVISUAL: INVESTIGACIÓN DE LA UNIVERSIDAD DE SALAMANCA.
 DIRECTOR DE LA CÁTEDRA DE INVESTIGACIÓN EN NIÑ@S JÓVENES Y MEDIOS CRTVE-USAL / CHILDREN YOUTH AND MEDIA CRTVE-USAL.
 DOCTOR EN COMUNICACIÓN, CULTURA Y EDUCACIÓN.
         
-  `}, {
-        name: 'Prof. Luis Alberto Pérez Velarde*',
+  `,
+      },
+      {
+        name: 'Prof. Luis Alberto Pérez Velarde',
         title: `Investigador, Profesor Asociado de Historia del Arte la Universidad Complutense de Madrid. Miembro del Cuerpo Facultativo de Conservadores de Museos del Estado. Miembro del Grupo de Investigación RE HISPÁNICA, Universidad de Castilla la Mancha. Miembro del Grupo de Investigación Espacio del COLECCIONISMO en la Casa de Austria II s XVI y s XVII (Universidad+Museo). Universidad Complutense.
-  `}],
+  `,
+      },
+    ],
   },
 };
 

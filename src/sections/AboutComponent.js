@@ -5,6 +5,7 @@ import { Box, Image } from 'rebass';
 import styled from 'styled-components';
 import markdownRenderer from '../components/MarkdownRenderer';
 import { colors } from '../styles/theme';
+import Section from '../components/Section';
 
 const ProfilePicture = styled(Image)`
   transition: all 0.25s ease-out;
@@ -60,11 +61,22 @@ const CommitteeItemTitle = styled.div`
   color: ${colors.secondary};
 `;
 
+const TitleSection = styled.div`
+  padding: 30px;
+`;
+
 const AboutComponent = ({ lang }) => (
   <div>
-    <h1 style={{ marginLeft: '20px' }}>
+    <TitleSection>
+      <Section.Header
+        name={lang === 'es-ES' ? 'Convocatoria' : 'Call for Papers'}
+        icon=""
+        label="person"
+      />
+    </TitleSection>
+    {/* <h1 style={{ marginLeft: '20px' }}>
       <strong>{lang === 'es-ES' ? 'Convocatoria' : 'Call for Papers'}</strong>
-    </h1>
+    </h1> */}
     <StaticQuery
       query={graphql`
         query AboutMeCompQuery {

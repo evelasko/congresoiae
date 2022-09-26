@@ -56,7 +56,7 @@ const CallColumn = styled.div`
 const Button = styled.div`
   display: inline-flex;
   background-color: ${colors.secondary};
-  color: ${colors.primary};
+  color: ${colors.primary}!important;
   padding: 5px;
   margin-top: 30px;
   margin-bottom: 10px;
@@ -70,7 +70,10 @@ const Stakeholders = ({ lang }) => (
       icon=""
       Box="notebook"
     />
-    {translations.call[lang.slice(0, 2)].description.map(paragraph => <p>{paragraph}</p>)}
+    {translations.call[lang.slice(0, 2)].description.map(paragraph => (
+      <p>{paragraph}</p>
+    ))}
+
     <Link to="es-ES/call">
       {translations.call[lang.slice(0, 2)].buttons[0]}
     </Link>
