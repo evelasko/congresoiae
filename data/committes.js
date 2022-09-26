@@ -9,22 +9,16 @@ const Committees = {
   `}, {
         name: 'D. Ricardo Rivero Ortega',
         title: `rector universidad de salamanca
-  `}, {
-        name: 'Doña Adriana Moscoso del Prado*',
-        title: `DIRECTORA GENERAL DE INDUSTRIAS CULTURALES (MINISTERIO DE CULTURA Y DEPORTE)
-  `}, {
-        name: 'D. Isaac Sastre de Diego*',
-        title: `DIRECTOR GENERAL DE BELLAS ARTES Y PATRIMONIO (MINISTERIO DE CULTURA Y DEPORTE)
-  `}, {
-        name: 'D. Joan Francesc Marco* ',
-        title: `DIRECTOR DEL INSTITUTO NACIONAL DE LAS ARTES ESCÉNICAS Y LA MÚSICA. (MINISTERIO DE CULTURA Y DEPORTE)
-  `}, {
-        name: 'D. Ricardo Díaz Martín*  ',
-        title: `DIRECTOR general de universidades y enseñanzas ARTÍSTICAS superiores de la comunidad AUTÓNOMA de madrid
-  `}, {
-        name: 'D. Enrique Ossorio Crespo*',
-        title: `Consejero de Educación, Universidades, Ciencia y Portavoz del Gobierno de la comunidad de madrid.
-  `}, {
+  `}, 
+//   {
+//         name: 'D. Ricardo Díaz Martín*  ',
+//         title: `DIRECTOR general de universidades y enseñanzas ARTÍSTICAS superiores de la comunidad AUTÓNOMA de madrid
+//   `}, 
+//   {
+//         name: 'D. Enrique Ossorio Crespo*',
+//         title: `Consejero de Educación, Universidades, Ciencia y Portavoz del Gobierno de la comunidad de madrid.
+//   `}, 
+  {
         name: 'Doña Cayeta Guillén Cuervo',
         title: `PRESIDENTa DE LA ACADEMIA DE LAS ARTES ESCÉNICAS DE ESPAÑA`}, {
         name: 'D. Tobias Biancone',
@@ -147,11 +141,47 @@ const Committees = {
   PREMIO EXTRAORDINARIO DE INVESTIGACIÓN.
   
   `}, {
-        name: 'Prof. D. Enrique Pérez Velasco, ',
+        name: 'Prof. D. Enrique Pérez Velasco',
         title: `doctor en comunicación audiovisual por la universidad rey juan carlos. 
   Profesor e investigador del INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO
   PROFESOR MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
-  `}
+
+  `}, {
+      name: 'Prof. D. José Manuel Buzón',
+      title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
+DIRECTOR DEL DEPARTAMENTO DE DANZA ESPAÑOLA DEL INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
+PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
+PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
+
+`},{
+name: 'Prof. D. Oscar Torrado del Puerto',
+title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
+DIRECTOR DEL DEPARTAMENTO DE DANZA CLÁSICA DEL INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
+PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
+PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
+
+`}, {
+name: 'Prof. D. Jorge Gallego Silva',
+title: `DOCTOR EN ARTES Y HUMANIDADES POR LA UNIVERSIDAD REY JUAN CARLOS.
+DIRECTOR DEL DEPARTAMENTO DE DANZA TEATRO Y DANZAS ACROBÁTICAS CIRCENSES DEL INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
+PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
+PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
+
+`}, {
+name: 'Prof. Dª. Gemma Pagés',
+title: `MÁSTER EN ARTES ESCENICAS POR LA UNIVERSIDAD REY JUAN CARLOS / INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
+PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
+PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
+
+`}, {
+name: 'Prof. D. Eduardo Lucas Muñoz',
+title: `CANDIDATO A DOCTOR POR LA UNIVERSIDAD COMPLUTENSE DE MADRID
+PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
+PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
+
+`}
+
+
 ],
   },
   cientific: {
@@ -183,6 +213,14 @@ const Committees = {
         title: `PROFESORA UNIVERSIDAD INTERNACIONAL DE VALENCIA Y COLABORADORA DEL INSTITUTO UNIVERSITARIO DE INVESTIGACIONES DE CIENCIAS DE LA EDUCACIÓN.
   COORDINADORA DEL MÁSTER EN GESTIÓN CULTURAL. UNIVERSIDAD DE SALAMANCA
   `}, {
+      name: 'Prof. José Luis Linaza',
+      title: `CATEDRÁTICO DE PSICOLOGÍA EVOLUTIVA Y DE LA EDUCACIÓN DE LA UNIVERSIDAD AUTÓNOMA DE MADRID.
+MIEMBRO DE LA CÁTEDRA UNESCO EN EDUCACIÓN PARA LA JUSTICIA.
+DOCTOR EN PSICOLOGÍA POR LA UNIVERSIDAD DE OXFORD
+LICENCIADO EN FILOSOFÍA Y LETRAS POR LA COMPLUTENSE DE MADRID (UCM),
+EXPERTO MUNDIALES DE LA PSICOLOGÍA EVOLUTIVA.
+`}, 
+  {
         name: 'Prof. Doña Marta Egea Ávila',
         title: `CATEDRÁTICA, DIRECTORA DE LA ESCUELA UNIVERSITARIA DE DANZA, UNIVERSIDAD NACIONAL DE COSTA RICA
   `}, {
@@ -204,8 +242,11 @@ const Committees = {
   PROFESORA DE LA UNIVERSIDAD DE STANFORD Y DE IE UNIVERSITY
   `}, {
         name: 'Prof. Félix Ortega Mohedano*',
-        title: `DIRECTOR DE Cátedra RTVE-USAL 'Niñ@s, jóvenes y medios
-  PROFESOR UNIVERSIDAD DE SALAMANCA
+        title: `MIEMBRO DEL OBSERVATORIO DE CONTENIDOS AUDIOVISUALES (OCA), UNIDAD DE INVESTIGACIÓN CONSOLIDADA 313 DE LA JUNTA DE CASTILLA Y LEÓN.
+DIRECTOR DEL MÁSTER EN COMUNICACIÓN AUDIOVISUAL: INVESTIGACIÓN DE LA UNIVERSIDAD DE SALAMANCA.
+DIRECTOR DE LA CÁTEDRA DE INVESTIGACIÓN EN NIÑ@S JÓVENES Y MEDIOS CRTVE-USAL / CHILDREN YOUTH AND MEDIA CRTVE-USAL.
+DOCTOR EN COMUNICACIÓN, CULTURA Y EDUCACIÓN.
+        
   `}, {
         name: 'Prof. Luis Alberto Pérez Velarde*',
         title: `Investigador, Profesor Asociado de Historia del Arte la Universidad Complutense de Madrid. Miembro del Cuerpo Facultativo de Conservadores de Museos del Estado. Miembro del Grupo de Investigación RE HISPÁNICA, Universidad de Castilla la Mancha. Miembro del Grupo de Investigación Espacio del COLECCIONISMO en la Casa de Austria II s XVI y s XVII (Universidad+Museo). Universidad Complutense.
