@@ -8,7 +8,10 @@
     "develop": "cleandir ./.cache && gatsby develop",
     "start": "npm run develop",
     "lint": "eslint ./src",
-    "setup": "node ./bin/setup.js"
+    "setup": "node ./bin/setup.js",
+    "deploy:preview": "netlify deploy --open",
+    "deploy:production": "netlify deploy -p",
+    "b&p": "yarn build && yarn deploy:preview"
   },
   "keywords": [
     "gatsby",

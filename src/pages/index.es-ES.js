@@ -11,11 +11,13 @@ import Landing from '../sections/Landing';
 import Projects from '../sections/Projects';
 import Stakeholders from '../sections/Stakeholders';
 import Writing from '../sections/Writing';
+import Requirements from '../sections/Requirements';
 
 const IndexPage = ({ pageContext: { langKey }, location: { pathname } }) => (
   <Layout lang={langKey}>
     <Header lang={langKey} pathname={pathname} />
     <Landing lang={langKey} />
+    <Requirements />
     <About lang={langKey} />
     <ParallaxBanner
       text={`Palacio de Congresos de Castilla y León`}
@@ -28,6 +30,7 @@ const IndexPage = ({ pageContext: { langKey }, location: { pathname } }) => (
       src="https://res.cloudinary.com/dmpl8wypd/image/upload/v1655751597/alicialonso/Sala_Mayor_-3-_ex3zrt.jpg"
     />
     <Stakeholders lang={langKey} />
+
     <SponsorSection />
     <Footer lang={langKey} />
     <CookieConsent

@@ -5,22 +5,39 @@ const Committees = {
     items: [
       {
         name: 'D. Carlos Manuel García Carbayo* ',
-        title: `excmo. alcalde de la ciudad de salamanca
-  `,
+        title: `excmo. alcalde de la ciudad de salamanca`,
       },
+
       {
         name: 'D. Ricardo Rivero Ortega',
-        title: `rector universidad de salamanca
-  `,
+        title: `rector universidad de salamanca`,
       },
-      //   {
-      //         name: 'D. Ricardo Díaz Martín*  ',
-      //         title: `DIRECTOR general de universidades y enseñanzas ARTÍSTICAS superiores de la comunidad AUTÓNOMA de madrid
-      //   `},
-      //   {
-      //         name: 'D. Enrique Ossorio Crespo',
-      //         title: `Consejero de Educación, Universidades, Ciencia y Portavoz del Gobierno de la comunidad de madrid.
-      //   `},
+
+      {
+        name: 'Dª. Adriana Moscoso del Prado*',
+        title: `DIRECTORA GENERAL DE INDUSTRIAS CULTURALES (MINISTERIO DE CULTURA Y DEPORTE)`,
+      },
+
+      {
+        name: 'D. Isaac Sastre de Diego*',
+        title: `DIRECTOR GENERAL DE BELLAS ARTES Y PATRIMONIO (MINISTERIO DE CULTURA Y DEPORTE)`,
+      },
+
+      {
+        name: 'D. Joan Francesc Marco* ',
+        title: `DIRECTOR DEL INSTITUTO NACIONAL DE LAS ARTES ESCÉNICAS Y LA MÚSICA. (MINISTERIO DE CULTURA Y DEPORTE)`,
+      },
+
+      {
+        name: 'D. Ricardo Díaz Martín*  ',
+        title: `DIRECTOR general de universidades y enseñanzas ARTÍSTICAS superiores de la comunidad AUTÓNOMA de madrid`,
+      },
+
+      {
+        name: 'D. Enrique Ossorio Crespo*',
+        title: `Consejero de Educación, Universidades, Ciencia y Portavoz del Gobierno de la comunidad de madrid.`,
+      },
+
       {
         name: 'Doña Cayeta Guillén Cuervo',
         title: `PRESIDENTa DE LA ACADEMIA DE LAS ARTES ESCÉNICAS DE ESPAÑA`,
@@ -150,22 +167,6 @@ const Committees = {
   `,
       },
       {
-        name: 'Prof. Gloria García Arambarry',
-        title: `COORDINADORA GENERAL
-  SECRETARIA DE LA DELEGACIÓN ESPAÑOLA DEL INSTITUTO INTERNACIONAL DE TEATRO ITI/ESPAÑA
-  DIRECTORA DEL DEPARTAMENTO DE DANZA CONTEMPORÁNEA DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO" UNIVERSIDAD REY JUAN CARLOS
-  
-  `,
-      },
-      {
-        name: 'Prof. D. Carlos Roldán López',
-        title: `COORDINADOR GENERAL
-  PROFESOR TITULAR, DIRECTOR DEL DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO", UNIVERSIDAD REY JUAN CARLOS.
-  PROFESOR MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
-  
-  `,
-      },
-      {
         name: 'Prof. D. Amador Cernuda Lago',
         title: `PROFESOR TITULAR, DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO" Y MIEMBRO DEL CONSEJO RECTOR, UNIVERSIDAD REY JUAN CARLOS.
   PROFESOR MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS.
@@ -174,7 +175,7 @@ const Committees = {
       },
       {
         name: 'Prof. Doña Celia Balbina Fernández',
-        title: `PROFESORA. DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”. 
+        title: `PROFESORA. DEPARTAMENTO DE TEORÍA DE LAS ARTES ESCÉNICAS Y CIENCIAS APLICADAS, INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”.
   PROFESORA MÁSTER UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS.
   PREMIO EXTRAORDINARIO DE INVESTIGACIÓN.
   
@@ -218,14 +219,6 @@ PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
       {
         name: 'Prof. Dª. Gemma Pagés',
         title: `MÁSTER EN ARTES ESCENICAS POR LA UNIVERSIDAD REY JUAN CARLOS / INSTITUTO UNIVERSITARIO DE LA DANZA “ALICIA ALONSO”
-PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
-PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
-
-`,
-      },
-      {
-        name: 'Prof. D. Eduardo Lucas Muñoz',
-        title: `CANDIDATO A DOCTOR POR LA UNIVERSIDAD COMPLUTENSE DE MADRID
 PROFESOR E INVESTIGADOR DEL INSTITUTO UNIVERSITARIO DE LA DANZA "ALICIA ALONSO”
 PROFESOR GRADO UNIVERSITARIO DE ARTES ESCÉNICAS UNIVERSIDAD REY JUAN CARLOS
 
@@ -279,16 +272,6 @@ DOCTOR EN PSICOLOGÍA POR LA UNIVERSIDAD DE OXFORD
 LICENCIADO EN FILOSOFÍA Y LETRAS POR LA COMPLUTENSE DE MADRID (UCM),
 EXPERTO MUNDIALES DE LA PSICOLOGÍA EVOLUTIVA.
 `,
-      },
-      {
-        name: 'Prof. Doña Marta Egea Ávila',
-        title: `CATEDRÁTICA, DIRECTORA DE LA ESCUELA UNIVERSITARIA DE DANZA, UNIVERSIDAD NACIONAL DE COSTA RICA
-  `,
-      },
-      {
-        name: 'Prof. Doña Ana Rodríguez Allen',
-        title: `CATEDRÁTICA, ESCUELA UNIVERSITARIA DE FILOSOFÍA, DIRECTORA DE LA CÁTEDRA DE BIOÉTICA. UNIVERSIDAD NACIONAL DE COSTA RICA
-  `,
       },
       {
         name: 'Prof. D. Dione Rufino Díaz',
