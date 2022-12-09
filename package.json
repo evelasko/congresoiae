@@ -65,7 +65,7 @@
     "node-redsys-api": "^0.0.5",
     "order-id": "^1.1.0",
     "prop-types": "^15.7.2",
-    "qs": "^6.8.0",
+    "qs": "^6.8.3",
     "react": "^16.8.6",
     "react-autosuggest": "^9.4.3",
     "react-cookie-consent": "^2.3.2",
